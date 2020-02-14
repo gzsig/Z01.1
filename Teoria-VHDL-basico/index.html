@@ -274,7 +274,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../A-Ambiente-Lab-1/" class="md-tabs__link">
+        <a href="../A-Ambiente-Lab-2/" class="md-tabs__link">
           Labs
         </a>
       
@@ -498,6 +498,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../A-Ambiente-Lab-2/" title="Lab 2: Github" class="md-nav__link">
+      Lab 2: Github
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../A-Ambiente-Lab-1/" title="Lab 1: Configurando github" class="md-nav__link">
       Lab 1: Configurando github
     </a>
@@ -707,6 +719,18 @@
   <li class="md-nav__item">
     <a href="../Teoria-VHDL-Combinacional/" title="VHDL - Combinacional" class="md-nav__link">
       VHDL - Combinacional
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Teoria-VHDL-exemplos/" title="VHDL - Exemplos completos" class="md-nav__link">
+      VHDL - Exemplos completos
     </a>
   </li>
 
@@ -1176,8 +1200,10 @@ um vetor de bits <code>std_logic_vector(2 downto 0)</code> (vetor de 3 bits). </
 <p>O tipo <code>STD_LOGIC</code> é muito mais complexo que só um bit, mas vamos deixar isso de lado 
 por ora.</p>
 <h4 id="exemplos">Exemplos<a class="headerlink" href="#exemplos" title="Permanent link">&para;</a></h4>
-<p>Módulo com duas entradas binárias: <code>a</code>, <code>x</code> e uma saída <code>b</code></p>
-<div class="codehilite"><pre><span></span>    <span class="k">entity</span> <span class="nc">TopLevel</span> <span class="k">is</span>
+<ul>
+<li>Módulo com duas entradas binárias: <code>a</code>, <code>x</code> e uma saída <code>b</code></li>
+</ul>
+<div class="codehilite"><pre><span></span>    <span class="k">entity</span> <span class="nc">Comp1</span> <span class="k">is</span>
       <span class="k">port</span><span class="p">(</span>
             <span class="n">a</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
             <span class="n">x</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
@@ -1186,7 +1212,10 @@ por ora.</p>
     <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
 </pre></div>
 
-<p>Módulo chamado MUX que possui 4 entradas na forma de um vetor (<code>I : in std_logic_vector(3 downto 0)</code>), um seletor de dois bits na forma de um vetor (<code>S</code>) e uma saída <code>q</code> na forma de um bit.</p>
+<p><img alt="" src="../figs/VHDL/VHDL-basico-exe1.svg" /></p>
+<ul>
+<li>Módulo chamado MUX que possui 4 entradas na forma de um vetor (<code>I : in std_logic_vector(3 downto 0)</code>), um seletor de dois bits na forma de um vetor (<code>S</code>) e uma saída <code>q</code> na forma de um bit.</li>
+</ul>
 <div class="codehilite"><pre><span></span>    <span class="k">entity</span> <span class="nc">mux</span> <span class="k">is</span>
       <span class="k">port</span><span class="p">(</span>
             <span class="n">I</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
@@ -1196,6 +1225,7 @@ por ora.</p>
     <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
 </pre></div>
 
+<p><img alt="" src="../figs/VHDL/VHDL-basico-exe2.svg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Note que a entrada <code>I</code> foi declarada como sendo um vetor que começa em <code>3</code> e termina em <code>0</code>, possuindo no total 4 bits: <code>3</code>, <code>2</code>, <code>1</code>, <code>0</code></p>
@@ -1206,7 +1236,9 @@ por ora.</p>
 </ul>
 <p><img alt="" src="../figs/VHDL/vector-bus.png" width="300" /></p>
 </div>
-<p>Entidade de uma ULA</p>
+<ul>
+<li>Entidade de uma ULA</li>
+</ul>
 <div class="codehilite"><pre><span></span><span class="k">entity</span> <span class="nc">ALU</span> <span class="k">is</span>
     <span class="k">port</span> <span class="p">(</span>
             <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">:</span>   <span class="k">in</span> <span class="kt">STD_LOGIC_VECTOR</span><span class="p">(</span><span class="mi">15</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">-- entradas de dados da ALU</span>
@@ -1223,9 +1255,10 @@ por ora.</p>
 <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
 </pre></div>
 
+<p><img alt="" src="../figs/VHDL/VHDL-basico-exe3.png" width="400" /></p>
 <div class="admonition note">
 <p class="admonition-title">nota</p>
-<p>Note que a primeira linha declara duas portas com nome <code>x</code> e <code>y</code> com a mesma direção <code>in</code> e do tipo <code>std_logic_vector(15 downto 0)</code>. Isso é um atalho no VHDL, e deve ser evitado. O ideal é reescrever essa linha como a seguir:</p>
+<p>Note que a primeira linha declara duas portas com nome <code>x</code> e <code>y</code> com a mesma direção <code>in</code> e do tipo <code>std_logic_vector(15 downto 0)</code>. Isso é um atalho no VHDL e deve ser evitado. O ideal é reescrever essa linha como a seguir:</p>
 <div class="codehilite"><pre><span></span><span class="k">port</span> <span class="p">(</span>
   <span class="n">x</span><span class="o">:</span> <span class="k">in</span> <span class="kt">STD_LOGIC_VECTOR</span><span class="p">(</span><span class="mi">15</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">-- entrada X de dados da ALU</span>
   <span class="n">y</span><span class="o">:</span> <span class="k">in</span> <span class="kt">STD_LOGIC_VECTOR</span><span class="p">(</span><span class="mi">15</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">-- entrada Y de dados da ALU</span>
@@ -1282,7 +1315,7 @@ por ora.</p>
 <p class="admonition-title">Note</p>
 <p>Note que aqui estamos usando aspas simples: <code>'0' e '1'</code> para indicar um número binário (<code>std_logic</code>). Aspas dupla <code>"0101"</code> em VHDL significa que estamos trabalhando com um vetor de números binários (<code>std_logic_vector</code>).</p>
 </div>
-<p>Podemos utilizar portas lógicas nas operações, alguns operadores implementados pela linguagem são: <code>not</code>, <code>and</code>, <code>or</code>, <code>nand</code>, <code>nor</code>, <code>xor</code>, <code>xnor</code>. O uso dos operadores é feito da seguinte maneira:</p>
+<p>Podemos utilizar portas lógicas nas operações, alguns operadores implementados pela linguagem, são eles: <code>not</code>, <code>and</code>, <code>or</code>, <code>nand</code>, <code>nor</code>, <code>xor</code>, <code>xnor</code>. O uso dos operadores é feito da seguinte maneira:</p>
 <ol>
 <li><code>q &lt;= not x</code> q recebe o valor de x <strong>negado</strong></li>
 <li><code>q &lt;= x and y</code> q recebe o valor de x <strong>E</strong> y</li>
@@ -1320,13 +1353,15 @@ por ora.</p>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>É comum confundir quando usa aspas simples <code>''</code> e aspas dupla <code>""</code>, fique atento aos 
+<p>É comum confundir quando usar aspas simples <code>''</code> e aspas dupla <code>""</code>, fique atento aos 
 erros de compilação.</p>
 </div>
 <h4 id="signal">signal<a class="headerlink" href="#signal" title="Permanent link">&para;</a></h4>
 <p>Sinais são declarados entre a palavra reservada <code>architecture</code> e o <code>begin</code> e servem para
 facilitar/ possibilitar o desenvolvimento de um sistema digital, eles só são visíveis
-dentro de uma entidade e servem como 'fios' internos de um módulo. <code>Sinais</code> diferente de portas não possuem direção, e são declarados da seguinte maneira:</p>
+dentro de uma entidade e servem como 'fios' internos de um módulo. </p>
+<p><img alt="" src="../figs/VHDL/VHDL-basico-signals.svg" width="400" /></p>
+<p><code>Sinais</code> são diferente de portas não possuem direção, e são declarados da seguinte maneira:</p>
 <div class="codehilite"><pre><span></span><span class="k">signal</span> <span class="n">NAME</span> <span class="o">:</span> <span class="k">TYPE</span>
 </pre></div>
 
