@@ -845,22 +845,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
   
-    <label class="md-nav__title" for="__toc">Índice</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configurando-travis" class="md-nav__link">
-    Configurando Travis
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
   
 </nav>
                   </div>
@@ -875,8 +861,6 @@
                   <a href="https://github.com/insper/Z01.1/edit/master/docs/sobra.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Sobra</h1>
-                
                 <h2 id="configurando-travis">Configurando Travis<a class="headerlink" href="#configurando-travis" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Criando um project no github</li>
@@ -887,6 +871,50 @@
 </ul>
 <p><img alt="Issues" src="../figs/C-LogiComb/C-3-issues.gif" /></p>
 <p>Os issues devem ser <a href="https://github.com/Insper/Z01.1/wiki/C-Logica-Combinacional-Projeto#o-que-deve-ser-feito-">todos os módulos</a> a serem implementados do projeto.</p>
+<h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="referenciando-a-raiz">Referenciando a raiz<a class="headerlink" href="#referenciando-a-raiz" title="Permanent link">&para;</a></h2>
+<p>Para começar será necessário atualizar o fork do repositório que vocês criaram, com novos dados que serão colocados no repositório da disciplina. Uma vez clonado o repositório, você deve entrar na pasta via o terminal:</p>
+<div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> Z01.1-NomeDoGrupo
+</pre></div>
+
+<p>Estando na pasta do repositório precisamos agora indicar para o repositório original na qual o repositório que deu origem a esse fork, para isso devemos executar a seguinte linha de código: </p>
+<div class="codehilite"><pre><span></span>$ git remote add upstream https://github.com/insper/Z01.1
+</pre></div>
+
+<p>Para verificar se deu certo, execute:</p>
+<div class="codehilite"><pre><span></span>$ git remote -v
+</pre></div>
+
+<p>E deve aparecer além do link para o repositório de vocês a referência ao repositório original:</p>
+<div class="codehilite"><pre><span></span>upstream    https://github.com/insper/Z01.1 <span class="o">(</span>fetch<span class="o">)</span>
+upstream    https://github.com/insper/Z01.1 <span class="o">(</span>push<span class="o">)</span>
+</pre></div>
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Dúvidas?</p>
+<ul>
+<li><a href="https://gist.github.com/CristinaSolana/1885435">https://gist.github.com/CristinaSolana/1885435</a></li>
+<li><a href="https://help.github.com/articles/syncing-a-fork/">https://help.github.com/articles/syncing-a-fork/</a></li>
+</ul>
+</div>
+<h2 id="sincronizando-com-upstream">Sincronizando com upstream<a class="headerlink" href="#sincronizando-com-upstream" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Apenas mediador</p>
+<p>Essa etapa deve ser realizada apenas pelo mediador do projeto!</p>
+</div>
+<p>Para atualizar o repositório do grupo de vocês com as novas atualizações inseridas no repositório da disciplina basta executar:</p>
+<div class="codehilite"><pre><span></span>$ git fetch upstream
+</pre></div>
+
+<p>Agora precisamos realizar um merge desse branch (que contém as atualizações do repositório da disciplina) com o master:</p>
+<div class="codehilite"><pre><span></span>$ git checkout master
+$ git merge upstream/master
+</pre></div>
+
+<p>Precisamos submeter essa atualização para o repositório remoto a fim de todos do grupo terem acesso a versão mais nova.</p>
+<div class="codehilite"><pre><span></span>$ git push origin master
+</pre></div>
                 
                   
                 
