@@ -36,7 +36,7 @@
     
     
       
-        <title>F Assembly Lab 3 - 2020-1 - Elementos de Sistemas - Z01</title>
+        <title>Dados Digitais - 2020-1 - Elementos de Sistemas - Z01</title>
       
     
     
@@ -87,7 +87,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#pequenos-problemas-que-ja-contam-na-entrega" tabindex="1" class="md-skip">
+      <a href="#dados-digitais" tabindex="1" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -162,7 +162,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                F Assembly Lab 3
+                Dados Digitais
               
             </span>
           
@@ -237,7 +237,9 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -285,7 +287,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../Teoria-Algebra-Booleana/" class="md-tabs__link">
+        <a href="../Teoria-Algebra-Booleana/" class="md-tabs__link md-tabs__link--active">
           Teoria
         </a>
       
@@ -535,10 +537,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Teoria
@@ -578,11 +582,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../Teoria-Dados/" title="Dados Digitais" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Dados Digitais
+      </label>
+    
+    <a href="./" title="Dados Digitais" class="md-nav__link md-nav__link--active">
       Dados Digitais
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Índice</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-2" class="md-nav__link">
+    Base 2
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -888,22 +930,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sub" class="md-nav__link">
-    sub
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mov" class="md-nav__link">
-    mov
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sw-e-led" class="md-nav__link">
-    SW e LED
+  <a href="#base-2" class="md-nav__link">
+    Base 2
   </a>
   
 </li>
@@ -924,67 +952,66 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/Z01.1/edit/master/docs/F-Assembly-Lab-3.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/insper/Z01.1/edit/master/docs/Teoria-Dados.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <p>Ao final desse lab você deve ser capaz de:</p>
-<ol>
-<li>Fazer programas simples em assembly com saltos </li>
-<li>Entender ainda mais a linguagem </li>
-<li>Entender ainda mias o hardawre</li>
-</ol>
-<p>Para todos os programas:</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Trabalhe com o grupo!</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Faça primeiramente na LOUSA, chame seu professor para validar</strong><ul>
-<li>Alterne quem vai para a lousa</li>
+                <h1 id="dados-digitais">Dados Digitais<a class="headerlink" href="#dados-digitais" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Primeiras Máquinas de Calcular</p>
+<p>Wilhelm Schickard (1592–1635) construiu em 1623 uma calculadora para seu amigo astrônomo Johannes Kepler. Esta é a mais antiga calculadora mecânica conhecida dequatro funções, que foi descoberta por esboços da sua criação.</p>
+<p><img alt="" src="http://people.idsia.ch/~juergen/schickardcomputer178e.jpg" width="200" /></p>
+<blockquote>
+<p>Fonte: <a href="http://people.idsia.ch/~juergen/schickard.html">http://people.idsia.ch/~juergen/schickard.html</a></p>
+</blockquote>
+</div>
+<div class="admonition info">
+<p class="admonition-title">História</p>
+<p>Blaise Pascal (1623-1662) inventou e produziu em 1642 a Pascaline. Ela só podia fazer adição e subtração, manipulando os números inscritos em seus mostradores. Ele construiu 50 deles ao longo de 10 anos, embora só tenha vendido 15.</p>
+<p><img alt="" src="https://images.computerhistory.org/revonline/images/500004213-03-01.jpg?w=600" width="200" /></p>
+<blockquote>
+<p>Fonte: <a href="http://www.computerhistory.org/revolution/calculators/1/47">http://www.computerhistory.org/revolution/calculators/1/47</a></p>
+</blockquote>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Primeiras Máquinas de Calcular</p>
+<p>Gottfried Wilhelm von Leibniz (1646-1716) é creditado como um dos inventores do cálculo diferencial e integral. Porém foi o primeiro a documentar e estudar profundamente o sistema binário de numeração (base 2). Em 1672 Leibniz começou a inventar uma máquina capaz de fazer as 4 operações aritméticas, o Staffelwalze.</p>
+<p><img alt="" src="https://images.computerhistory.org/revonline/images/102630768-03-01.jpg?w=600" width="300" /></p>
+<blockquote>
+<p>Fonte: <a href="https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz">https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz</a></p>
+</blockquote>
+</div>
+<p>Sistemas numéricos é a maneira como os seres humanos representam números, ao decorrer da história as civilizações assumiam maneiras diferentes de representar números, muitas vezes possuindo diferentes maneiras de codificar para fala e para escrita. </p>
+<p>O sistema decimal é o mais utilizado pelas civilizações modernas, nele utilizamos de 9 símbolos: <code>0</code>, <code>1</code> ... <code>9</code> para representar qualquer número, essa notação remonta do fato de possuirmos 10 dedos em nossas mãos. Nesse sistema, cada digito possui um peso da ordem <span><span class="MathJax_Preview">10^n</span><script type="math/tex">10^n</script></span>:</p>
+<p><img alt="" src="../figs/Teoria/Dados-decimal.svg" /></p>
+<div class="admonition info">
+<p class="admonition-title">Algarismos indo-arábicos</p>
+<p>O sistema de numeração hindu como a conhecemos hoje, pode ser atribuído a dois homens: o astrônomo Ariabata (आर्यभट) e seu pupilo Bhāskara I, durante 499-522 ac. Eles inventaram um sistema que se baseia na utilização da combinação de sílabas para formar os números, em um sistema incluindo a notação do zero. </p>
+<p><img alt="" src="https://cdn.britannica.com/60/91960-004-42DF23AB.gif" /></p>
+<blockquote>
+<p>Fonte: <a href="https://kids.britannica.com/kids/assembly/view/89478">https://kids.britannica.com/kids/assembly/view/89478</a></p>
+</blockquote>
+</div>
+<h2 id="base-2">Base 2<a class="headerlink" href="#base-2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Base 10</li>
+<li>Base 8</li>
+<li>Base 2</li>
+<li>
+<p>Base 16</p>
+</li>
+<li>
+<p>Base 2 </p>
+<ul>
+<li>Adição binária</li>
+<li>Complemento de 1</li>
+<li>Complemento de 2</li>
 </ul>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Faça no simulador GUI<ul>
-<li>Lembre de iniciar a memória RAM para validar o teste!</li>
+<li>Ponto fixo / ponto flutuante</li>
+<li>BCD</li>
+<li>ASCII</li>
+<li>UTF8</li>
 </ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Descomente no arquivo <code>test/conf.txt</code></li>
-<li>Sempre use a descrição do hardware.</li>
-</ul>
-<h1 id="pequenos-problemas-que-ja-contam-na-entrega">Pequenos problemas (que já contam na entrega)<a class="headerlink" href="#pequenos-problemas-que-ja-contam-na-entrega" title="Permanent link">&para;</a></h1>
-<p>Com auxilio do exemplo do add e das instruções disponíveis no nosso hardware (<a href="AssemblyZ1">AssemblyZ1</a>) faça na <strong>LOUSA</strong> e depois no <strong>Simulador GUI</strong> um programa que:</p>
-<h2 id="sub">sub<a class="headerlink" href="#sub" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Arquivo: <code>sub.nasm</code></li>
-<li>Faz uma subtração binaria do valor de:  RAM[1] - RAM[0] gravando em RAM[2].</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="gd">- FAÇA NA LOUSA PRIMEIRO! CHAME UM PROF. PARA VALIDAR</span>
-<span class="gd">- SIMULE NO GUI</span>
-<span class="gd">- RODE O TESTE </span>
- (descomente tests/conf.txt)
-</pre></div>
-
-<h2 id="mov">mov<a class="headerlink" href="#mov" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Arquivo: <code>mov.nasm</code></li>
-<li>Movimentação de dados da memoria RAM.</li>
-</ul>
-<div class="codehilite"><pre><span></span> tmp    = RAM[0]
- RAM[0] = RAM[1]
- RAM[1] = tmp
- RAM[3] = 1
-</pre></div>
-
-<div class="codehilite"><pre><span></span><span class="gd">- FAÇA NA LOUSA PRIMEIRO! CHAME UM PROF. PARA VALIDAR</span>
-<span class="gd">- SIMULE NO GUI</span>
-<span class="gd">- RODE O TESTE</span>
- (descomente tests/conf.txt)
-</pre></div>
-
-<h2 id="sw-e-led">SW e LED<a class="headerlink" href="#sw-e-led" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Arquivo: <code>SWeLED.nasm</code></li>
-<li>Faça os LEDs exibirem o resultado da soma entre as chaves da FPGA: LEDR = SW[9..6] + SW[3..0].</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="gd">- Valide no hardawre</span>
-<span class="gd">- Faça um vídeo!</span>
-</pre></div>
                 
                   
                 
@@ -1001,6 +1028,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Teoria-RTL/" title="Resistor-Transistor Logic (RTL)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Resistor-Transistor Logic (RTL)
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Teoria-Componentes/" title="Componentes Digitais" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Próximo
+                </span>
+                Componentes Digitais
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
