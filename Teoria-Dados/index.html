@@ -619,6 +619,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#definicoes" class="md-nav__link">
+    Definições
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#conversao-decimal-binario" class="md-nav__link">
     Conversão Decimal &lt;-&gt; Binário
   </a>
@@ -668,6 +675,26 @@
   <a href="#outros-sistemas" class="md-nav__link">
     Outros sistemas
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bcd" class="md-nav__link">
+    BCD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ascii" class="md-nav__link">
+    ASCII
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1016,6 +1043,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#definicoes" class="md-nav__link">
+    Definições
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#conversao-decimal-binario" class="md-nav__link">
     Conversão Decimal &lt;-&gt; Binário
   </a>
@@ -1065,6 +1099,26 @@
   <a href="#outros-sistemas" class="md-nav__link">
     Outros sistemas
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bcd" class="md-nav__link">
+    BCD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ascii" class="md-nav__link">
+    ASCII
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1166,8 +1220,8 @@
 <p>Fonte: <a href="https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz">https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz</a></p>
 </blockquote>
 </div>
-<p>Sistemas numéricos é a maneira como os seres humanos representam números, ao decorrer da história as civilizações assumiam maneiras diferentes de representar números, muitas vezes possuindo diferentes maneiras de codificar para fala e para escrita. </p>
-<p>O sistema decimal é o mais utilizado pelas civilizações modernas, nele utilizamos de 9 símbolos: <code>0</code>, <code>1</code> ... <code>9</code> para representar qualquer número, essa notação remonta do fato de possuirmos 10 dedos em nossas mãos. Nesse sistema, cada digito possui um peso da ordem <span><span class="MathJax_Preview">10^n</span><script type="math/tex">10^n</script></span>:</p>
+<p>Sistemas numéricos é a maneira como os seres humanos representam números, ao decorrer da história as civilizações assumiam maneiras diferentes de representar números, muitas vezes possuindo diferentes maneiras de codificar números na forma horal e escrita. </p>
+<p>O sistema decimal é o mais utilizado pelas civilizações modernas, nele utilizamos 9 símbolos: <code>0</code>, <code>1</code> ... <code>9</code> para representar qualquer número, essa notação remonta do fato de possuirmos 10 dedos em nossas mãos. Nesse sistema, cada digito possui um peso da ordem <span><span class="MathJax_Preview">10^n</span><script type="math/tex">10^n</script></span>:</p>
 <p><img alt="" src="../figs/Teoria/Dados-decimal.svg" width="400" /></p>
 <div class="admonition info">
 <p class="admonition-title">Algarismos indo-arábicos</p>
@@ -1183,6 +1237,9 @@
 <p>No sistema de base 2 possuímos apenas duas opções de símbolo: <code>0</code> e <code>1</code>. Nesse base, cada posição possui um peso da ordem <span><span class="MathJax_Preview">2^n</span><script type="math/tex">2^n</script></span>:</p>
 <p><img alt="" src="../figs/Teoria/Dados-binario.svg" width="500" /></p>
 <p>Dessa maneira podemos construir o valor que desejarmos de decimal (<span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>) em binário, para isso será necessário ocupar <span><span class="MathJax_Preview">ceil(log2(m))</span><script type="math/tex">ceil(log2(m))</script></span> bits para armazenar o valor. A tabela a seguir ilustra algumas situações:</p>
+<blockquote>
+<p><code>ceil</code>: arredondar para cima</p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -1294,6 +1351,14 @@
 0x100 != 0b100 != 100
 </pre></div></p>
 </div>
+<h3 id="definicoes">Definições<a class="headerlink" href="#definicoes" title="Permanent link">&para;</a></h3>
+<p>Em muitas linguagens de programação é necessário definirmos o tamanho da variável que iremos armazenar um dado, para facilitar o entendimento damos nome a quantidade de bits que ela irá ocupar: </p>
+<ol>
+<li>4 bits: <strong>nibble</strong></li>
+<li>8 bits: <strong>byte</strong></li>
+<li>16 bits: <strong>halfword</strong></li>
+<li>32 bits: <strong>word</strong></li>
+</ol>
 <h3 id="conversao-decimal-binario">Conversão Decimal &lt;-&gt; Binário<a class="headerlink" href="#conversao-decimal-binario" title="Permanent link">&para;</a></h3>
 <p>Existem diversas técnicas de conversão binário &lt;-&gt; decimal, a seguir detalhes de como realizar essas conversões, o segredo é entender os pesos de cada casa de um <code>bit</code> no sistema binário e então fazer a conta inversa.</p>
 <iframe width="948" height="534" src="https://www.youtube.com/embed/_68Cn5VuDxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -1436,7 +1501,7 @@
     |       |       |
   A.16^2  0.16^1   1.16^1
 
-   -&gt; 10.256 + 0 + 1.16 = 2072
+   -&gt; 10.256 + 0 + 1.16 = 2576
 </pre></div>
 
 <p>Para converter de Decimal para Hexa, uma das soluções mais triviais é a de converter primeiro para binário e então agrupar os bits de 4 em 4 e converter para hexa:</p>
@@ -1579,21 +1644,34 @@ $ chmod 754 FILE
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Povos</p>
-<p>Alguns povos da América do norte e México, assim como Europa utilizam o sistema octal pois consideram os vãos dos dedos, e não os dedos.</p>
+<p>Alguns povos da América do norte, Mexico e Europa utilizam o sistema octal pois consideram a quantidade dos vãos dos dedos, e não os dedos.</p>
 <blockquote>
 <p>Fonte: <a href="https://en.wikipedia.org/wiki/Octal#By_Native_Americans">https://en.wikipedia.org/wiki/Octal#By_Native_Americans</a></p>
 </blockquote>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Início da computação</p>
-<p>Para que serve o sistema octal? No começo da computação a IBM possuía memórias com: 6-bit, 12-bit, 24-bit e 36-bit. Sendo todas as unidades divisíveis por 3, o que facilita a interpretação em um sistema octal (e não hexadecimal que teria que serem divisíveis por 4).</p>
+<p>Para que serve o sistema octal? No começo da computação a IBM possuía memórias com: 6-bit, 12-bit, 24-bit e 36-bit. Sendo todas as unidades divisíveis por 3, o que facilita a interpretação em um sistema octal.</p>
 </div>
 <h2 id="outros-sistemas">Outros sistemas<a class="headerlink" href="#outros-sistemas" title="Permanent link">&para;</a></h2>
+<p>Existem inúmeras maneiras de codificação de números e/ou caracteres diversos, as mais utilizadas são:</p>
 <ul>
 <li>BCD</li>
 <li>ASCII</li>
-<li>UTF8</li>
+<li>UTF-8</li>
 </ul>
+<h3 id="bcd">BCD<a class="headerlink" href="#bcd" title="Permanent link">&para;</a></h3>
+<p>No sistema <a href="https://pt.wikipedia.org/wiki/Codifica%C3%A7%C3%A3o_bin%C3%A1ria_decimal">Binary-coded decimal (BCD)</a> cada unidade de um sistema decimal é convertido para <code>4 bits</code>, muito parecido com a conversão para Hexadecimal.</p>
+<iframe width="900" height="506" src="https://www.youtube.com/embed/AM0tr8Kyvzg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h3 id="ascii">ASCII<a class="headerlink" href="#ascii" title="Permanent link">&para;</a></h3>
+<p><a href="https://pt.wikipedia.org/wiki/ASCII">ASCII</a> (do inglês American Standard Code for Information Interchange; "Código Padrão Americano para o Intercâmbio de Informação") é uma maneira de codificar em binário (8 bits) 95 sinais gráficos (letras, símbolos e números) e alguns sinais de controle. É muito utilizada pelos programas para armazenarem 'caracteres' e 'strings'. </p>
+<p><a href="http://www.asciitable.com"><img alt="" src="http://www.asciitable.com/index/asciifull.gif" /></a></p>
+<blockquote>
+<p>Fonte: <a href="http://www.asciitable.com">www.asciitable.com</a></p>
+</blockquote>
+<p>Por exemplo, a palavra Insper convertido para ASCII fica da seguinte maneira (em decimal):</p>
+<p><img alt="" src="../figs/Teoria/Dados-ascii.svg" width="500" /></p>
                 
                   
                 
