@@ -1196,16 +1196,50 @@
                 
                 
                 <h1 id="vhdl-introducao">VHDL - Introdução<a class="headerlink" href="#vhdl-introducao" title="Permanent link">&para;</a></h1>
-<p>O VHDL é uma linguagem de descrição de hardware (Hardware Description Language - HDL), não sendo uma linguagem de programação. Foi criada durante a Guerra Fria no Departamento de Defesa Americano (DoD-DARPA) para a documentação de hardwares complexos (complementava/substituía os esquemáticos). Com a evolução da tecnologia agora é possível utilizar a linguagem para implementar sistemas digitais em hardwares programáveis (FPGA/CPL/...).</p>
-<p>Por não ser criada para o fim que a utilizamos, o VHDL é no primeiro momento bastante intricado. Mas com o usar, vocês irão se acostumar com a linguagem e serão capazes de realizar hardwares cada vez mais complexos.</p>
+<table>
+<thead>
+<tr>
+<th>Estudando</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Leituras (extra)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="http://freerangefactory.org/pdf/df344hdh4h8kjfh3500ft2/free_range_vhdl.pdf">Free Range VHDL BOOK</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://www.embarcados.com.br/vhdl-basico-parte-1-entidade/">VHDL Básico: Parte 1 - Entidade</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://www.embarcados.com.br/vhdl-basico-parte-2-arquitetura/">VHDL Básico: Parte 2 - Arquitetura</a></td>
+</tr>
+<tr>
+<td>Vídeos (extra)</td>
+<td></td>
+</tr>
+<tr>
+<td><img alt="👍" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f44d.svg" title=":+1:" /></td>
+<td><iframe width="200" height="200" src="https://www.youtube.com/embed/zm-RA6BsYmc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+</tr>
+</tbody>
+</table>
+<p>O <a href="https://en.wikipedia.org/wiki/VHDL">VHDL</a> é uma linguagem de descrição de hardware (<a href="https://en.wikipedia.org/wiki/Hardware_description_language">Hardware Description Language - HDL</a>), não sendo uma linguagem de programação. Foi criada durante a Guerra Fria no Departamento de Defesa Americano (DoD-DARPA) para a documentação de hardwares complexos (complementava/substituía os esquemáticos). Com a evolução da tecnologia agora é possível utilizar a linguagem para implementar sistemas digitais em hardwares programáveis (FPGA/CPL/...).</p>
+<p>Por não ter sido criada para o fim que a utilizamos, o VHDL é no primeiro momento bastante intricado. Mas com o usar, vocês irão se acostumar com a linguagem e serão capazes de realizar hardwares cada vez mais complexos.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Iremos utilizar a palavra 'código' para descrever um projeto em VHDL, 
-tenha em mente que não estamos falando de um programa e sim de um 
-projeto de hardware.</p>
+<p>Algumas vezes iremos utilizar a palavra 'código' para descrever um projeto em VHDL, 
+tenha em mente que não estamos falando de um programa e sim de uma
+descrição de hardware.</p>
 </div>
-<p>Um programa em <code>Python</code>/<code>Java</code>/<code>C</code> é como uma receita de bolo que será executada em uma cozinha que já está montada, essa cozinha é o seu CPU (processador), e não dá para mudar com código (software), o que você muda de um programa para outro é a receita. Uma cozinha é capaz de realizar diversas receitas diferentes ....</p>
-<p>No caso do VHDL não temos essa 'cozinha' pronta, na verdade, podemos criar qualquer cozinha que quisermos. Com o VHDL você será o arquiteto de cozinhas, capaz de criar praticamente qualquer hardware!</p>
+<p>Um programa em <code>Python</code>/<code>Java</code>/<code>C</code> é como uma receita de bolo que será executada em uma cozinha que já está montada, essa cozinha é o sua CPU (processador), e não dá para mudar com código (software), o que você muda de um programa para outro é a receita. Uma cozinha é capaz de realizar diversas receitas diferentes ....</p>
+<p>No caso do VHDL não temos essa 'cozinha' pronta, na verdade, podemos criar qualquer cozinha que quisermos. Com o VHDL você será o arquiteto de cozinhas, capaz de criar praticamente qualquer hardware! E então realizar suas receitas na cozinha que criou.</p>
 <h2 id="regras-de-ouro-do-vhdl">Regras de Ouro do VHDL<a class="headerlink" href="#regras-de-ouro-do-vhdl" title="Permanent link">&para;</a></h2>
 <ul>
 <li>VHDL é uma descrição, ou projeto, do hardware e não uma programação dele.<ul>
@@ -1213,7 +1247,7 @@ projeto de hardware.</p>
 <li>As linhas de código serão executadas simultaneamente.</li>
 </ul>
 </li>
-<li>Deve-se possuir uma visão de como o circuito final será.<ul>
+<li>Deve-se possuir uma visão de como o circuito digital final será.<ul>
 <li>Se ele for muito complexo, use uma divisão em blocos menores até chegar às unidades construtivas básicas.</li>
 </ul>
 </li>
@@ -1240,14 +1274,23 @@ projeto de hardware.</p>
 
 <span class="k">begin</span>
 
-  <span class="n">a</span> <span class="o">&lt;=</span> <span class="k">not</span> <span class="n">b</span><span class="p">;</span>
+  <span class="n">a</span> <span class="o">&lt;=</span> <span class="k">not</span> <span class="n">b</span><span class="p">;</span> <span class="c1">-- a saída A recebe a entrada B</span>
 
 <span class="k">end</span> <span class="nc">rtl</span><span class="p">;</span>
 </pre></div></li>
 </ol>
 <p><img alt="" src="../figs/VHDL/bloco.png" width="400" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Comentários em VHDL</p>
+<p>Comentários em VHDL são iniciados com dois traços: <code>--</code>. Exemplo:</p>
+<div class="codehilite"><pre><span></span><span class="c1">-- Comenário em VHDL </span>
+<span class="c1">-- a &lt;= not b;          Trecho de código comentado</span>
+<span class="n">a</span> <span class="o">&lt;=</span> <span class="err">`</span><span class="mi">1</span><span class="err">`</span><span class="p">;</span> <span class="c1">-- comentário</span>
+</pre></div>
+
+</div>
 <h3 id="bibliotecas">Bibliotecas<a class="headerlink" href="#bibliotecas" title="Permanent link">&para;</a></h3>
-<p>As bibliotecas do VHDL é onde as definições dos tipos e das operações são realizadas, não será necessário mexer com isso ao longo do semestre, essa parte já vai estar pronta nos projetos que vocês forem mexer.</p>
+<p>As <a href="https://www.csee.umbc.edu/portal/help/VHDL/stdpkg.html">bibliotecas do VHDL</a> são onde as definições dos tipos e das operações são realizadas, não será necessário mexer com isso ao longo do semestre, essa parte já vai estar pronta nos projetos que vocês forem mexer. </p>
 <h3 id="entidade-entity">Entidade (entity)<a class="headerlink" href="#entidade-entity" title="Permanent link">&para;</a></h3>
 <p>Podemos pensar na entidade como o trecho de código que define o módulo como uma caixa preta, ela explicita quem são as entradas e quais são as saídas desse módulo. Assim como um CHIP, que possui pinos de entradas e pinos de saída.</p>
 <p>No exemplo anterior, o módulo é chamado de <code>TopLevel</code> e possui uma entrada <code>a</code> e uma saída <code>b</code>. Tanto a entrada quanto a saída são do tipo <code>std_logic</code>. Cada porta tem a descrição de sua direção (<code>in</code>, <code>out</code>), como detalhado a seguir:</p>
@@ -1258,13 +1301,26 @@ projeto de hardware.</p>
 
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Note que a necessidade do <code>;</code> no final da linha, isso indica para o VHDL
+<p>Note a necessidade do <code>;</code> no final da linha, isso indica para o VHDL
 que essa descrição 'acabou'. A quebra de linha <code>Enter</code> não tem uso para o 
 VHDL, só serve para facilitar nossa leitura.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>O <code>;</code> não deve aparecer na última porta! No exemplo anterior a porta <code>b : out STD_LOGIC</code> não possui <code>;</code>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Adicionando uma entrada <code>x</code> ao módulo anterior:</p>
+<div class="codehilite"><pre><span></span><span class="k">entity</span> <span class="nc">TopLevel</span> <span class="k">is</span>
+  <span class="k">port</span><span class="p">(</span>
+       <span class="n">a</span> <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
+       <span class="n">b</span> <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">;</span>
+       <span class="n">x</span> <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span>
+  <span class="p">);</span>
+<span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
+</pre></div>
+
 </div>
 <h4 id="nome">Nome<a class="headerlink" href="#nome" title="Permanent link">&para;</a></h4>
 <p>No VHDL você <strong>não</strong> pode usar um nome de porta que:</p>
@@ -1275,11 +1331,8 @@ VHDL, só serve para facilitar nossa leitura.</p>
 </ul>
 <p>Para mais detalhes, dê uma olhada na <a href="https://www.ics.uci.edu/~jmoorkan/vhdlref/names.html">documentação completa</a></p>
 <h4 id="direcao">Direção<a class="headerlink" href="#direcao" title="Permanent link">&para;</a></h4>
-<p>A direção <code>in</code>, <code>out</code> define se a informação irá 'entrar' no módulo ou 'sair'
-do módulo. Por exemplo, se quisermos 'ler' um botão, devemos declarar essa
-porta como sendo uma 'entrada' do módulo, mas se quisermos acionar um LED,
-devemos declarar essa porta como 'saída', pois ela será controlada por 
-nossa lógica.</p>
+<p>A direção <code>in</code>, <code>out</code> define se a informação irá <strong>entrar</strong> no módulo ou <strong>sair</strong> do módulo. Por exemplo, se quisermos 'ler' um botão, devemos declarar essa
+porta como sendo uma 'entrada' (<code>in</code>) do módulo, mas se quisermos acionar um LED, devemos declarar essa porta como 'saída' (<code>out</code>), pois ela será controlada por nossa lógica.</p>
 <h4 id="tipo">Tipo<a class="headerlink" href="#tipo" title="Permanent link">&para;</a></h4>
 <p>O tipo define se a porta será composta por um único bit <code>std_logic</code> ou por
 um vetor de bits <code>std_logic_vector(2 downto 0)</code> (vetor de 3 bits). </p>
@@ -1372,27 +1425,30 @@ por ora.</p>
 <div class="admonition note">
 <p>Suponha o uso da entidade a seguir para os exemplos que serão apresentados</p>
 <div class="codehilite"><pre><span></span><span class="k">entity</span> <span class="nc">Foo</span> <span class="k">is</span>
-<span class="k">port</span><span class="p">(</span>
+    <span class="k">port</span><span class="p">(</span>
         <span class="n">x</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
         <span class="n">y</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
         <span class="n">q</span>   <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">;</span>
         <span class="n">p</span>   <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span>
-  <span class="p">);</span>
+    <span class="p">);</span>
 <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
 </pre></div>
 
 </div>
 <p>No VHDL usamos <code>&lt;=</code> para representar que alguma coisa (a esquerda da seta) recebe algum outro valor (a direita da seta). Exemplos:</p>
 <ol>
-<li><code>q &lt;= x;</code> q recebe o valor de <code>x</code><ul>
+<li><code>q &lt;= x;</code> <ul>
+<li><code>q</code> recebe o valor de <code>x</code></li>
 <li>Na prática estamos conectando um fio de <code>x</code> que liga em <code>q</code></li>
 </ul>
 </li>
-<li><code>q &lt;= '0';</code> q recebe o valor <code>0</code><ul>
+<li><code>q &lt;= '0';</code> <ul>
+<li><code>q</code> recebe o valor <code>0</code></li>
 <li>Na prática estamos conectando um fio que sai de <code>q</code> e liga no terra</li>
 </ul>
 </li>
-<li><code>q &lt;= '1';</code> q recebe o valor <code>1</code><ul>
+<li><code>q &lt;= '1';</code> <ul>
+<li><code>q</code> recebe o valor <code>1</code></li>
 <li>Na prática estamos conectando um fio que sai de <code>q</code> e liga no vcc</li>
 </ul>
 </li>
@@ -1401,17 +1457,26 @@ por ora.</p>
 <p class="admonition-title">Note</p>
 <p>Note que aqui estamos usando aspas simples: <code>'0' e '1'</code> para indicar um número binário (<code>std_logic</code>). Aspas dupla <code>"0101"</code> em VHDL significa que estamos trabalhando com um vetor de números binários (<code>std_logic_vector</code>).</p>
 </div>
-<p>Podemos utilizar portas lógicas nas operações, alguns operadores implementados pela linguagem, são eles: <code>not</code>, <code>and</code>, <code>or</code>, <code>nand</code>, <code>nor</code>, <code>xor</code>, <code>xnor</code>. O uso dos operadores é feito da seguinte maneira:</p>
+<p>Podemos utilizar portas lógicas nas operações, alguns operadores implementados pela linguagem, são: <code>not</code>, <code>and</code>, <code>or</code>, <code>nand</code>, <code>nor</code>, <code>xor</code>, <code>xnor</code>. O uso dos operadores é feito da seguinte maneira:</p>
 <ol>
-<li><code>q &lt;= not x</code> q recebe o valor de x <strong>negado</strong></li>
-<li><code>q &lt;= x and y</code> q recebe o valor de x <strong>E</strong> y</li>
-<li><code>p &lt;= x xor y</code> </li>
+<li><code>q &lt;= not x;</code> <ul>
+<li><code>q</code> recebe o valor de <code>x</code> <strong>negado</strong></li>
+</ul>
+</li>
+<li><code>q &lt;= x and y;</code> <ul>
+<li><code>q</code> recebe o valor de <code>x</code> <strong>E</strong> <code>y</code></li>
+</ul>
+</li>
+<li><code>p &lt;= x xor y;</code> <ul>
+<li><code>q</code> recebe o valor de <code>x</code> <strong>XOR</strong> <code>y</code></li>
+</ul>
+</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Em VHDL não é possível 'ler' uma saída, a seguinte operação <strong>não pode</strong> ser realizada:</p>
-<div class="codehilite"><pre><span></span><span class="n">q</span> <span class="o">&lt;=</span> <span class="k">not</span> <span class="n">x</span><span class="p">;</span>
-<span class="n">p</span> <span class="o">&lt;=</span> <span class="n">q</span><span class="p">;</span>
+<p>Em VHDL não é possível 'ler' uma saída, as seguintes operações <strong>não pode</strong> ser realizada:</p>
+<div class="codehilite"><pre><span></span><span class="n">q</span> <span class="o">&lt;=</span> <span class="k">not</span> <span class="n">x</span><span class="p">;</span> <span class="c1">-- x é saída</span>
+<span class="n">p</span> <span class="o">&lt;=</span> <span class="n">q</span><span class="p">;</span>     <span class="c1">-- q é saída</span>
 </pre></div>
 
 </div>
@@ -1431,11 +1496,26 @@ por ora.</p>
 </div>
 <p>Exemplos de operação com vetores:</p>
 <ol>
-<li><code>p &lt;= "100"</code> <code>p</code> recebe o valor em binário <code>100</code></li>
-<li><code>p &lt;= not "100"</code> <code>p</code> recebe o valor em binário <code>011</code></li>
-<li><code>p &lt;= b(2 downto 0)</code> <code>p</code> recebe os três primeiros bits de <code>b</code></li>
-<li><code>p(0) &lt;= a</code> <code>p</code> <code>bit 0</code> recebe o valor da entrada <code>a</code></li>
-<li><code>q &lt;= not b(1)</code> a saída binária <code>q</code> recebe o <code>bit 1</code> da entrada <code>b</code> negado.</li>
+<li><code>p &lt;= "100"</code><ul>
+<li><code>p</code> recebe o valor em binário <code>100</code></li>
+</ul>
+</li>
+<li><code>p &lt;= not "100"</code><ul>
+<li><code>p</code> recebe o valor em binário <code>011</code></li>
+</ul>
+</li>
+<li><code>p &lt;= b(2 downto 0);</code><ul>
+<li><code>p</code> recebe os três primeiros bits de <code>b</code></li>
+</ul>
+</li>
+<li><code>p(0) &lt;= a;</code> <ul>
+<li><code>p</code> <code>bit 0</code> recebe o valor da entrada <code>a</code></li>
+</ul>
+</li>
+<li><code>q &lt;= not b(1);</code><ul>
+<li>a saída binária <code>q</code> recebe o <code>bit 1</code> da entrada <code>b</code> negado.</li>
+</ul>
+</li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1457,9 +1537,11 @@ dentro de uma entidade e servem como 'fios' internos de um módulo. </p>
 <p>Exemplo:</p>
 <div class="codehilite"><pre><span></span><span class="k">architecture</span> <span class="nc">rtl</span> <span class="k">of</span> <span class="nc">TopLevel</span> <span class="k">is</span>
 
-<span class="k">signal</span> <span class="n">aux1</span> <span class="o">:</span> <span class="kt">std_logic</span><span class="p">;</span>
+<span class="c1">-- Declaração de sinais</span>
+<span class="k">signal</span> <span class="n">aux1</span> <span class="o">:</span> <span class="kt">std_logic</span><span class="p">;</span>                
 <span class="k">signal</span> <span class="n">aux2</span> <span class="o">:</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
 
+<span class="c1">-- inicio da implementação</span>
 <span class="k">begin</span>
 
     <span class="c1">--------------------</span>
