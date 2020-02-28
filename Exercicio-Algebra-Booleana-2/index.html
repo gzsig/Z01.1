@@ -263,7 +263,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../A-Ambiente-Desenvolvimento-Projeto/" class="md-tabs__link">
+        <a href="../LogiComb-Projeto/" class="md-tabs__link">
           Projetos
         </a>
       
@@ -276,7 +276,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../A-Transistores-Lab-1/" class="md-tabs__link">
+        <a href="../A-Ambiente-Lab-1/" class="md-tabs__link">
           Labs
         </a>
       
@@ -328,7 +328,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../Util-Vixi!-Sou-Scrum-Master/" class="md-tabs__link">
+        <a href="../Util-Comecando-novo-projeto/" class="md-tabs__link">
           Útil
         </a>
       
@@ -464,6 +464,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../LogiComb-Projeto/" title="B - Lógica Combinacional" class="md-nav__link">
+      B - Lógica Combinacional
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../A-Ambiente-Desenvolvimento-Projeto/" title="A - Ambiente de desenvolvimento" class="md-nav__link">
       A - Ambiente de desenvolvimento
     </a>
@@ -500,8 +512,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../A-Transistores-Lab-1/" title="Lab 3: Transistores" class="md-nav__link">
-      Lab 3: Transistores
+    <a href="../A-Ambiente-Lab-1/" title="Lab 1: Configurando Github" class="md-nav__link">
+      Lab 1: Configurando Github
     </a>
   </li>
 
@@ -524,8 +536,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../A-Ambiente-Lab-1/" title="Lab 1: Configurando Github" class="md-nav__link">
-      Lab 1: Configurando Github
+    <a href="../A-Transistores-Lab-1/" title="Lab 3: Transistores" class="md-nav__link">
+      Lab 3: Transistores
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../LogiComb-Lab-1/" title="Lab 4: FPGA - VHDL" class="md-nav__link">
+      Lab 4: FPGA - VHDL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../LogiComb-Lab-2/" title="Lab 5: Lógica Combinacional" class="md-nav__link">
+      Lab 5: Lógica Combinacional
     </a>
   </li>
 
@@ -868,8 +904,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../Util-Vixi!-Sou-Scrum-Master/" title="Vixi! Sou Scrum Master" class="md-nav__link">
-      Vixi! Sou Scrum Master
+    <a href="../Util-Comecando-novo-projeto/" title="Começando novo projeto" class="md-nav__link">
+      Começando novo projeto
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Util-Vixi!-Sou-Scrum-Master/" title="Vixi! Sou scrum master" class="md-nav__link">
+      Vixi! Sou scrum master
     </a>
   </li>
 
@@ -891,15 +939,27 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../Util-Dicas-Travis/" title="Dicas Travis" class="md-nav__link">
+      Dicas Travis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-5" type="checkbox" id="nav-7-5">
     
-    <label class="md-nav__link" for="nav-7-3">
+    <label class="md-nav__link" for="nav-7-5">
       ZO1.1
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-7-3">
+      <label class="md-nav__title" for="nav-7-5">
         ZO1.1
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1080,10 +1140,35 @@
 <h3 id="detector-de-moedas">Detector de moedas<a class="headerlink" href="#detector-de-moedas" title="Permanent link">&para;</a></h3>
 <p>Um detector de moedas em uma máquina de venda aceita <em>quarters, dimes e nickels</em> e ativa o sinal correspondente (Q,D,N) apenas com a moeda correta. É fisicamente impossível múltiplas moedas estarem presentes ao mesmo tempo. Um circuito digital utiliza os sinais Q,D e N como entradas e produz um número binário representando o valor da moeda, como mostrado no circuito a seguir.</p>
 <p><img alt="TOCCI - pg. 178" src="../figs/Exercicios/AlgebraBooleana-moeda-Tocci-174.png" /></p>
+<ul>
+<li>Desenvolva um circuito (diagrama lógico) que resolva o problema (dica: use um MUX)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Moeda</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quarter</td>
+<td><code>25</code></td>
+</tr>
+<tr>
+<td>Dime</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td>Nickel</td>
+<td><code>5</code></td>
+</tr>
+</tbody>
+</table>
 <hr />
 <p>\newpage</p>
 <h3 id="impressora">Impressora<a class="headerlink" href="#impressora" title="Permanent link">&para;</a></h3>
-<p>A fig. a seguir mostra quatro chaves que fazem parte do circuito de controle em uma máquina copiadora. As chaves estão posicionadas ao longo da trajetória do papel dentro da máquina. Cada chave está no estado normal aberta e, quando o papel passa sobre a chave, ela é fechada. É impossível o fechamento simultâneo das chaves SW1 e SW2. </p>
+<p>A fig. a seguir mostra quatro chaves que fazem parte do circuito de controle em uma máquina copiadora. As chaves estão posicionadas ao longo da trajetória do papel dentro da máquina. Cada chave está no estado normal aberta e, quando o papel passa sobre a chave, ela é fechada. É impossível o fechamento simultâneo das chaves SW1 e SW4. </p>
 <ol>
 <li>Projete um circuito lógico que gere em saída em nível ALTO sempre que duas ou mais chaves estiverem fechadas ao mesmo tempo. Utilize o mapa de Karnaught.</li>
 </ol>
@@ -1098,6 +1183,10 @@
 <blockquote>
 <p><img alt="" src="https://raw.githubusercontent.com/Insper/Z01.1/master/docs-src/figs/C-LogiComb/7seg-manual.png" /></p>
 </blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A lógica de acender um display é invertida (por ser do tipo ando comum), para acender um segmento é necessário colocar <code>0</code> na linha e para apagar <code>1</code>.</p>
+</div>
                 
                   
                 

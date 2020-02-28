@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://insper.github.io/Z01.1/C-Logica-Combinacional-Lab-1/">
+        <link rel="canonical" href="https://insper.github.io/Z01.1/LogiComb-Lab-1/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>C - Lógica Combinacional - parte 1 - 2020-1 - Elementos de Sistemas - Z01</title>
+        <title>Lab 4: FPGA - VHDL - 2020-1 - Elementos de Sistemas - Z01</title>
       
     
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#c-logica-combinacional-parte-1" tabindex="1" class="md-skip">
+      <a href="#lab-4-fpga-vhdl" tabindex="1" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -164,7 +164,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                C - Lógica Combinacional - parte 1
+                Lab 4: FPGA - VHDL
               
             </span>
           
@@ -239,7 +239,9 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -261,7 +263,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../A-Ambiente-Desenvolvimento-Projeto/" class="md-tabs__link">
+        <a href="../LogiComb-Projeto/" class="md-tabs__link">
           Projetos
         </a>
       
@@ -274,7 +276,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../A-Transistores-Lab-1/" class="md-tabs__link">
+        <a href="../A-Ambiente-Lab-1/" class="md-tabs__link md-tabs__link--active">
           Labs
         </a>
       
@@ -326,7 +328,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../Util-Vixi!-Sou-Scrum-Master/" class="md-tabs__link">
+        <a href="../Util-Comecando-novo-projeto/" class="md-tabs__link">
           Útil
         </a>
       
@@ -462,6 +464,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../LogiComb-Projeto/" title="B - Lógica Combinacional" class="md-nav__link">
+      B - Lógica Combinacional
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../A-Ambiente-Desenvolvimento-Projeto/" title="A - Ambiente de desenvolvimento" class="md-nav__link">
       A - Ambiente de desenvolvimento
     </a>
@@ -477,10 +491,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Labs
@@ -498,8 +514,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../A-Transistores-Lab-1/" title="Lab 3: Transistores" class="md-nav__link">
-      Lab 3: Transistores
+    <a href="../A-Ambiente-Lab-1/" title="Lab 1: Configurando Github" class="md-nav__link">
+      Lab 1: Configurando Github
     </a>
   </li>
 
@@ -522,8 +538,173 @@
 
 
   <li class="md-nav__item">
-    <a href="../A-Ambiente-Lab-1/" title="Lab 1: Configurando Github" class="md-nav__link">
-      Lab 1: Configurando Github
+    <a href="../A-Transistores-Lab-1/" title="Lab 3: Transistores" class="md-nav__link">
+      Lab 3: Transistores
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lab 4: FPGA - VHDL
+      </label>
+    
+    <a href="./" title="Lab 4: FPGA - VHDL" class="md-nav__link md-nav__link--active">
+      Lab 4: FPGA - VHDL
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Índice</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#antes-de-comecar" class="md-nav__link">
+    Antes de começar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entendendo-a-estrutura-de-pastas-dos-projetos" class="md-nav__link">
+    Entendendo a estrutura de pastas dos projetos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abrindo-o-quartus" class="md-nav__link">
+    Abrindo o Quartus
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compilando-o-codigo" class="md-nav__link">
+    Compilando o código
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rtl-view" class="md-nav__link">
+    RTL View
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificando-o-projeto" class="md-nav__link">
+    Modificando o projeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programando-a-fpga" class="md-nav__link">
+    Programando a FPGA
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios" class="md-nav__link">
+    Exercícios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adicionando-um-novo-componente-ao-projeto" class="md-nav__link">
+    Adicionando um novo componente ao projeto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binario-para-bcd" class="md-nav__link">
+    binário para BCD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inserindo-binariotobcd-no-projeto" class="md-nav__link">
+    Inserindo binarioToBcd no projeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-no-toplevel" class="md-nav__link">
+    Usando no toplevel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testando" class="md-nav__link">
+    Testando
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desafios-extras" class="md-nav__link">
+    Desafios extras
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../LogiComb-Lab-2/" title="Lab 5: Lógica Combinacional" class="md-nav__link">
+      Lab 5: Lógica Combinacional
     </a>
   </li>
 
@@ -798,8 +979,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../Util-Vixi!-Sou-Scrum-Master/" title="Vixi! Sou Scrum Master" class="md-nav__link">
-      Vixi! Sou Scrum Master
+    <a href="../Util-Comecando-novo-projeto/" title="Começando novo projeto" class="md-nav__link">
+      Começando novo projeto
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Util-Vixi!-Sou-Scrum-Master/" title="Vixi! Sou scrum master" class="md-nav__link">
+      Vixi! Sou scrum master
     </a>
   </li>
 
@@ -821,15 +1014,27 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../Util-Dicas-Travis/" title="Dicas Travis" class="md-nav__link">
+      Dicas Travis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-5" type="checkbox" id="nav-7-5">
     
-    <label class="md-nav__link" for="nav-7-3">
+    <label class="md-nav__link" for="nav-7-5">
       ZO1.1
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-7-3">
+      <label class="md-nav__title" for="nav-7-5">
         ZO1.1
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -938,26 +1143,26 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vhdl" class="md-nav__link">
-    VHDL
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#entendendo-a-estrutura-de-pastas" class="md-nav__link">
-    Entendendo a estrutura de pastas
+  <a href="#antes-de-comecar" class="md-nav__link">
+    Antes de começar
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#entendendo-a-estrutura-de-pastas-dos-projetos" class="md-nav__link">
+    Entendendo a estrutura de pastas dos projetos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#abrindo-o-quartus" class="md-nav__link">
     Abrindo o Quartus
   </a>
   
-</li>
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#compilando-o-codigo" class="md-nav__link">
@@ -993,8 +1198,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercicio" class="md-nav__link">
-    Exercício
+  <a href="#exercicios" class="md-nav__link">
+    Exercícios
   </a>
   
 </li>
@@ -1008,8 +1213,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#inserindo-no-toplevel" class="md-nav__link">
-    Inserindo no toplevel
+  <a href="#binario-para-bcd" class="md-nav__link">
+    binário para BCD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inserindo-binariotobcd-no-projeto" class="md-nav__link">
+    Inserindo binarioToBcd no projeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-no-toplevel" class="md-nav__link">
+    Usando no toplevel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testando" class="md-nav__link">
+    Testando
   </a>
   
 </li>
@@ -1042,48 +1268,36 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/Z01.1/edit/master/docs/C-Logica-Combinacional-Lab-1.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/insper/Z01.1/edit/master/docs/LogiComb-Lab-1.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="c-logica-combinacional-parte-1">C - Lógica Combinacional - parte 1<a class="headerlink" href="#c-logica-combinacional-parte-1" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Por favor, realizar em trio ou dupla</p>
-</div>
+                <h1 id="lab-4-fpga-vhdl">Lab 4: FPGA - VHDL<a class="headerlink" href="#lab-4-fpga-vhdl" title="Permanent link">&para;</a></h1>
 <div class="admonition linux">
 <p class="admonition-title">Linux</p>
 <p>Usar o Linux fornecido!</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Trabalhando em grupo</p>
+<p>Realizar o resto o lab em dupla</p>
+</div>
+<p>Esse laboratório é introdutório para o desenvolvimento do projeto (<a href="/LogiComb-Projeto"><code>B-Lógica-Combinacional</code></a>), onde iremos criar os bloquinhos de hardware que serão os tijolos de nosso computador. Primeiro precisamos praticar um pouco de VHDL e entender a ferramenta de compilação e programação (Quartus).</p>
+<p>Após essa etapa, iremos começar o desenvolvimento do projeto, programando os módulos que virão a ser utilizados no computador Z01 (Lab-5).</p>
+<h2 id="antes-de-comecar">Antes de começar<a class="headerlink" href="#antes-de-comecar" title="Permanent link">&para;</a></h2>
+<p>Toda vez que um novo projeto começar será necessário realizar algumas configurações no repositório do grupo, vocês devem seguir para o documento: <a href="https://insper.github.io/Z01.1/Util-Comecando-novo-projeto/"><code>Util/Começando novo Projeto</code></a> e depois voltar para esse lab.</p>
 <div class="admonition warning">
-<p class="admonition-title">Scrum Master</p>
-<p>Atualize o repositório com o upstream antes de começar!</p>
+<p class="admonition-title">Warning</p>
+<p>Não seguir sem realizar a etapa anterior.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Você é <code>Scrum Master</code> e não sabe por onde começar? De uma olhada nessas dicas: <a href="Vixi!-Sou-Scrum-Master">Vixi! Sou Scrum Master</a></p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Antes de começar!</p>
-<p>Após clonar o repositório devemos baixar e atualizar a infra necessária para o curso, ainda no terminal, vá para a pasta do repositório:</p>
-<div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> Z01.1-NomeDoGrupo/
-$ ./updateZ01tools.sh
-</pre></div>
-
-<p>Isso irá baixar as dependências phython (via pip) e também clonar um repositório chamado <code>Z01-Tools</code> na raiz do usuário: <code>$HOME/Z01-Tools/</code>.</p>
-</div>
-<p>Nesse lab iremos pela primeira vez programar uma FPGA e começar a trabalhar com uma linguagem de descrição de hardware (HDL), o VHDL.</p>
-<h2 id="vhdl">VHDL<a class="headerlink" href="#vhdl" title="Permanent link">&para;</a></h2>
-<p>Esse laboratório é introdutório para o desenvolvimento do projeto (<a href="C-Logica-Combinacional-Projeto"><code>C Lógica Combinacional</code></a>), vamos criar o nosso primeiro código em VHDL e em seguida, programar a FPGA para executar o hardware recém descrito.</p>
-<p>Após essa etapa, iremos começar o desenvolvimento do projeto, programando os módulos que virão a ser utilizados no computador Z01.</p>
-<h3 id="entendendo-a-estrutura-de-pastas">Entendendo a estrutura de pastas<a class="headerlink" href="#entendendo-a-estrutura-de-pastas" title="Permanent link">&para;</a></h3>
-<p>A pasta do projeto C (<code>C-LogicaCombinacional</code>) no repositório Z01 possui a seguinte estrutura:</p>
-<div class="codehilite"><pre><span></span>/C-Logica-combinacional
+<h2 id="entendendo-a-estrutura-de-pastas-dos-projetos">Entendendo a estrutura de pastas dos projetos<a class="headerlink" href="#entendendo-a-estrutura-de-pastas-dos-projetos" title="Permanent link">&para;</a></h2>
+<p>A pasta do projeto B (<code>LogicaCombinacional</code>) no repositório Z01 possui a seguinte estrutura (assim como todos os demais projetos): </p>
+<div class="codehilite"><pre><span></span>/B-LogicaCombinacional
     testeLogicaCombinacional.py
     /Quartus
     /src
         /rtl
             *.vhd
     /tests
+        config.txt
         /tst
             *.vhd
 </pre></div>
@@ -1098,60 +1312,40 @@ $ ./updateZ01tools.sh
 <li><code>tests/tst/*.vhd</code>: Arquivos VHDL que realizam teste lógico nos arquivos do rtl</li>
 <li><code>tests/config.txt</code>: Configuração dos testes</li>
 </ol>
-<h3 id="abrindo-o-quartus">Abrindo o Quartus<a class="headerlink" href="#abrindo-o-quartus" title="Permanent link">&para;</a></h3>
+<h2 id="abrindo-o-quartus">Abrindo o Quartus<a class="headerlink" href="#abrindo-o-quartus" title="Permanent link">&para;</a></h2>
 <div class="admonition linux">
 <p class="admonition-title">Linux</p>
 <p>Se não encontrar o software abra o terminal e escreva <code>quartus</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <code>enter</code>.</p>
 </div>
-<p>Abra o software do  <code>Quartus</code> <img alt="" src="../figs/C-LogiComb/quartusIcon.png" width="30px" /> e clique em <code>File</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <code>Open Project</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> escolha o projeto localizado na pasta <code>C-Logica-Combinacional/Quartus</code>.</p>
+<p>Abra o software do  <code>Quartus</code> <img alt="" src="../figs/LogiComb/quartusIcon.png" width="30px" /> e clique em <code>File</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <code>Open Project</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> escolha o projeto localizado na pasta <code>B-LogicaCombinacional/Quartus</code>.</p>
 <p>O arquivo que o Quartus irá reconhecer é o: <code>DE0_CV_Default.qpf</code> como no gif a seguir:</p>
-<p><img alt="Abrindo o Quartus" src="../figs/C-LogiComb/Quartus1.gif" /></p>
+<p><img alt="Abrindo o Quartus" src="../figs/LogiComb/Quartus1.gif" /></p>
 <p>Abra o arquivo <code>TopLevel.vhd</code> como demonstrado no gif anterior, este arquivo é o que chamamos de <a href="https://www.xilinx.com/support/documentation/sw_manuals/xilinx10/isehelp/pfp_p_toplevelhdl.htm">top level</a> (pode-se fazer uma analogia com o <code>main</code> de um código), ele será o primeiro a ser executado na compilação e utilizará os demais módulos do sistema.</p>
-<p>Um código em VHDL possui basicamente três partes:</p>
-<ol>
-<li>Declaração de bibliotecas utilizadas</li>
-</ol>
-<div class="codehilite"><pre><span></span><span class="k">library</span> <span class="nn">ieee</span><span class="p">;</span>
-<span class="k">use</span> <span class="nn">ieee.std_logic_1164.</span><span class="k">all</span><span class="p">;</span>
-<span class="k">use</span> <span class="nn">ieee.numeric_std.</span><span class="k">all</span><span class="p">;</span>
-<span class="k">use</span> <span class="nn">work.</span><span class="k">all</span><span class="p">;</span>
-</pre></div>
-
-<ol>
-<li>Declaração das entradas e saídas desse bloco (entidade)</li>
-</ol>
-<div class="codehilite"><pre><span></span><span class="k">entity</span> <span class="nc">TopLevel</span> <span class="k">is</span>
-  <span class="k">port</span><span class="p">(</span>
-        <span class="n">SW</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">9</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
-        <span class="n">LEDR</span> <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">9</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span>
-  <span class="p">);</span>
-<span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
-</pre></div>
-
-<ol>
-<li>Implementação da lógica que relaciona as entradas e saídas do módulo (arquitetura)</li>
-</ol>
-<div class="codehilite"><pre><span></span><span class="k">architecture</span> <span class="nc">rtl</span> <span class="k">of</span> <span class="nc">TopLevel</span> <span class="k">is</span>
-
-<span class="k">begin</span>
-
-
-<span class="k">end</span> <span class="nc">rtl</span><span class="p">;</span>
-</pre></div>
-
-<p><img alt="" src="../figs/C-LogiComb/entity.png" /></p>
-<p>O código original disponível não realiza nenhuma lógica. Note que sua arquitetura está vazia!</p>
 <h3 id="compilando-o-codigo">Compilando o código<a class="headerlink" href="#compilando-o-codigo" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>O código original disponível não realiza nenhuma lógica. Note que sua arquitetura está vazia!</p>
+</div>
 <p>Para compilarmos esse código VHDL basta irmos em: <code>Processing</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <code>Start Compilation</code>. A ferramenta irá "realizar" o código, ou seja, interpretar e torna-lo um hardware.</p>
-<p><img alt="Compilando" src="../figs/C-LogiComb/Quartus2.gif" /></p>
+<p><img alt="Compilando" src="../figs/LogiComb/Quartus2.gif" /></p>
 <h3 id="rtl-view">RTL View<a class="headerlink" href="#rtl-view" title="Permanent link">&para;</a></h3>
-<p>Podemos gerar a visão rtl do código em vhdl, esse diagrama é a interpretação do código em VHDL pelo compilador e como ele seria supostamente implementando em hardware. Para isso: </p>
-<p><code>Tools</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <code>Netlist Viewers</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <code>RTL viewer</code></p>
-<p>Ele irá gerar o seguinte diagrama:</p>
-<p><img alt="Compilando" src="../figs/C-LogiComb/Quartus3.png" /></p>
+<p>Podemos gerar a visão <a href="https://en.wikipedia.org/wiki/Register-transfer_level">RTL</a> do código em vhdl, esse diagrama é a interpretação do código em VHDL pelo compilador e como ele seria supostamente implementando em hardware. Para isso: </p>
+<ul>
+<li><code>Tools</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <code>Netlist Viewers</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <code>RTL viewer</code></li>
+</ul>
+<p>Ele irá gerar o diagrama a seguir:</p>
+<p><img alt="Compilando" src="../figs/LogiComb/Quartus3.png" /></p>
 <p>Onde podemos analisar que não existe nenhuma lógica que relaciona entrada com saída.</p>
+<div class="admonition note">
+<p class="admonition-title">RTL</p>
+<p>O RTL aqui tem outro significado de quando foi utilizado com transistores, aqui é <strong>Register-transfer level</strong> e nos transistores é <strong>Resistor–transistor logic</strong>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Iremos utilizar bastante o RTL.</p>
+</div>
 <h3 id="modificando-o-projeto">Modificando o projeto<a class="headerlink" href="#modificando-o-projeto" title="Permanent link">&para;</a></h3>
-<p>Vamos modificar o arquivo <code>toplevel.vhd</code> do projeto para ficar como:</p>
+<p>Vamos modificar o arquivo <code>toplevel.vhd</code> do projeto adicionando que o <code>bit 0</code> do vetor <code>LEDR</code> seja igual ao <code>bit 0</code> da chave SW, o vhdl deve ficar como a seguir:</p>
 <div class="codehilite"><pre><span></span><span class="c1">---------------</span>
 <span class="c1">-- implementacao</span>
 <span class="c1">---------------</span>
@@ -1162,141 +1356,154 @@ $ ./updateZ01tools.sh
 <span class="k">end</span> <span class="nc">rtl</span><span class="p">;</span>
 </pre></div>
 
-<div class="codehilite"><pre><span></span><span class="gi">+ 1. Compile</span>
-<span class="gi">+ 2. Gere o RTL Viewer novamente</span>
-</pre></div>
-
+<div class="admonition example">
+<p class="admonition-title">Tarefa</p>
+<ol>
+<li>Edite o toplevel</li>
+<li>Compile</li>
+<li>Gere o RTL Viewer novamente</li>
+</ol>
+</div>
 <p>O resultado deve ser o seguinte:</p>
-<p><img alt="Compilando" src="../figs/C-LogiComb/Quartus-rtl2.png" /></p>
+<p><img alt="Compilando" src="../figs/LogiComb/Quartus-rtl2.png" /></p>
 <p>Onde o valor do <code>LEDR0</code> será o próprio valor de entrada chave <code>SW0</code>.</p>
 <h3 id="programando-a-fpga">Programando a FPGA<a class="headerlink" href="#programando-a-fpga" title="Permanent link">&para;</a></h3>
 <p>Para programar na FPGA conecte-a ao seu computador via cabo USB e vá em: <code>Tools</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <code>Programmer</code>. Ele deve abrir uma nova interface:</p>
-<p><img alt="Programando" src="../figs/C-LogiComb/quartus-pgr.gif" /></p>
+<p><img alt="Programando" src="../figs/LogiComb/quartus-pgr.gif" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Testando</p>
-<p>Brinque com as chaves e note que os LEDs irão acender conforme as chaves são colocadas na posição on.</p>
+<p>Brinque com a chave SW0 e note que o LED irá acender conforme a chave é colocada na posição on.</p>
 </div>
-<h2 id="exercicio">Exercício<a class="headerlink" href="#exercicio" title="Permanent link">&para;</a></h2>
+<h2 id="exercicios">Exercícios<a class="headerlink" href="#exercicios" title="Permanent link">&para;</a></h2>
 <p>Para cada desafio proposto a seguir, verifique se o RTL corresponde a lógica que deseja implementar. Após a verificação teste na programe e teste na FPGA:</p>
 <ol>
 <li>Compile</li>
 <li>Verifique o RTL</li>
 <li>Programe a FPGA</li>
 </ol>
-<div class="admonition question">
-<p class="admonition-title">Exercício 1</p>
-<ol>
-<li>Faça a saída LEDR(0) ser o inverso da entrada SW(0)</li>
-</ol>
+<div class="admonition example">
+<p class="admonition-title">Tarefa</p>
+<p>Faça a saída <code>LEDR(0)</code> ser o inverso da entrada <code>SW(0)</code></p>
 </div>
-<div class="admonition question">
-<p class="admonition-title">Exercício 2</p>
-<p>Faça a saída LEDR(0) ser a entrada SW(0) ou SW(1)</p>
+<div class="admonition example">
+<p class="admonition-title">Tarefa</p>
+<p>Faça a saída <code>LEDR(0)</code> ser a entrada <code>SW(0) ou SW(1)</code></p>
 </div>
-<div class="admonition question">
-<p class="admonition-title">Exercício 3</p>
-<p>Faça a saída LEDR(0) ser a entrada SW(0) ou SW(1) e o LEDR(1) ser a chave SW(1)</p>
+<div class="admonition example">
+<p class="admonition-title">Tarefa</p>
+<p>Faça a saída <code>LEDR(0)</code> ser a entrada <code>SW(0) ou SW(1)</code> e o <code>LEDR(1)</code> ser a chave <code>SW(1)</code></p>
 </div>
-<div class="admonition question">
-<p class="admonition-title">Exercício 4</p>
 <p>Note que na nossa FPGA possuímos seis <a href="https://en.wikipedia.org/wiki/Seven-segment_display">displays de sete segmentos</a>. </p>
-<p><img alt="" src="../figs/C-LogiComb/7seg.png" /></p>
+<p><img alt="" src="../figs/LogiComb/7seg.png" /></p>
 <p>Para termos acesso a esses displays, basta modificar a entidade do projeto para:</p>
 <div class="codehilite"><pre><span></span><span class="k">entity</span> <span class="nc">TopLevel</span> <span class="k">is</span>
     <span class="k">port</span><span class="p">(</span>
         <span class="n">SW</span>      <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">9</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
         <span class="n">HEX0</span>    <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">6</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">-- 7seg0</span>
-        <span class="n">HEX1</span>    <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">6</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">-- 7seg1</span>
-        <span class="n">HEX2</span>    <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">6</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">-- 7seg2</span>
-        <span class="n">HEX3</span>    <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">6</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">-- 7seg3</span>
         <span class="n">LEDR</span>    <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">9</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span>
     <span class="p">);</span>
 <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
 </pre></div>
 
-<p>Agora com os 7segs mapeados como saída (<code>out</code>) na nossa <code>entity</code> podemos acionar cada led do display, como descrito no manual da placa (isso só é possível pois o projeto já foi configurado corretamente antes pelo seu professor):</p>
-<p><img alt="" src="../figs/C-LogiComb/7seg-manual.png" /></p>
-<ul>
-<li>Faça aparecer o número <code>5</code> no <code>HEX0</code>.</li>
-</ul>
-</div>
-<h2 id="adicionando-um-novo-componente-ao-projeto">Adicionando um novo componente ao projeto<a class="headerlink" href="#adicionando-um-novo-componente-ao-projeto" title="Permanent link">&para;</a></h2>
-<p>O desenvolvimento de projetos de hardware assim como os de softwares devem ser feitos de forma modular, onde especifica-se e implementa-se pequenos módulos (entidades) que são combinadas em sistemas cada vez mais complexos até chegar ao <code>TopLevel</code>.</p>
-<p>Esse projeto define uma série de pequenos módulos, um com sua especificidade (localizados em <code>C-LogicaCombinacional/src/rtl/</code>) :</p>
-<ul>
-<li>And16.vhd</li>
-<li>DMux2Way.vhd</li>
-<li>DMux4Way.vhd</li>
-<li>DMux8Way.vhd</li>
-<li>Mux16.vhd</li>
-<li>Mux2Way.vhd</li>
-<li>Mux4Way16.vhd</li>
-<li>Mux4Way.vhd</li>
-<li>Mux8Way16.vhd</li>
-<li>Mux8Way.vhd</li>
-<li><a href="https://github.com/Insper/Z01.1/blob/master/Projetos/C-LogicaCombinacional/src/rtl/Nand.vhd"><code>Nand.vhd</code></a></li>
-<li>Nor8Way.vhd</li>
-<li>Not16.vhd</li>
-<li>Or16.vhd</li>
-<li>Or8Way.vhd</li>
-<li>TopLevel.vhd</li>
-</ul>
-<p>O módulo <a href="https://github.com/Insper/Z01.1/blob/master/Projetos/C-LogicaCombinacional/src/rtl/Nand.vhd"><code>Nand.vhd</code></a> que já está implementando para vocês, possui o seguinte conteúdo:</p>
-<div class="codehilite"><pre><span></span><span class="k">Library</span> <span class="nn">ieee</span><span class="p">;</span>
-<span class="k">use</span> <span class="nn">ieee.std_logic_1164.</span><span class="k">all</span><span class="p">;</span>
-
-<span class="k">entity</span> <span class="nc">nand_z01</span> <span class="k">is</span>
-   <span class="k">port</span><span class="p">(</span>
-      <span class="n">A</span> <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
-      <span class="n">B</span> <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
-      <span class="n">Q</span> <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span>
-   <span class="p">);</span>
-<span class="k">end</span> <span class="nc">nand_z01</span><span class="p">;</span>
-
-<span class="k">architecture</span> <span class="nc">rtl</span> <span class="k">of</span> <span class="nc">nand_z01</span> <span class="k">is</span>
-<span class="k">begin</span>
-   <span class="n">q</span> <span class="o">&lt;=</span> <span class="k">not</span> <span class="p">(</span><span class="n">a</span> <span class="k">and</span> <span class="n">b</span><span class="p">);</span>
-<span class="k">end</span> <span class="nc">rtl</span><span class="p">;</span>
-</pre></div>
-
+<p>Agora com um display de 7segementos mapeado como saída (<code>out</code>) na nossa <code>entity</code> podemos acionar cada led do display como descrito no manual da placa (isso só é possível pois o projeto já foi configurado corretamente antes pelo seu professor):</p>
+<p><img alt="" src="../figs/LogiComb/7seg-manual.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Note que o VHDL não é case sensitive (nand = NAND = nAnD = ...)</p>
+<p>Para acender um segmento é necessário colocar <code>0</code> e para apagar <code>1</code>.</p>
 </div>
-<p>Esse módulo é uma entidade que possui duas entrada (a,b) e uma saída (q) e implementa um <code>nand</code> entre as entradas.</p>
-<h3 id="inserindo-no-toplevel">Inserindo no <code>toplevel</code><a class="headerlink" href="#inserindo-no-toplevel" title="Permanent link">&para;</a></h3>
-<p>Podemos inserir essa <code>nand</code> no <code>toplevel</code> da seguinte maneira:</p>
+<div class="admonition example">
+<p class="admonition-title">Tarefa</p>
+<ol>
+<li>Modifique a <code>entity</code> para possuir a nova saída</li>
+<li>Faça aparecer o número <code>5</code> no <code>HEX0</code>.</li>
+</ol>
+</div>
+<h2 id="adicionando-um-novo-componente-ao-projeto">Adicionando um novo componente ao projeto<a class="headerlink" href="#adicionando-um-novo-componente-ao-projeto" title="Permanent link">&para;</a></h2>
+<p>O desenvolvimento de projetos de hardware assim como os de softwares devem ser feitos de forma modular, onde especifica-se e implementa-se pequenos módulos (entidades) que são combinadas em sistemas cada vez mais complexos até chegar ao <code>TopLevel</code>. </p>
+<p>Para usarmos um novo componente no projeto é necessário:</p>
+<ol>
+<li>Adicionar o arquivo ao projeto</li>
+<li>Usar na arquitetura</li>
+</ol>
+<h3 id="binario-para-bcd">binário para BCD<a class="headerlink" href="#binario-para-bcd" title="Permanent link">&para;</a></h3>
+<p>Vamos inserir no <code>toplevel</code> um componente que faz a conversão de números binários para <code>BCD</code>, esse componente já está implementando e se encontra na pasta <code>B-LogicaCombinacional/src/rtl/</code> junto com outros módulos: </p>
+<ul>
+<li>And16.vhd</li>
+<li>Mux8Way.vhd</li>
+<li><img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> binarioToBcd.vhd</li>
+<li>...</li>
+<li>Nor8Way.vhd</li>
+<li>TopLevel.vhd</li>
+</ul>
+<p>O módulo <a href="https://github.com/Insper/Z01.1/blob/master/Projetos/B-LogicaCombinacional/src/rtl/binarioToBcd.vhd"><code>binarioToBcd.vhd</code></a> possui a seguinte entidade (entradas e saídas):</p>
+<div class="codehilite"><pre><span></span><span class="k">entity</span> <span class="nc">binary_bcd</span> <span class="k">is</span>
+    <span class="k">port</span><span class="p">(</span>
+        <span class="n">clk</span><span class="p">,</span> <span class="n">reset</span><span class="o">:</span> <span class="k">in</span> <span class="kt">std_logic</span><span class="p">;</span>
+        <span class="n">binary_in</span><span class="o">:</span> <span class="k">in</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">bcd0</span><span class="p">,</span> <span class="n">bcd1</span><span class="p">,</span> <span class="n">bcd2</span><span class="p">,</span> <span class="n">bcd3</span><span class="p">,</span> <span class="n">bcd4</span><span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">);</span>
+<span class="k">end</span> <span class="nc">binary_bcd</span> <span class="p">;</span>
+</pre></div>
+
+<p>Esse módulo que possui como interfaces principais: um vetor de entrada <code>binary_in</code> e cinco saídas (<code>bcd0</code> .. <code>bcd5</code>) e implementa um conversor de binário para BCD. </p>
+<div class="admonition note">
+<p class="admonition-title">clock e rst</p>
+<p>Note que esse componente possui outras duas entradas: <code>clk</code> e <code>reset</code>, isso é necessário pois ele é um componente sequencial (ainda não vimos isso).</p>
+</div>
+<h3 id="inserindo-binariotobcd-no-projeto">Inserindo <code>binarioToBcd</code> no projeto<a class="headerlink" href="#inserindo-binariotobcd-no-projeto" title="Permanent link">&para;</a></h3>
+<p>Para inserirmos o componente no projeto devemos:</p>
+<ul>
+<li>no <code>quartus</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <code>Project</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <code>Add/Remove files in Project</code>. 
+Uma nova janela deve aparecer, nela clicar em <code>File name ...</code> e procurar pelo arquivo <code>binarioToBcd.vhd</code> que está na pasta <code>src/rtl</code> um nível a cima. Ao final, clicar em <code>apply</code>.</li>
+</ul>
+<p><img alt="" src="../figs/LogiComb/quartus-add-file.gif" /></p>
+<h3 id="usando-no-toplevel">Usando no <code>toplevel</code><a class="headerlink" href="#usando-no-toplevel" title="Permanent link">&para;</a></h3>
+<p>Podemos inserir o conversor <code>binarioToBcd</code> no <code>toplevel</code> da seguinte maneira:</p>
 <div class="codehilite"><pre><span></span><span class="k">begin</span>
-
-  <span class="n">u1</span> <span class="o">:</span> <span class="nn">work</span><span class="p">.</span><span class="n">nand_z01</span> <span class="k">port</span> <span class="k">map</span><span class="p">(</span><span class="n">A</span> <span class="o">=&gt;</span> <span class="n">SW</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> 
-                              <span class="n">B</span> <span class="o">=&gt;</span> <span class="n">SW</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> 
-                              <span class="n">Q</span><span class="o">=&gt;</span> <span class="n">LEDR</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-                              <span class="p">);</span>
-
+   <span class="n">u1</span> <span class="o">:</span> <span class="nn">work</span><span class="p">.</span><span class="n">binarioToBcd</span> <span class="k">port</span> <span class="k">map</span><span class="p">(</span><span class="n">clk</span>   <span class="o">=&gt;</span> <span class="n">CLOCK_50</span><span class="p">,</span>
+                                   <span class="n">reset</span> <span class="o">=&gt;</span> <span class="sc">&#39;0&#39;</span><span class="p">,</span>
+                                   <span class="n">binary_in</span> <span class="o">=&gt;</span> <span class="n">SW</span><span class="p">,</span>
+                                   <span class="n">bcd0</span>  <span class="o">=&gt;</span> <span class="n">LEDR</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">),</span>
+                                   <span class="n">bcd1</span>  <span class="o">=&gt;</span> <span class="n">LEDR</span><span class="p">(</span><span class="mi">7</span> <span class="k">downto</span> <span class="mi">4</span><span class="p">),</span>
+                                   <span class="n">bcd2</span>  <span class="o">=&gt;</span> <span class="k">open</span><span class="p">,</span>
+                                   <span class="n">bcd3</span>  <span class="o">=&gt;</span> <span class="k">open</span><span class="p">,</span>
+                                   <span class="n">bcd4</span>  <span class="o">=&gt;</span> <span class="k">open</span><span class="p">);</span>
 <span class="k">end</span> <span class="nc">rtl</span><span class="p">;</span>
 </pre></div>
 
 <p>Essa linha de código pode ser lida como:</p>
 <blockquote>
-<p>Cria um componente chamada de <strong>u1</strong>, mapeando (roteando) a entrada <code>SW(0)</code> na porta <strong>A</strong> da <code>NAND</code> e a entrada <code>SW(1)</code> na entrada <strong>B</strong> da <code>NAND</code> e a saída <strong>Q</strong> mapeada para o LEDR(0)</p>
+<p>Cria um componente chamada de <strong>u1</strong>, esse componente é uma implementação do <code>binarioToBcd</code>, nesse componente mapeasse a entrada <code>clk</code> para o pino <code>CLOCK_50</code>, a entrada <code>reset</code> para <code>0</code> e a entrada <code>binary_in</code> para as chaves da FPGA. Os dígitos 0 e 1 são exibidos nos LEDs e os demais deixamos desconectados.</p>
 </blockquote>
 <p>Compilando o projeto podemos analisar o RTL gerado:</p>
-<p><img alt="RTL NAND TopLevel" src="../figs/C-LogiComb/quartus-nand.png" /></p>
-<p><img alt="RTL NAND Expandido" src="../figs/C-LogiComb/quartus-nand2.png" /></p>
+<p><img alt="" src="../figs/LogiComb/rtl-binaryToBcd.png" /></p>
+<h3 id="testando">Testando<a class="headerlink" href="#testando" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Tarefa</p>
+<ol>
+<li>Compile</li>
+<li>Gere o RTL e análise </li>
+<li>Programe a FPGA e teste</li>
+</ol>
+</div>
+<p>Você deve mudar as chaves SW e observar se os LEDs (3..0) e (7..4) estão acendendo corretamente.</p>
+<ul>
+<li>dica: coloque a palavra 13 em binário, você deve obter: LED(3..0) = "0011" e os LED(7..4) = "0001".</li>
+</ul>
 <h2 id="desafios-extras">Desafios extras<a class="headerlink" href="#desafios-extras" title="Permanent link">&para;</a></h2>
 <p>Realize os seguintes desafios junto com o seu grupo, siga os passos anteriores para conseguir rodar na FPGA.</p>
-<div class="admonition question">
-<p class="admonition-title">Exercício 5</p>
+<div class="admonition example">
+<p class="admonition-title">Tarefa</p>
 <p>Faça TODOs os LEDs acenderem quando a seguinte combinação de entrada for:</p>
 <div class="codehilite"><pre><span></span>SW9               SW0
   1 0 0 1 1 0 1 0 1 0
 </pre></div>
 
 </div>
-<div class="admonition question">
-<p class="admonition-title">Exercício 6</p>
+<div class="admonition example">
+<p class="admonition-title">Tarefa</p>
 <p>Faça um código VHDL para implementar o circuito a seguir:</p>
-<p><img alt="Circuito" src="../figs/C-LogiComb/circuito.png" /></p>
+<p><img alt="Circuito" src="../figs/LogiComb/circuito.png" /></p>
 <p>Sendo:</p>
 <ul>
 <li>X: chave 0 (SW(0))</li>
@@ -1320,6 +1527,41 @@ $ ./updateZ01tools.sh
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../A-Transistores-Lab-1/" title="Lab 3: Transistores" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Lab 3: Transistores
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../LogiComb-Lab-2/" title="Lab 5: Lógica Combinacional" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Próximo
+                </span>
+                Lab 5: Lógica Combinacional
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

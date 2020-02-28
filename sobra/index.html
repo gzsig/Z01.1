@@ -261,7 +261,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../A-Ambiente-Desenvolvimento-Projeto/" class="md-tabs__link">
+        <a href="../LogiComb-Projeto/" class="md-tabs__link">
           Projetos
         </a>
       
@@ -274,7 +274,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../A-Transistores-Lab-1/" class="md-tabs__link">
+        <a href="../A-Ambiente-Lab-1/" class="md-tabs__link">
           Labs
         </a>
       
@@ -326,7 +326,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../Util-Vixi!-Sou-Scrum-Master/" class="md-tabs__link">
+        <a href="../Util-Comecando-novo-projeto/" class="md-tabs__link">
           Útil
         </a>
       
@@ -462,6 +462,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../LogiComb-Projeto/" title="B - Lógica Combinacional" class="md-nav__link">
+      B - Lógica Combinacional
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../A-Ambiente-Desenvolvimento-Projeto/" title="A - Ambiente de desenvolvimento" class="md-nav__link">
       A - Ambiente de desenvolvimento
     </a>
@@ -498,8 +510,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../A-Transistores-Lab-1/" title="Lab 3: Transistores" class="md-nav__link">
-      Lab 3: Transistores
+    <a href="../A-Ambiente-Lab-1/" title="Lab 1: Configurando Github" class="md-nav__link">
+      Lab 1: Configurando Github
     </a>
   </li>
 
@@ -522,8 +534,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../A-Ambiente-Lab-1/" title="Lab 1: Configurando Github" class="md-nav__link">
-      Lab 1: Configurando Github
+    <a href="../A-Transistores-Lab-1/" title="Lab 3: Transistores" class="md-nav__link">
+      Lab 3: Transistores
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../LogiComb-Lab-1/" title="Lab 4: FPGA - VHDL" class="md-nav__link">
+      Lab 4: FPGA - VHDL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../LogiComb-Lab-2/" title="Lab 5: Lógica Combinacional" class="md-nav__link">
+      Lab 5: Lógica Combinacional
     </a>
   </li>
 
@@ -798,8 +834,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../Util-Vixi!-Sou-Scrum-Master/" title="Vixi! Sou Scrum Master" class="md-nav__link">
-      Vixi! Sou Scrum Master
+    <a href="../Util-Comecando-novo-projeto/" title="Começando novo projeto" class="md-nav__link">
+      Começando novo projeto
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Util-Vixi!-Sou-Scrum-Master/" title="Vixi! Sou scrum master" class="md-nav__link">
+      Vixi! Sou scrum master
     </a>
   </li>
 
@@ -821,15 +869,27 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../Util-Dicas-Travis/" title="Dicas Travis" class="md-nav__link">
+      Dicas Travis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-5" type="checkbox" id="nav-7-5">
     
-    <label class="md-nav__link" for="nav-7-3">
+    <label class="md-nav__link" for="nav-7-5">
       ZO1.1
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-7-3">
+      <label class="md-nav__title" for="nav-7-5">
         ZO1.1
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -931,8 +991,36 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">Índice</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configurando-travis" class="md-nav__link">
+    Configurando Travis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referenciando-a-raiz" class="md-nav__link">
+    Referenciando a raiz
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sincronizando-com-upstream" class="md-nav__link">
+    Sincronizando com upstream
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
   
 </nav>
                   </div>
@@ -947,17 +1035,18 @@
                   <a href="https://github.com/insper/Z01.1/edit/master/docs/sobra.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
+                  <h1>Sobra</h1>
+                
                 <h2 id="configurando-travis">Configurando Travis<a class="headerlink" href="#configurando-travis" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Criando um project no github</li>
 </ul>
-<p><img alt="Project" src="../figs/C-LogiComb/C-2-project.gif" /></p>
+<p><img alt="Project" src="figs/C-LogiComb/C-2-project.gif" /></p>
 <ul>
 <li>Adicionando issues</li>
 </ul>
-<p><img alt="Issues" src="../figs/C-LogiComb/C-3-issues.gif" /></p>
+<p><img alt="Issues" src="figs/C-LogiComb/C-3-issues.gif" /></p>
 <p>Os issues devem ser <a href="https://github.com/Insper/Z01.1/wiki/C-Logica-Combinacional-Projeto#o-que-deve-ser-feito-">todos os módulos</a> a serem implementados do projeto.</p>
-<h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="referenciando-a-raiz">Referenciando a raiz<a class="headerlink" href="#referenciando-a-raiz" title="Permanent link">&para;</a></h2>
 <p>Para começar será necessário atualizar o fork do repositório que vocês criaram, com novos dados que serão colocados no repositório da disciplina. Uma vez clonado o repositório, você deve entrar na pasta via o terminal:</p>
 <div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> Z01.1-NomeDoGrupo
@@ -1001,6 +1090,16 @@ $ git merge upstream/master
 <p>Precisamos submeter essa atualização para o repositório remoto a fim de todos do grupo terem acesso a versão mais nova.</p>
 <div class="codehilite"><pre><span></span>$ git push origin master
 </pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Dicas VHDL</p>
+<p>Existem diversos locais onde podem tirar dúvida de <code>VHDL</code>, por exemplo : </p>
+<ul>
+<li><img alt="👍" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f44d.svg" title=":+1:" /> <a href="http://esd.cs.ucr.edu/labs/tutorial/">http://esd.cs.ucr.edu/labs/tutorial/</a></li>
+<li><a href="https://courseware.ee.calpoly.edu/cpe-169/Misc_stuff/cheat_sheet.pdf">https://courseware.ee.calpoly.edu/cpe-169/Misc_stuff/cheat_sheet.pdf</a></li>
+<li><a href="https://www.ics.uci.edu/~jmoorkan/vhdlref/vhdl_golden_reference_guide.pdf">https://www.ics.uci.edu/~jmoorkan/vhdlref/vhdl_golden_reference_guide.pdf</a></li>
+</ul>
+</div>
                 
                   
                 
