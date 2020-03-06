@@ -263,7 +263,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../LogiComb-Projeto/" class="md-tabs__link">
+        <a href="../A-Ambiente-Desenvolvimento-Projeto/" class="md-tabs__link">
           Projetos
         </a>
       
@@ -464,8 +464,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../LogiComb-Projeto/" title="B - Lógica Combinacional" class="md-nav__link">
-      B - Lógica Combinacional
+    <a href="../A-Ambiente-Desenvolvimento-Projeto/" title="A - Ambiente de desenvolvimento" class="md-nav__link">
+      A - Ambiente de desenvolvimento
     </a>
   </li>
 
@@ -476,8 +476,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../A-Ambiente-Desenvolvimento-Projeto/" title="A - Ambiente de desenvolvimento" class="md-nav__link">
-      A - Ambiente de desenvolvimento
+    <a href="../LogiComb-Projeto/" title="B - Lógica Combinacional" class="md-nav__link">
+      B - Lógica Combinacional
     </a>
   </li>
 
@@ -566,6 +566,42 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ula-Lab-1/" title="Lab 6: Adders" class="md-nav__link">
+      Lab 6: Adders
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ula-Lab-2/" title="Lab 7: Visualizando simulação" class="md-nav__link">
+      Lab 7: Visualizando simulação
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ula-Lab-3/" title="Lab 8: ULA" class="md-nav__link">
+      Lab 8: ULA
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -632,6 +668,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../Teoria-Componentes/" title="Componentes Digitais" class="md-nav__link">
+      Componentes Digitais
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../Teoria-Aritmetica-Binaria/" title="Aritmética Binária" class="md-nav__link">
       Aritmética Binária
     </a>
@@ -644,8 +692,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../Teoria-Componentes/" title="Componentes Digitais" class="md-nav__link">
-      Componentes Digitais
+    <a href="../Teoria-Aritmetica-Binaria-HW/" title="Aritmética Binária - HW" class="md-nav__link">
+      Aritmética Binária - HW
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Teoria-ULA/" title="ULA" class="md-nav__link">
+      ULA
     </a>
   </li>
 
@@ -670,6 +730,18 @@
   <li class="md-nav__item">
     <a href="../Teoria-VHDL-Combinacional/" title="VHDL - Combinacional" class="md-nav__link">
       VHDL - Combinacional
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Teoria-VHDL-port-map/" title="VHDL - port map" class="md-nav__link">
+      VHDL - port map
     </a>
   </li>
 
@@ -893,6 +965,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#atualizar-tools" class="md-nav__link">
+    Atualizar tools
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -922,7 +1001,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Util-Vixi!-Sou-Scrum-Master/" title="Vixi! Sou scrum master" class="md-nav__link">
+    <a href="../Util-vixi-sou-scrum/" title="Vixi! Sou scrum master" class="md-nav__link">
       Vixi! Sou scrum master
     </a>
   </li>
@@ -1102,6 +1181,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#atualizar-tools" class="md-nav__link">
+    Atualizar tools
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1145,6 +1231,7 @@
 <p>Dica: Aconselhável no primeiro projeto alguém com facilidade de Linux e git.</p>
 </blockquote>
 </div>
+<p>Você deve fazer a secção do seu papel: Mediador/ Desenvolvedor</p>
 <h2 id="antes-de-comecar-mediador">Antes de começar - Mediador<a class="headerlink" href="#antes-de-comecar-mediador" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Scrum Master</p>
@@ -1170,21 +1257,15 @@ $ git merge upstream/master
 <h3 id="travis">travis<a class="headerlink" href="#travis" title="Permanent link">&para;</a></h3>
 <p>Edite o arquivo <code>.travis.yml</code> localizado na raiz do repositório modificando o final do arquivo para ficar como:</p>
 <div class="codehilite"><pre><span></span>script:
-  ## Instal Z01.1 tools
-  - bash updateZ01tools.sh 
-
-  ## run scripts
-  - python3 Projetos/A-AmbienteDesenvolvimento/testeAmbienteDesenvolvimento.py
-  - python3 Projetos/B-LogicaCombinacional/testeLogicaCombinacional.py 
+   ## run scripts
+   - python3 Projetos/A-AmbienteDesenvolvimento/testeAmbienteDesenvolvimento.py
+   - python3 Projetos/B-LogicaCombinacional/testeLogicaCombinacional.py 
+<span class="gi">+  - python3 Projetos/C-UnidadeLogicaAritmetica/testeULA.py</span>
 </pre></div>
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Exemplo para o projeto B</p>
-</div>
 <p>Agora vamos realizar um commit e submeter aos demais colegas do grupo as alterações:</p>
 <div class="codehilite"><pre><span></span>$ git add .travis.yml
-$ git commit -m <span class="s2">&quot;configurando travis projeto B&quot;</span>
+$ git commit -m <span class="s2">&quot;configurando travis para novo projeto&quot;</span>
 </pre></div>
 
 <h3 id="scrum_masterjson">SCRUM_MASTER.json<a class="headerlink" href="#scrum_masterjson" title="Permanent link">&para;</a></h3>
@@ -1196,10 +1277,19 @@ $ git commit -m <span class="s2">&quot;configurando travis projeto B&quot;</span
 <div class="codehilite"><pre><span></span>$ git push origin master
 </pre></div>
 
+<h3 id="atualizar-tools">Atualizar tools<a class="headerlink" href="#atualizar-tools" title="Permanent link">&para;</a></h3>
+<p>Você deve atualizar os scripts de teste, executando o comando a seguir:</p>
+<div class="codehilite"><pre><span></span>$ ./updateZ01tools.sh
+</pre></div>
+
 <h2 id="antes-de-comecar-desenvolvedores">Antes de começar - Desenvolvedores<a class="headerlink" href="#antes-de-comecar-desenvolvedores" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Desenvolvedores</p>
 <p>Todos do grupo devem realizar isso.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Fazer isso somente depois que o mediador fez a parte dele!</p>
 </div>
 <p>Agora todos os integrantes do grupo devem atualizar o repositório:</p>
 <div class="codehilite"><pre><span></span>$ git pull origin master
@@ -1247,7 +1337,7 @@ $ git commit -m <span class="s2">&quot;configurando travis projeto B&quot;</span
           </a>
         
         
-          <a href="../Util-Vixi!-Sou-Scrum-Master/" title="Vixi! Sou scrum master" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Util-vixi-sou-scrum/" title="Vixi! Sou scrum master" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
