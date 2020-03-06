@@ -146,8 +146,13 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://insper.github.io/Z01.1/Util-Aulas/</loc>
-     <lastmod>2020-03-06</lastmod>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
     <url>
