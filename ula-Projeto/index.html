@@ -38,7 +38,7 @@
     
     
       
-        <title>D - ULA - 2020-1 - Elementos de Sistemas - Z01</title>
+        <title>C - ULA - 2020-1 - Elementos de Sistemas - Z01</title>
       
     
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#d-ula" tabindex="1" class="md-skip">
+      <a href="#c-ula" tabindex="1" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -164,7 +164,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                D - ULA
+                C - ULA
               
             </span>
           
@@ -1120,9 +1120,25 @@
                   <a href="https://github.com/insper/Z01.1/edit/master/docs/ula-Projeto.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="d-ula">D - ULA<a class="headerlink" href="#d-ula" title="Permanent link">&para;</a></h1>
+                <h1 id="c-ula">C - ULA<a class="headerlink" href="#c-ula" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Entrega</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>17/3 - Terça</td>
+</tr>
+</tbody>
+</table>
 <p><img alt="ULA" src="../figs/D-ULA/D-sistema-ula.png" /></p>
 <p>Neste projeto seu grupo terá que desenvolver os componentes para a implementação de uma unidade lógica e aritmética (ULA) de 16 bit (proposta pelo livro texto) que será capaz de realizar operações binárias muito simples porém que possibilitará realizarmos muitas coisas!</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>O grupo deve eleger um novo scrum master para essa entrega.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Nas discussões com o grupo, o scrum master deverá definir 
@@ -1141,7 +1157,7 @@ De uma olhada nessas dicas:
 </div>
 <h2 id="instrucoes">Instruções<a class="headerlink" href="#instrucoes" title="Permanent link">&para;</a></h2>
 <p>A pasta do projeto D, no repositório Z01, possui a seguinte estrutura:</p>
-<div class="codehilite"><pre><span></span>/D-ULA
+<div class="codehilite"><pre><span></span>/C-ULA
     testeULA.py
     programFPGA.py
     /Quartus
@@ -1160,19 +1176,19 @@ De uma olhada nessas dicas:
 <li>tests/tst/*.vhd: Arquivos VHDL que realizam o teste lógico nos arquivos do rtl.</li>
 </ol>
 <h3 id="executando-o-script-de-teste">Executando o Script de Teste<a class="headerlink" href="#executando-o-script-de-teste" title="Permanent link">&para;</a></h3>
-<p>Abra o terminal na pasta <code>D-UnidadeLogicaAritmetica/</code>  e execute o script python localizado nessa pasta:</p>
+<p>Abra o terminal na pasta <code>C-UnidadeLogicaAritmetica/</code>  e execute o script python localizado nessa pasta:</p>
 <div class="codehilite"><pre><span></span>$ ./testeULA.py
 </pre></div>
 
 <p>O mesmo irá compilar os arquivos <code>src/rtl/*.vhd</code> e executar os testes unitários em cada um deles. Nesse momento do teste, como os módulos não estão implementados, o resultado deverá ser falho.</p>
 <p>Esse comando executa um teste unitário em cada um dos módulos, verificando se sua implementação está correta. O resultado é exibido na tela como : <strong>pass</strong> ou <strong>fail</strong>.</p>
 <h1 id="o-que-deve-ser-feito">O que deve ser feito:<a class="headerlink" href="#o-que-deve-ser-feito" title="Permanent link">&para;</a></h1>
-<p>Além de implementar os módulos, deve-se gerar uma imagem com a forma de onda desse módulo. Para cada nova implementação deve-se criar um novo branch e remover o comentário do arquivo: <code>tests/config.txt</code> somente o módulo que está sendo implementado. </p>
-<p>Note que é possível reaproveitar, via <strong>port map</strong>, os módulos do projeto anterior (C). Esses módulos anteriores, já são incluídos, automaticamente (pelo script), na compilação dos módulos do projeto D.</p>
+<p>Além de implementar os módulos, deve-se gerar uma imagem com a forma de onda de cada um desses módulos. Para cada nova implementação deve-se criar um novo branch e remover o comentário do arquivo: <code>tests/config.txt</code> somente o módulo que está sendo implementado. </p>
+<p>Note que é possível reaproveitar, via <strong>port map</strong>, os módulos do projeto anterior (C). Esses módulos anteriores <strong>já estão incluídos automaticamente (pelo script)</strong> na compilação dos módulos do projeto C.</p>
 <h2 id="modulos">Módulos<a class="headerlink" href="#modulos" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Esses arquivos estão localizados em <code>D-UnidadeLogicaAritmetica/src/rtl/</code></p>
+<p>Esses arquivos estão localizados em <code>C-UnidadeLogicaAritmetica/src/rtl/</code></p>
 </div>
 <p>Deve-se implementar os seguintes circuitos combinacionais:</p>
 <ul>
@@ -1200,14 +1216,24 @@ De uma olhada nessas dicas:
 <li><strong>Dependência</strong>: <code>FullAdder</code></li>
 </ul>
 </li>
-<li>
-<p>Inc16 </p>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deve utilizar o <code>FullAdder</code> via port map.</p>
+</div>
 <ul>
+<li>Inc16 <ul>
 <li><strong>Arquivo</strong>   : <code>Inc16.vhd</code></li>
-<li><strong>Descrição</strong> : Adiciona '1' a um vetor de 16 bits resultando em um vetor de 16 bits (sem carry out do MSB).</li>
+<li><strong>Descrição</strong> : Adiciona '1' a um vetor de 16 bits resultando em um vetor de 16 bits (sem carry out).</li>
 <li><strong>Dependência</strong>: <code>Add16</code></li>
 </ul>
 </li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deve utilizar o <code>add16</code> via <code>port map</code>.</p>
+</div>
+<ul>
 <li>
 <p>Inversor16 </p>
 <ul>
@@ -1253,10 +1279,14 @@ De uma olhada nessas dicas:
 </ul>
 </li>
 </ul>
-<p>Para implementar a ALU será necessário usar os blocos desenvolvidos neste projeto e os blocos desenvolvidos no projeto anterior: And16, Mux16. O script de compilação e teste já faz a inclusão deles. A arquitetura da ULA pode ser vista abaixo:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deve utilizar os módulos via via <code>port map</code>.</p>
+</div>
+<p>Para implementar a ALU será necessário usar os blocos desenvolvidos neste projeto e os blocos desenvolvidos no projeto anterior: <code>And16</code>, <code>Mux16</code>. O script de compilação e teste já faz a inclusão deles. A arquitetura da ULA pode ser vista abaixo:</p>
 <p><img alt="ULA" src="../figs/D-ULA/D-ula.png" /></p>
 <h2 id="forma-de-onda">Forma de onda<a class="headerlink" href="#forma-de-onda" title="Permanent link">&para;</a></h2>
-<p>Para cada teste realizado, deve-se carregar a interface gráfica e tirar um print da forma de onda do módulo com os testes aplicados a ele (<a href="D-ULA-Lab-1">lab 8</a>). Essa imagem deve ser salva na mesma pasta dos arquivos VHDL (src/rtl/) e com o mesmo nome dos módulos. A pasta no final do projeto deve possuir os seguintes arquivos:</p>
+<p>Para cada teste realizado, deve-se carregar a interface gráfica e tirar um print da forma de onda do módulo com os testes aplicados a ele (LAB-7). Essa imagem deve ser salva na mesma pasta dos arquivos VHDL (src/rtl/) e com o mesmo nome dos módulos. A pasta no final do projeto deve possuir os seguintes arquivos:</p>
 <div class="codehilite"><pre><span></span>/src/rtl/
          Add16.vhd
          Add16.png
@@ -1277,8 +1307,8 @@ De uma olhada nessas dicas:
 </pre></div>
 
 <h2 id="testando-em-hw">Testando em HW<a class="headerlink" href="#testando-em-hw" title="Permanent link">&para;</a></h2>
-<p>Para testar os módulos em hardware, deve-se abrir o projeto (D-UnidadeLogicaAritmetica/Quartus). Ele já inclui todos os módulos desta entrega e também os módulos da entrega passada. O arquivo localizado em /rtl/toplevel.vhd já faz o mapeamento dos pinos da FPGA para os pinos da ULA (como no <a href="D-ULA-Lab-2">lab 9</a>). Para testar no hardware basta compilar e programar a FPGA.</p>
-<h1 id="rubricas-para-avaliacao-de-projetos">Rubricas para avaliação de projetos<a class="headerlink" href="#rubricas-para-avaliacao-de-projetos" title="Permanent link">&para;</a></h1>
+<p>Para testar os módulos em hardware, deve-se abrir o projeto (<code>C-UnidadeLogicaAritmetica/Quartus</code>). Ele já inclui todos os módulos desta entrega e também os módulos da entrega passada. O arquivo localizado em <code>/rtl/toplevel.vhd</code> já faz o mapeamento dos pinos da FPGA para os pinos da ULA. Para testar no hardware basta compilar e programar a FPGA.</p>
+<h2 id="rubricas-para-avaliacao-de-projetos">Rubricas para avaliação de projetos<a class="headerlink" href="#rubricas-para-avaliacao-de-projetos" title="Permanent link">&para;</a></h2>
 <p>Cada integrante do grupo irá receber duas notas: uma referente ao desenvolvimento total do projeto (Projeto) e outra referente a sua participação individual no grupo (que depende do seu papel).</p>
 <h2 id="projeto">Projeto<a class="headerlink" href="#projeto" title="Permanent link">&para;</a></h2>
 <table>
@@ -1290,8 +1320,48 @@ De uma olhada nessas dicas:
 </thead>
 <tbody>
 <tr>
-<td>I</td>
-<td>- Não implementou os módulos Add16, ULA, Comparador, FullAdder, HalfAdder, Inc16, Inversosr, Zerador.</td>
+<td>A</td>
+<td>- Modifique a ULA adicionando a operação de shift left/right</td>
+</tr>
+<tr>
+<td></td>
+<td>- Modifique o <code>toplevel</code> para mostrar o resultado da ULA nos displays de 7s (em hexa)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>B</td>
+<td>- Modifique a ULA adicionando o sinal de estouro da soma (carry) a saída da ULA</td>
+</tr>
+<tr>
+<td></td>
+<td>- Modifique a ULA adicionando a operação: X xor Y</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>C</td>
+<td>- Configurou o travis para testar o projeto</td>
+</tr>
+<tr>
+<td></td>
+<td>- Todos os modulos implementando e passam nos testes</td>
+</tr>
+<tr>
+<td></td>
+<td>- Faz reaproveitamentos dos módulos via <code>port map</code> sempre que possível</td>
+</tr>
+<tr>
+<td></td>
+<td>- Possui a forma de onda de todos os módulos (.png).</td>
+</tr>
+<tr>
+<td></td>
+<td>- Compila no Quartus a ULA do grupo e fez um vídeo demonstrando o seu funcionamento (FPGA).</td>
 </tr>
 <tr>
 <td></td>
@@ -1306,48 +1376,19 @@ De uma olhada nessas dicas:
 <td></td>
 </tr>
 <tr>
-<td>C</td>
-<td>- Configurou o travis e funcionou.</td>
-</tr>
-<tr>
-<td></td>
-<td>- Todos os testes passaram (ok).</td>
-</tr>
-<tr>
-<td></td>
-<td>- ULA funcionando.</td>
-</tr>
-<tr>
-<td></td>
-<td>- Todos os módulos sendo testados no Travis.</td>
-</tr>
-<tr>
-<td></td>
-<td>- Possui a forma de onda de todos os módulos (.png).</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>B</td>
-<td>- Compila no Quartus a ULA do grupo e fez um vídeo demonstrando o seu funcionamento (FPGA).</td>
-</tr>
-<tr>
-<td></td>
-<td>O vídeo pode estar no git (se for pequeno) ou hospedado em algum site</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>A</td>
-<td>- Modifica a ULA incluindo uma instrução a mais (exe: shift left/right)</td>
+<td>I</td>
+<td>- Não implementou os módulos Add16, ULA, Comparador, FullAdder, HalfAdder, Inc16, Inversosr, Zerador.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="desenvolvedor-e-scrum-master">Desenvolvedor e Scrum Master<a class="headerlink" href="#desenvolvedor-e-scrum-master" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol>
+<li>Para os conceitos B e A, o grupo deve gravar um vídeo da FPGA demonstrando que as modificações funcionam.</li>
+<li>Os conceitos são incrementais: primeiro deve atingir o C <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> B <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> A.</li>
+</ol>
+</div>
+<h3 id="desenvolvedor-e-scrum-master">Desenvolvedor e Scrum Master<a class="headerlink" href="#desenvolvedor-e-scrum-master" title="Permanent link">&para;</a></h3>
 <p>As rubricas a serem seguidas serão comuns a todos os projeto e está descrito no link :</p>
 <ul>
 <li><a href="/Sobre-Rubricas/">Rubricas Scrum e Desenvolvedor</a></li>
