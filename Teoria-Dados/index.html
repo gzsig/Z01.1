@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.96cc8824.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -53,12 +53,12 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#dados-digitais" tabindex="1" class="md-skip">
+      <a href="#dados-digitais" tabindex="0" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -183,7 +183,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1414,7 +1414,7 @@
 <td></td>
 </tr>
 <tr>
-<td><img alt="👍" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f44d.svg" title=":+1:" /></td>
+<td><img alt="👍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f44d.svg" title=":+1:" /></td>
 <td><iframe width="200" height="200" src="https://www.youtube.com/embed/dVixMB1uSYA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
 </tr>
 <tr>
@@ -1578,9 +1578,9 @@
 <li><code>0x</code>: Para indicar um número em hexadecimal</li>
 </ul>
 <p>Exemplo:
-<div class="codehilite"><pre><span></span>hex      bin      dec
+<div class="codehilite"><pre><span></span><code>hex      bin      dec
 0x100 != 0b100 != 100
-</pre></div></p>
+</code></pre></div></p>
 </div>
 <h3 id="definicoes">Definições<a class="headerlink" href="#definicoes" title="Permanent link">&para;</a></h3>
 <p>Em muitas linguagens de programação é necessário definirmos o tamanho da variável que iremos armazenar um dado, para facilitar o entendimento damos nome a quantidade de bits que ela irá ocupar: </p>
@@ -1705,42 +1705,42 @@
 <p>A conversão de número na base 16 para a base 2 e vice versa acontece de forma trivial. Da base 2 para a base 16 basta separar os bits da palavra em unidades de 4 casas e então realizar a conversão de cada grupo de 4 bits para o seu equivalente em Hexa. Para a conversão de hexa para binário, basta converter cada símbolo de hexa para o seu equivalente em binário (4 dígitos), seguindo a tabela anterior.</p>
 <p>Exemplos:</p>
 <p>a) 0xA01 para binário:</p>
-<div class="codehilite"><pre><span></span>      A   0    1  
+<div class="codehilite"><pre><span></span><code>      A   0    1  
       |    \    \ 
       |     \    \  
      1010   0000  0001 
 
      -&gt; 0b1010_1000_00001 
-</pre></div>
+</code></pre></div>
 
 <p>b) <code>0b1111_0101_1000</code> para hexa:</p>
-<div class="codehilite"><pre><span></span>     1111 0101 1000
+<div class="codehilite"><pre><span></span><code>     1111 0101 1000
       |    |    |
       |    |    |
       F    5    8
 
       -&gt; 0xF58
-</pre></div>
+</code></pre></div>
 
 <h3 id="base-16-base-10">Base 16 &lt;-&gt; Base 10<a class="headerlink" href="#base-16-base-10" title="Permanent link">&para;</a></h3>
 <iframe width="864" height="486" src="https://www.youtube.com/embed/0yAst89n0rM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <p>Para converter de Hexa para Decimal basta aplicar os pesos em cada um das unidades, como demonstrado a seguir:</p>
 <p>a) 0x10A para decimal:</p>
-<div class="codehilite"><pre><span></span>    A       0       1
+<div class="codehilite"><pre><span></span><code>    A       0       1
     |       |       |
     |       |       |
   A.16^2  0.16^1   1.16^1
 
    -&gt; 10.256 + 0 + 1.16 = 2576
-</pre></div>
+</code></pre></div>
 
 <p>Para converter de Decimal para Hexa, uma das soluções mais triviais é a de converter primeiro para binário e então agrupar os bits de 4 em 4 e converter para hexa:</p>
-<div class="codehilite"><pre><span></span>   Decimal -&gt; Binário -&gt; Hexa
-</pre></div>
+<div class="codehilite"><pre><span></span><code>   Decimal -&gt; Binário -&gt; Hexa
+</code></pre></div>
 
 <p>b) 42 -&gt; 0x ???</p>
-<div class="codehilite"><pre><span></span>    32 +  8 +  2 = 42
+<div class="codehilite"><pre><span></span><code>    32 +  8 +  2 = 42
       \   |   /     ---------------
        \  |  /      |             |
         \ | /       |             v
@@ -1751,7 +1751,7 @@
                   ----|----
                       |      
                 Blocos de 4 bits
-</pre></div>
+</code></pre></div>
 
 <h2 id="base-8">Base 8<a class="headerlink" href="#base-8" title="Permanent link">&para;</a></h2>
 <p>Similar as outras bases de número, o sistema octal é composto por 8 símbolos: <code>0</code> .. <code>7</code>, e nele cada posição possui valor na forma de: <span><span class="MathJax_Preview">8^n</span><script type="math/tex">8^n</script></span>. Veja o exemplo a seguir:</p>
@@ -1788,14 +1788,14 @@
 <td>1*64</td>
 <td>3*8</td>
 <td>7*1</td>
-<td><img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <span><span class="MathJax_Preview">64+24+7=95</span><script type="math/tex">64+24+7=95</script></span></td>
+<td><img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/27a1.svg" title=":arrow_right:" /> <span><span class="MathJax_Preview">64+24+7=95</span><script type="math/tex">64+24+7=95</script></span></td>
 </tr>
 </tbody>
 </table>
 <p>Para representarmos um valor octal em binário, é necessário reservarmos 3 bits para cada símbolo do número octal, a conversão é feita como no sistema hexadecimal, porém aqui separando blocos de 3 bits:</p>
 <p>b) 137 para binário:</p>
-<div class="codehilite"><pre><span></span> 001 011 111
-</pre></div>
+<div class="codehilite"><pre><span></span><code> 001 011 111
+</code></pre></div>
 
 <p>O sistema octal é utilizado no Linux para permissões de arquivos onde são necessários 3 bits para controlar se um usuário possui: acesso de leitura, escrita e/ou execução de um determinado arquivo:</p>
 <table>
@@ -1859,13 +1859,13 @@
 </tbody>
 </table>
 <p>Para modificar a permisão de um arquivo no linux é necessário fornecer a informação para três grupos diferentes: <code>usuário</code>, grupos na qual o usuário faz parte e qualquer outro user. Para isso basta escrever no terminal: </p>
-<div class="codehilite"><pre><span></span>            / others
+<div class="codehilite"><pre><span></span><code>            / others
            /
 $ chmod 754 FILE
         | \
         |  \ group
         user 
-</pre></div>
+</code></pre></div>
 
 <p>Isso da permissão de: </p>
 <ul>
@@ -1896,9 +1896,9 @@ $ chmod 754 FILE
 <ul>
 <li>Exemplo, <code>356</code> em BCD: </li>
 </ul>
-<div class="codehilite"><pre><span></span>  3   5    6    : Decimal
+<div class="codehilite"><pre><span></span><code>  3   5    6    : Decimal
 0011 0101 0110  : BCD
-</pre></div>
+</code></pre></div>
 
 <iframe width="900" height="506" src="https://www.youtube.com/embed/AM0tr8Kyvzg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -1913,6 +1913,7 @@ $ chmod 754 FILE
 <iframe width="900" height="506" src="https://www.youtube.com/embed/zB85kTs-sEw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 
                   
+                
                 
               
               
@@ -1972,9 +1973,9 @@ $ chmod 754 FILE
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -1984,7 +1985,7 @@ $ chmod 754 FILE
       
     </div>
     
-      <script src="../assets/javascripts/application.1f8d785c.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
         
         
@@ -2001,7 +2002,7 @@ $ chmod 754 FILE
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:".."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

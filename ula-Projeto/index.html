@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.96cc8824.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -53,12 +53,12 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#c-ula" tabindex="1" class="md-skip">
+      <a href="#c-ula" tabindex="0" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -183,7 +183,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1273,7 +1273,7 @@ De uma olhada nessas dicas:
 </div>
 <h2 id="instrucoes">Instruções<a class="headerlink" href="#instrucoes" title="Permanent link">&para;</a></h2>
 <p>A pasta do projeto D, no repositório Z01, possui a seguinte estrutura:</p>
-<div class="codehilite"><pre><span></span>/C-ULA
+<div class="codehilite"><pre><span></span><code>/C-ULA
     testeULA.py
     programFPGA.py
     /Quartus
@@ -1283,7 +1283,7 @@ De uma olhada nessas dicas:
     /tests
         /tst
             *.vhd
-</pre></div>
+</code></pre></div>
 
 <ol>
 <li>Quartus: Projeto Quartus que faz uso dos arquivos VHDL localizados em src/rtl/*.vhd;</li>
@@ -1293,8 +1293,8 @@ De uma olhada nessas dicas:
 </ol>
 <h3 id="executando-o-script-de-teste">Executando o Script de Teste<a class="headerlink" href="#executando-o-script-de-teste" title="Permanent link">&para;</a></h3>
 <p>Abra o terminal na pasta <code>C-UnidadeLogicaAritmetica/</code>  e execute o script python localizado nessa pasta:</p>
-<div class="codehilite"><pre><span></span>$ ./testeULA.py
-</pre></div>
+<div class="codehilite"><pre><span></span><code>$ ./testeULA.py
+</code></pre></div>
 
 <p>O mesmo irá compilar os arquivos <code>src/rtl/*.vhd</code> e executar os testes unitários em cada um deles. Nesse momento do teste, como os módulos não estão implementados, o resultado deverá ser falho.</p>
 <p>Esse comando executa um teste unitário em cada um dos módulos, verificando se sua implementação está correta. O resultado é exibido na tela como : <strong>pass</strong> ou <strong>fail</strong>.</p>
@@ -1376,7 +1376,7 @@ De uma olhada nessas dicas:
 </li>
 </ul>
 <p>Pseudo código :</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
   <span class="n">zr</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">else</span><span class="p">:</span>
   <span class="n">zr</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1385,7 +1385,7 @@ De uma olhada nessas dicas:
   <span class="n">ng</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">else</span><span class="p">:</span>
   <span class="n">ng</span> <span class="o">=</span> <span class="mi">0</span>
-</pre></div>
+</code></pre></div>
 
 <ul>
 <li>ALU<ul>
@@ -1403,7 +1403,7 @@ De uma olhada nessas dicas:
 <p><img alt="ULA" src="../figs/D-ULA/D-ula.png" /></p>
 <h2 id="forma-de-onda">Forma de onda<a class="headerlink" href="#forma-de-onda" title="Permanent link">&para;</a></h2>
 <p>Para cada teste realizado, deve-se carregar a interface gráfica e tirar um print da forma de onda do módulo com os testes aplicados a ele (LAB-7). Essa imagem deve ser salva na mesma pasta dos arquivos VHDL (src/rtl/) e com o mesmo nome dos módulos. A pasta no final do projeto deve possuir os seguintes arquivos:</p>
-<div class="codehilite"><pre><span></span>/src/rtl/
+<div class="codehilite"><pre><span></span><code>/src/rtl/
          Add16.vhd
          Add16.png
          ALU.vhd
@@ -1420,7 +1420,7 @@ De uma olhada nessas dicas:
          Inversor16.png
          Zerador16.vhd
          Zerador16.png
-</pre></div>
+</code></pre></div>
 
 <h2 id="testando-em-hw">Testando em HW<a class="headerlink" href="#testando-em-hw" title="Permanent link">&para;</a></h2>
 <p>Para testar os módulos em hardware, deve-se abrir o projeto (<code>C-UnidadeLogicaAritmetica/Quartus</code>). Ele já inclui todos os módulos desta entrega e também os módulos da entrega passada. O arquivo localizado em <code>/rtl/toplevel.vhd</code> já faz o mapeamento dos pinos da FPGA para os pinos da ULA. Para testar no hardware basta compilar e programar a FPGA.</p>
@@ -1501,7 +1501,7 @@ De uma olhada nessas dicas:
 <p class="admonition-title">Note</p>
 <ol>
 <li>Para os conceitos B e A, o grupo deve gravar um vídeo da FPGA demonstrando que as modificações funcionam.</li>
-<li>Os conceitos são incrementais: primeiro deve atingir o C <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> B <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> A.</li>
+<li>Os conceitos são incrementais: primeiro deve atingir o C <img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/27a1.svg" title=":arrow_right:" /> B <img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/27a1.svg" title=":arrow_right:" /> A.</li>
 </ol>
 </div>
 <h3 id="desenvolvedor-e-scrum-master">Desenvolvedor e Scrum Master<a class="headerlink" href="#desenvolvedor-e-scrum-master" title="Permanent link">&para;</a></h3>
@@ -1511,6 +1511,7 @@ De uma olhada nessas dicas:
 </ul>
                 
                   
+                
                 
               
               
@@ -1570,9 +1571,9 @@ De uma olhada nessas dicas:
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -1582,7 +1583,7 @@ De uma olhada nessas dicas:
       
     </div>
     
-      <script src="../assets/javascripts/application.1f8d785c.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
         
         
@@ -1599,7 +1600,7 @@ De uma olhada nessas dicas:
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:".."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

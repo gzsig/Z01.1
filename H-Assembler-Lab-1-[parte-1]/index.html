@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://insper.github.io/Z01.1/H-Assembler-Lab-1-[parte-1]/">
+        <link rel="canonical" href="https://insper.github.io/Z01.1/H-Assembler-Lab-1-%5Bparte-1%5D/">
       
       
       
@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.96cc8824.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -53,12 +53,12 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#assembler" tabindex="1" class="md-skip">
+      <a href="#assembler" tabindex="0" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -183,7 +183,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1170,18 +1170,18 @@
                 
                 <p>Agora iremos desenvolver um programa em java que será capaz de ler nossos programas em .nasm e converter eles para .hack (binário). Nosso arquivo <code>.hack</code> é um arquivo de <strong>texto</strong> que possui apenas <code>1</code>s e <code>0</code>s. Cada linha desse arquivo <code>.hack</code> é uma instrução a ser armazenada na memória.</p>
 <p>Exemplo de um arquivo <code>.hack</code>:</p>
-<div class="codehilite"><pre><span></span>000000000000000101
+<div class="codehilite"><pre><span></span><code>000000000000000101
 100101100000010000
 000000000000000001
 100000000000100000
 000000000000001011
-</pre></div>
+</code></pre></div>
 
 <blockquote>
 <p>Você pode abrir seus arquivos .hack, basta ir em <code>F-Assembly/bin/hack/</code> que vai encontrar seus programas em linguagem de máquina.</p>
 </blockquote>
 <p>O arquivo <code>.hack</code> é um formato que não conseguimos fazer o download para a FPGA, é necessário convertemos esse formato em um que o Quartus entenda. Esse formato do Quartus é chamado de <code>.mif</code> e é gerado automaticamente pelos scripts de teste, esse arquivo <code>.mif</code> é simular ao <code>.hack</code> salvo um cabeçalho e a indicação do endereço na qual a linha deve ser salva:</p>
-<div class="codehilite"><pre><span></span>WIDTH=18;
+<div class="codehilite"><pre><span></span><code>WIDTH=18;
 DEPTH=5;
 
 ADDRESS_RADIX=UNS;
@@ -1194,17 +1194,17 @@ CONTENT BEGIN
   3 : 100000000000100000;
   4 : 000000000000001011;
 END;
-</pre></div>
+</code></pre></div>
 
 <blockquote>
 <p><strong>O Assembler de vocês deve gerar um arquivo .hack. A conversão para o .mif é feita pelos scripts em python já fornecidos</strong></p>
 </blockquote>
-<div class="codehilite"><pre><span></span>       assembler        script
+<div class="codehilite"><pre><span></span><code>       assembler        script
 .nasm ---------&gt; .hack --------&gt; .mif 
                                    v
                                    |---------&gt; FPGA
                                    |---------&gt; SIMULADOR
-</pre></div>
+</code></pre></div>
 
 <h1 id="assembler">Assembler<a class="headerlink" href="#assembler" title="Permanent link">&para;</a></h1>
 <p>O assembler será um programa escrito em java e que foi estruturado em <strong>quatro classes</strong>:</p>
@@ -1240,6 +1240,7 @@ END;
                 
                   
                 
+                
               
               
                 
@@ -1263,9 +1264,9 @@ END;
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -1275,7 +1276,7 @@ END;
       
     </div>
     
-      <script src="../assets/javascripts/application.1f8d785c.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
         
         
@@ -1292,7 +1293,7 @@ END;
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:".."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

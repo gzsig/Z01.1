@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.96cc8824.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -53,12 +53,12 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#algebra-booleana" tabindex="1" class="md-skip">
+      <a href="#algebra-booleana" tabindex="0" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -183,7 +183,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1486,7 +1486,7 @@
 <td></td>
 </tr>
 <tr>
-<td><img alt="👍" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f44d.svg" title=":+1:" /></td>
+<td><img alt="👍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f44d.svg" title=":+1:" /></td>
 <td><iframe width="200" height="200" src="https://www.youtube.com/embed/YYIucfsQKl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
 </tr>
 <tr>
@@ -1502,7 +1502,7 @@
 <td><a href="https://www.youtube.com/watch?v=3vkMgTmieZI">Computer Science: Karnaugh Maps – Introduction</a></td>
 </tr>
 <tr>
-<td><img alt="👍" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f44d.svg" title=":+1:" /></td>
+<td><img alt="👍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f44d.svg" title=":+1:" /></td>
 <td><a href="https://www.youtube.com/watch?v=YJSqf_Z024w">Computer Science: Karnaugh Maps - 4 vars</a></td>
 </tr>
 </tbody>
@@ -1516,8 +1516,8 @@
 </div>
 <h2 id="equacoes">Equações<a class="headerlink" href="#equacoes" title="Permanent link">&para;</a></h2>
 <p>Uma equação de lógica booleana pode possuir uma ou mais 'entradas' e apenas uma saída, na equação exemplo a seguir, <code>X</code> é uma saída (e pode assumir apenas valor <code>1</code> ou <code>0</code>) e <code>A</code> e <code>B</code> são entradas também do tipo binária.</p>
-<div class="codehilite"><pre><span></span>    X(A,B) = A ^ B
-</pre></div>
+<div class="codehilite"><pre><span></span><code>    X(A,B) = A ^ B
+</code></pre></div>
 
 <p><img alt="" src="../figs/Teoria/LogicaBooleana-caixaPreta.png" width="400" /></p>
 <div class="admonition note">
@@ -1580,9 +1580,9 @@ ao longo do curso.</p>
 <ul>
 <li>Notação: <code>not</code>, <code>-</code>, <code>~</code>, <code>¬</code></li>
 </ul>
-<div class="codehilite"><pre><span></span>                            _
+<div class="codehilite"><pre><span></span><code>                            _
 X = not A  /  X = A  /  X = Ã / X = ¬ A
-</pre></div>
+</code></pre></div>
 
 <ul>
 <li>Tabela Verdade</li>
@@ -1617,8 +1617,8 @@ X = not A  /  X = A  /  X = Ã / X = ¬ A
 <ul>
 <li>Notação:  <code>and</code>, <code>.</code>, <code>^</code></li>
 </ul>
-<div class="codehilite"><pre><span></span>X = A and B  /  X = A . B   /  X = A ^ B
-</pre></div>
+<div class="codehilite"><pre><span></span><code>X = A and B  /  X = A . B   /  X = A ^ B
+</code></pre></div>
 
 <ul>
 <li>Tabela Verdade</li>
@@ -1666,8 +1666,8 @@ X = not A  /  X = A  /  X = Ã / X = ¬ A
 <ul>
 <li>Notação:  <code>or</code>, <code>+</code>, <code>v</code></li>
 </ul>
-<div class="codehilite"><pre><span></span>X = A or B  /  X = A + B   /  X = A v B
-</pre></div>
+<div class="codehilite"><pre><span></span><code>X = A or B  /  X = A + B   /  X = A v B
+</code></pre></div>
 
 <ul>
 <li>Tabela Verdade</li>
@@ -1715,9 +1715,9 @@ X = not A  /  X = A  /  X = Ã / X = ¬ A
 <ul>
 <li>Notação:  <code>nand</code>, <code>¬( ∧ )</code></li>
 </ul>
-<div class="codehilite"><pre><span></span>                    _____
+<div class="codehilite"><pre><span></span><code>                    _____
 X = A nand B  /  X = A . B  / X = ¬(A ∧ B)
-</pre></div>
+</code></pre></div>
 
 <ul>
 <li>Tabela Verdade</li>
@@ -1807,19 +1807,19 @@ X = A nand B  /  X = A . B  / X = ¬(A ∧ B)
 </ul>
 <h3 id="soma-dos-produtos">Soma Dos Produtos<a class="headerlink" href="#soma-dos-produtos" title="Permanent link">&para;</a></h3>
 <p>Na soma dos produtos iremos encontrar uma equação booleana que possui a seguinte forma:</p>
-<div class="codehilite"><pre><span></span> X = ( . . . ) + ( . . . ) + ... + ( . . . )
+<div class="codehilite"><pre><span></span><code> X = ( . . . ) + ( . . . ) + ... + ( . . . )
        ----- 
          |
          | = &#39;1&#39;
-</pre></div>
+</code></pre></div>
 
 <p>Nesse método, precisamos encontrar as linhas da tabela verdade que resultam em uma saída <strong>'1'</strong> (Verdadeira) e invertendo (ou não) as entras fazendo com que o termo <code>( . . . .)</code> resulte em <strong>'1'</strong> para a linha em questão.</p>
 <h3 id="produto-das-somas">Produto das somas<a class="headerlink" href="#produto-das-somas" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span> X = ( + + + ) . ( + + + ) . ... . ( + + + )
+<div class="codehilite"><pre><span></span><code> X = ( + + + ) . ( + + + ) . ... . ( + + + )
        -----
          |
          | = &#39;0&#39;
-</pre></div>
+</code></pre></div>
 
 <p>Nesse método, precisamos encontrar as linhas da tabela verdade que resultam em uma saída <strong>'0'</strong> e invertendo (ou não) as entras gazer com que o termo <code>( . . . .)</code> resulte em <strong>'0'</strong> para a linha em questão.</p>
 <div class="admonition example">
@@ -1975,15 +1975,15 @@ X = A nand B  /  X = A . B  / X = ¬(A ∧ B)
 <p>O mapa pode ser criado para N entradas, mas só iremos tratar nesse curso sistemas de <strong>2</strong>, <strong>3</strong> ou <strong>4</strong> variáveis (entradas). A seguir exemplos do mapa para 2, 3 e 4 entradas:</p>
 <p><img alt="" src="../figs/Teoria/LogicaBooleana-mk-construindo1.png" /></p>
 <p>Para criar o mapa basta seguir a receitinha anterior, note que a sequência das entras: <code>AB</code> e <code>CD</code> é da forma:</p>
-<div class="codehilite"><pre><span></span>     __ _      _
+<div class="codehilite"><pre><span></span><code>     __ _      _
      AB AB AB AB
      -----------
 AB \ 00 01 11 10
-</pre></div>
+</code></pre></div>
 
 <p>e não:</p>
-<div class="codehilite"><pre><span></span>AB \ 00 01 10 11
-</pre></div>
+<div class="codehilite"><pre><span></span><code>AB \ 00 01 10 11
+</code></pre></div>
 
 <p>Como seria mais lógico (já que em binário: <code>00 = 0; 01 = 1; 10 = 2; 11 = 3</code>). Porém o mapa de Karnaugh assume que as variáveis estão ordenadas na forma de <a href="https://pt.wikipedia.org/wiki/C%C3%B3digo_de_Gray">código gray</a>, onde um bit é alterado por vez!</p>
 <p><img alt="" src="../figs/Teoria/LogicaBooleana-mk-construindo2.png" width="450" /></p>
@@ -1994,11 +1994,11 @@ AB \ 00 01 11 10
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Podemos começar a sequência com qualquer combinação, se seguirmos a ordem de só mudar um bit por vez, exemplo:</p>
-<div class="codehilite"><pre><span></span>AB \ 11 10 00 01
-</pre></div>
+<div class="codehilite"><pre><span></span><code>AB \ 11 10 00 01
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span>AB \ 01 11 10 00
-</pre></div>
+<div class="codehilite"><pre><span></span><code>AB \ 01 11 10 00
+</code></pre></div>
 
 </div>
 <div class="admonition example">
@@ -2030,43 +2030,43 @@ AB \ 00 01 11 10
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>O agrupamento no mapa de Karnaugh só pode ser realizado quando juntamos uns que estão a um bit de distância. Essa é a razão de não podermos juntar na diagonal.</p>
-<div class="codehilite"><pre><span></span>  AB  00   01   11   10
+<div class="codehilite"><pre><span></span><code>  AB  00   01   11   10
 CD \---------------------
 00 | 0000 0100 1100 1000
 10 | 0010 0110 1110 1010 
 11 | 0011 0111 1111 1011
 10 | 0010 0110 1110 1010
-</pre></div>
+</code></pre></div>
 
 <p>Note que no exemplo anterior se juntarmos duas possibilidades na horizontal (as duas primeira):</p>
-<div class="codehilite"><pre><span></span> ---------
+<div class="codehilite"><pre><span></span><code> ---------
 [0000 0100]
  ---------
-</pre></div>
+</code></pre></div>
 
 <p>Apenas o bit referente a entrada <strong>B</strong> muda. Mas se considerarmos a diagonal:</p>
-<div class="codehilite"><pre><span></span> ----
+<div class="codehilite"><pre><span></span><code> ----
 [0000 
      0110]
      ----
-</pre></div>
+</code></pre></div>
 
 <p>Temos duas mudanças de bit, a da entrada <strong>B</strong> e a da entrada <strong>C</strong>, isso não pode!</p>
 <p>O ultimo caso são os cantos, por exemplo:</p>
-<div class="codehilite"><pre><span></span>----              ----
+<div class="codehilite"><pre><span></span><code>----              ----
 0000]            [1000
 ----              ----
-</pre></div>
+</code></pre></div>
 
 <p>Nesse caso apenas o bit <strong>A</strong> muda, logo podemos juntar!</p>
 <p>Um caso que não pode juntar são as extremidades:</p>
-<div class="codehilite"><pre><span></span>----
+<div class="codehilite"><pre><span></span><code>----
 0000]
 ----
                    ----
                   [1010
                    ----
-</pre></div>
+</code></pre></div>
 
 <p>Nesse caso <strong>A</strong> e <strong>C</strong> mudam!</p>
 </div>
@@ -2084,9 +2084,9 @@ CD \---------------------
 <p class="admonition-title">Exemplo 1</p>
 <p><img alt="" src="../figs/Teoria/LogicaBooleana-mk-exemplo1a.png" width="400" /></p>
 <p>Nesse caso, a variável <strong>B</strong> pode assumir tanto <code>0</code> quanto <code>1</code> para <strong>A</strong> fixo em <code>0</code>, para o grupo em questão as entradas <strong>A</strong> e <strong>B</strong> são:</p>
-<p><div class="codehilite"><pre><span></span>AB: 00
+<p><div class="codehilite"><pre><span></span><code>AB: 00
 AB: 01
-</pre></div>
+</code></pre></div>
 A equação feita via a tabela verdade seria:</p>
 <p><span><span class="MathJax_Preview">\bar{A}.B + \bar{A} . \bar{B}</span><script type="math/tex">\bar{A}.B + \bar{A} . \bar{B}</script></span> que pode ser reduzida para <span><span class="MathJax_Preview">\bar{A} (\bar{B}. B)</span><script type="math/tex">\bar{A} (\bar{B}. B)</script></span> e então para: <span><span class="MathJax_Preview">\bar{A}</span><script type="math/tex">\bar{A}</script></span></p>
 <p>O mapa de Karnaugh já nos fornece o resultado de forma direta!</p>
@@ -2117,6 +2117,7 @@ A equação feita via a tabela verdade seria:</p>
 </div>
                 
                   
+                
                 
               
               
@@ -2176,9 +2177,9 @@ A equação feita via a tabela verdade seria:</p>
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -2188,7 +2189,7 @@ A equação feita via a tabela verdade seria:</p>
       
     </div>
     
-      <script src="../assets/javascripts/application.1f8d785c.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
         
         
@@ -2205,7 +2206,7 @@ A equação feita via a tabela verdade seria:</p>
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:".."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.96cc8824.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -53,12 +53,12 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#vhdl-introducao" tabindex="1" class="md-skip">
+      <a href="#vhdl-introducao" tabindex="0" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -183,7 +183,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1418,7 +1418,7 @@
 <td><a href="http://freerangefactory.org/pdf/df344hdh4h8kjfh3500ft2/free_range_vhdl.pdf">Free Range VHDL BOOK</a></td>
 </tr>
 <tr>
-<td><img alt="👍" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f44d.svg" title=":+1:" /></td>
+<td><img alt="👍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f44d.svg" title=":+1:" /></td>
 <td><a href="https://www.ics.uci.edu/~alexv/154/VHDL-Cookbook.pdf">VHDL CookBook</a></td>
 </tr>
 <tr>
@@ -1434,7 +1434,7 @@
 <td></td>
 </tr>
 <tr>
-<td><img alt="👍" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f44d.svg" title=":+1:" /></td>
+<td><img alt="👍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f44d.svg" title=":+1:" /></td>
 <td><iframe width="200" height="200" src="https://www.youtube.com/embed/zm-RA6BsYmc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
 </tr>
 </tbody>
@@ -1465,37 +1465,37 @@ descrição de hardware.</p>
 <p>Um código em VHDL possui basicamente três partes:</p>
 <ol>
 <li>Declaração de bibliotecas utilizadas
-    <div class="codehilite"><pre><span></span><span class="k">library</span> <span class="nn">ieee</span><span class="p">;</span>
+    <div class="codehilite"><pre><span></span><code><span class="k">library</span> <span class="nn">ieee</span><span class="p">;</span>
 <span class="k">use</span> <span class="nn">ieee.std_logic_1164.</span><span class="k">all</span><span class="p">;</span>
 <span class="k">use</span> <span class="nn">ieee.numeric_std.</span><span class="k">all</span><span class="p">;</span>
 <span class="k">use</span> <span class="nn">work.</span><span class="k">all</span><span class="p">;</span>
-</pre></div></li>
+</code></pre></div></li>
 <li>Declaração das entradas e saídas desse bloco (entidade)
-    <div class="codehilite"><pre><span></span><span class="k">entity</span> <span class="nc">TopLevel</span> <span class="k">is</span>
+    <div class="codehilite"><pre><span></span><code><span class="k">entity</span> <span class="nc">TopLevel</span> <span class="k">is</span>
   <span class="k">port</span><span class="p">(</span>
         <span class="n">a</span> <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
         <span class="n">b</span> <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span>
   <span class="p">);</span>
 <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
-</pre></div></li>
+</code></pre></div></li>
 <li>Implementação da lógica que relaciona as entradas e saídas do módulo (arquitetura)
-    <div class="codehilite"><pre><span></span><span class="k">architecture</span> <span class="nc">rtl</span> <span class="k">of</span> <span class="nc">TopLevel</span> <span class="k">is</span>
+    <div class="codehilite"><pre><span></span><code><span class="k">architecture</span> <span class="nc">rtl</span> <span class="k">of</span> <span class="nc">TopLevel</span> <span class="k">is</span>
 
 <span class="k">begin</span>
 
   <span class="n">a</span> <span class="o">&lt;=</span> <span class="k">not</span> <span class="n">b</span><span class="p">;</span> <span class="c1">-- a saída A recebe a entrada B</span>
 
 <span class="k">end</span> <span class="nc">rtl</span><span class="p">;</span>
-</pre></div></li>
+</code></pre></div></li>
 </ol>
 <p><img alt="" src="../figs/VHDL/bloco.png" width="400" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Comentários em VHDL</p>
 <p>Comentários em VHDL são iniciados com dois traços: <code>--</code>. Exemplo:</p>
-<div class="codehilite"><pre><span></span><span class="c1">-- Comenário em VHDL </span>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- Comenário em VHDL </span>
 <span class="c1">-- a &lt;= not b;          Trecho de código comentado</span>
 <span class="n">a</span> <span class="o">&lt;=</span> <span class="err">`</span><span class="mi">1</span><span class="err">`</span><span class="p">;</span> <span class="c1">-- comentário</span>
-</pre></div>
+</code></pre></div>
 
 </div>
 <h3 id="bibliotecas">Bibliotecas<a class="headerlink" href="#bibliotecas" title="Permanent link">&para;</a></h3>
@@ -1505,8 +1505,8 @@ descrição de hardware.</p>
 <p>No exemplo anterior, o módulo é chamado de <code>TopLevel</code> e possui uma entrada <code>a</code> e uma saída <code>b</code>. Tanto a entrada quanto a saída são do tipo <code>std_logic</code>. Cada porta tem a descrição de sua direção (<code>in</code>, <code>out</code>), como detalhado a seguir:</p>
 <p><img alt="" src="../figs/VHDL/entidade-descricao.png" width="800" /></p>
 <p>Uma entidade pode ter nenhuma ou 'infinitas' portas, para adicionarmos uma porta nova a uma entidade, basta adicionarmos uma nova linha com as três propriedades:</p>
-<div class="codehilite"><pre><span></span>   NOME : DIREÇÃO TIPO;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>   NOME : DIREÇÃO TIPO;
+</code></pre></div>
 
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1521,14 +1521,14 @@ VHDL, só serve para facilitar nossa leitura.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Adicionando uma entrada <code>x</code> ao módulo anterior:</p>
-<div class="codehilite"><pre><span></span><span class="k">entity</span> <span class="nc">TopLevel</span> <span class="k">is</span>
+<div class="codehilite"><pre><span></span><code><span class="k">entity</span> <span class="nc">TopLevel</span> <span class="k">is</span>
   <span class="k">port</span><span class="p">(</span>
        <span class="n">a</span> <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
        <span class="n">b</span> <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">;</span>
        <span class="n">x</span> <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span>
   <span class="p">);</span>
 <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 </div>
 <h4 id="nome">Nome<a class="headerlink" href="#nome" title="Permanent link">&para;</a></h4>
@@ -1551,27 +1551,27 @@ por ora.</p>
 <ul>
 <li>Módulo com duas entradas binárias: <code>a</code>, <code>x</code> e uma saída <code>b</code></li>
 </ul>
-<div class="codehilite"><pre><span></span>    <span class="k">entity</span> <span class="nc">Comp1</span> <span class="k">is</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">entity</span> <span class="nc">Comp1</span> <span class="k">is</span>
       <span class="k">port</span><span class="p">(</span>
             <span class="n">a</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
             <span class="n">x</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
             <span class="n">b</span>   <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span>
       <span class="p">);</span>
     <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <p><img alt="" src="../figs/VHDL/VHDL-basico-exe1.svg" /></p>
 <ul>
 <li>Módulo chamado MUX que possui 4 entradas na forma de um vetor (<code>I : in std_logic_vector(3 downto 0)</code>), um seletor de dois bits na forma de um vetor (<code>S</code>) e uma saída <code>q</code> na forma de um bit.</li>
 </ul>
-<div class="codehilite"><pre><span></span>    <span class="k">entity</span> <span class="nc">mux</span> <span class="k">is</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">entity</span> <span class="nc">mux</span> <span class="k">is</span>
       <span class="k">port</span><span class="p">(</span>
             <span class="n">I</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
             <span class="n">S</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
             <span class="n">q</span>   <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span>
       <span class="p">);</span>
     <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <p><img alt="" src="../figs/VHDL/VHDL-basico-exe2.svg" /></p>
 <div class="admonition tip">
@@ -1587,7 +1587,7 @@ por ora.</p>
 <ul>
 <li>Entidade de uma ULA</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="k">entity</span> <span class="nc">ALU</span> <span class="k">is</span>
+<div class="codehilite"><pre><span></span><code><span class="k">entity</span> <span class="nc">ALU</span> <span class="k">is</span>
     <span class="k">port</span> <span class="p">(</span>
             <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">:</span>   <span class="k">in</span> <span class="kt">STD_LOGIC_VECTOR</span><span class="p">(</span><span class="mi">15</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">-- entradas de dados da ALU</span>
             <span class="n">zx</span><span class="o">:</span>    <span class="k">in</span> <span class="kt">STD_LOGIC</span><span class="p">;</span>                     <span class="c1">-- zera a entrada x</span>
@@ -1601,21 +1601,21 @@ por ora.</p>
             <span class="n">saida</span><span class="o">:</span> <span class="k">out</span> <span class="kt">STD_LOGIC_VECTOR</span><span class="p">(</span><span class="mi">15</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">-- saída de dados da ALU</span>
     <span class="p">);</span>
 <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <p><img alt="" src="../figs/VHDL/VHDL-basico-exe3.png" width="400" /></p>
 <div class="admonition note">
 <p class="admonition-title">nota</p>
 <p>Note que a primeira linha declara duas portas com nome <code>x</code> e <code>y</code> com a mesma direção <code>in</code> e do tipo <code>std_logic_vector(15 downto 0)</code>. Isso é um atalho no VHDL e deve ser evitado. O ideal é reescrever essa linha como a seguir:</p>
-<div class="codehilite"><pre><span></span><span class="k">port</span> <span class="p">(</span>
+<div class="codehilite"><pre><span></span><code><span class="k">port</span> <span class="p">(</span>
   <span class="n">x</span><span class="o">:</span> <span class="k">in</span> <span class="kt">STD_LOGIC_VECTOR</span><span class="p">(</span><span class="mi">15</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">-- entrada X de dados da ALU</span>
   <span class="n">y</span><span class="o">:</span> <span class="k">in</span> <span class="kt">STD_LOGIC_VECTOR</span><span class="p">(</span><span class="mi">15</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">-- entrada Y de dados da ALU</span>
-</pre></div>
+</code></pre></div>
 
 </div>
 <h3 id="arquitetura-architecture">Arquitetura (architecture)<a class="headerlink" href="#arquitetura-architecture" title="Permanent link">&para;</a></h3>
 <p>A arquitetura (<code>architecture</code>) define a relação das entradas com as saídas da entidade. Nessa parte é onde será construída a lógica digital desse módulo. Pense que é na arquitetura onde transcrevemos uma equação lógica, ou onde descrevemos uma memória.</p>
-<div class="codehilite"><pre><span></span><span class="k">architecture</span> <span class="nc">rtl</span> <span class="k">of</span> <span class="nc">TopLevel</span> <span class="k">is</span>
+<div class="codehilite"><pre><span></span><code><span class="k">architecture</span> <span class="nc">rtl</span> <span class="k">of</span> <span class="nc">TopLevel</span> <span class="k">is</span>
 
 <span class="c1">-- Aqui é declaro os possíveis:</span>
 <span class="c1">--   a) sinais internos de uma entidade</span>
@@ -1628,12 +1628,12 @@ por ora.</p>
     <span class="n">a</span> <span class="o">&lt;=</span> <span class="k">not</span> <span class="n">b</span><span class="p">;</span>
 
 <span class="k">end</span> <span class="nc">rtl</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <h4 id="operacoes-basicas">Operações básicas<a class="headerlink" href="#operacoes-basicas" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
 <p>Suponha o uso da entidade a seguir para os exemplos que serão apresentados</p>
-<div class="codehilite"><pre><span></span><span class="k">entity</span> <span class="nc">Foo</span> <span class="k">is</span>
+<div class="codehilite"><pre><span></span><code><span class="k">entity</span> <span class="nc">Foo</span> <span class="k">is</span>
     <span class="k">port</span><span class="p">(</span>
         <span class="n">x</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
         <span class="n">y</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
@@ -1641,7 +1641,7 @@ por ora.</p>
         <span class="n">p</span>   <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span>
     <span class="p">);</span>
 <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 </div>
 <p>No VHDL usamos <code>&lt;=</code> para representar que alguma coisa (a esquerda da seta) recebe algum outro valor (a direita da seta). Exemplos:</p>
@@ -1684,15 +1684,15 @@ por ora.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Em VHDL não é possível 'ler' uma saída, as seguintes operações <strong>não pode</strong> ser realizada:</p>
-<div class="codehilite"><pre><span></span><span class="n">q</span> <span class="o">&lt;=</span> <span class="k">not</span> <span class="n">x</span><span class="p">;</span> <span class="c1">-- x é saída</span>
+<div class="codehilite"><pre><span></span><code><span class="n">q</span> <span class="o">&lt;=</span> <span class="k">not</span> <span class="n">x</span><span class="p">;</span> <span class="c1">-- x é saída</span>
 <span class="n">p</span> <span class="o">&lt;=</span> <span class="n">q</span><span class="p">;</span>     <span class="c1">-- q é saída</span>
-</pre></div>
+</code></pre></div>
 
 </div>
 <h4 id="operacao-com-vetores">Operação com vetores<a class="headerlink" href="#operacao-com-vetores" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
 <p>Suponha o uso da entidade a seguir para os exemplos que serão apresentados</p>
-<div class="codehilite"><pre><span></span><span class="k">entity</span> <span class="nc">Bar</span> <span class="k">is</span>
+<div class="codehilite"><pre><span></span><code><span class="k">entity</span> <span class="nc">Bar</span> <span class="k">is</span>
 <span class="k">port</span><span class="p">(</span>
         <span class="n">a</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
         <span class="n">b</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
@@ -1700,7 +1700,7 @@ por ora.</p>
         <span class="n">p</span>   <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">2</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span>
   <span class="p">);</span>
 <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 </div>
 <p>Exemplos de operação com vetores:</p>
@@ -1737,14 +1737,14 @@ facilitar/ possibilitar o desenvolvimento de um sistema digital, eles só são v
 dentro de uma entidade e servem como 'fios' internos de um módulo. </p>
 <p><img alt="" src="../figs/VHDL/VHDL-basico-signals.svg" width="400" /></p>
 <p><code>Sinais</code> são diferente de portas não possuem direção, e são declarados da seguinte maneira:</p>
-<div class="codehilite"><pre><span></span><span class="k">signal</span> <span class="n">NAME</span> <span class="o">:</span> <span class="k">TYPE</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">signal</span> <span class="n">NAME</span> <span class="o">:</span> <span class="k">TYPE</span>
+</code></pre></div>
 
 <ul>
 <li><code>TYPE</code> pode ser: <code>std_logic</code>/ <code>std_logic_vector</code>, entre outros.</li>
 </ul>
 <p>Exemplo:</p>
-<div class="codehilite"><pre><span></span><span class="k">architecture</span> <span class="nc">rtl</span> <span class="k">of</span> <span class="nc">TopLevel</span> <span class="k">is</span>
+<div class="codehilite"><pre><span></span><code><span class="k">architecture</span> <span class="nc">rtl</span> <span class="k">of</span> <span class="nc">TopLevel</span> <span class="k">is</span>
 
 <span class="c1">-- Declaração de sinais</span>
 <span class="k">signal</span> <span class="n">aux1</span> <span class="o">:</span> <span class="kt">std_logic</span><span class="p">;</span>                
@@ -1763,11 +1763,12 @@ dentro de uma entidade e servem como 'fios' internos de um módulo. </p>
     <span class="n">p</span><span class="p">(</span><span class="mi">2</span> <span class="k">downto</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">aux2</span><span class="p">;</span>
 
 <span class="k">end</span> <span class="nc">rtl</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <p>No exemplo anterior, criamos um sinal auxiliar chamado de <code>aux1</code> que recebe a entrada <code>a</code> negada, esse sinal é então atribuído a saída <code>q</code> e ao <code>bit 0</code> da saída <code>p</code>. Outro sinal <code>aux2</code>, vetor de 2 bits recebe os dois bits mais significativos da entrada <code>b</code> e então é atribuído a saída <code>p</code>, bits 2 e 1.</p>
                 
                   
+                
                 
               
               
@@ -1827,9 +1828,9 @@ dentro de uma entidade e servem como 'fios' internos de um módulo. </p>
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -1839,7 +1840,7 @@ dentro de uma entidade e servem como 'fios' internos de um módulo. </p>
       
     </div>
     
-      <script src="../assets/javascripts/application.1f8d785c.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
         
         
@@ -1856,7 +1857,7 @@ dentro de uma entidade e servem como 'fios' internos de um módulo. </p>
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:".."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

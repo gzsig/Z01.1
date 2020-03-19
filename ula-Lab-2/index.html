@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.96cc8824.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -53,12 +53,12 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#lab-7-visualizando-simulacao" tabindex="1" class="md-skip">
+      <a href="#lab-7-visualizando-simulacao" tabindex="0" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -183,7 +183,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1297,8 +1297,8 @@
 </div>
 <p>É muito difícil sabermos porque uma implementação em VHDL não funciona, atualmente o fluxo é: transcreve para VHDL o componente; testa; não funcionou volta para o VHDL; testa.... Será que não existe uma forma de conseguirmos visualizar o resultado do teste e com isso mudarmos a implementação em VDHL? Sim existe! Para isso será necessário invocarmos a parte gráfica do modelsim. 
 Na hora de invocarmos o script de teste (<code>B-UnidadeLogicaAritmetica/testeULA.py</code>) passe o parâmetro <code>--gui</code> (ou <code>-g</code>), como a seguir:</p>
-<div class="codehilite"><pre><span></span>$ python testeULA.py --gui
-</pre></div>
+<div class="codehilite"><pre><span></span><code>$ python testeULA.py --gui
+</code></pre></div>
 
 <p>Esse comando irá executar a simulação e abrir no software <code>modelsim</code> (toda a simulação é realizada por esse software, mas estava sendo 'mascarada' pelos scripts de teste em py).</p>
 <div class="admonition note">
@@ -1321,8 +1321,8 @@ Na hora de invocarmos o script de teste (<code>B-UnidadeLogicaAritmetica/testeUL
 <p>Resultando em:</p>
 <p><img alt="ModelSim" src="../figs/D-ULA/D-modelsim4.png" /></p>
 <p>Agora podemos executar a simulação, na região do script TCL execute o seguinte comando: <strong>vunit_run</strong></p>
-<div class="codehilite"><pre><span></span><span class="nv">VSIM</span> <span class="o">&gt;</span> vunit_run
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nv">VSIM</span> <span class="o">&gt;</span> vunit_run
+</code></pre></div>
 
 <p>Podemos agora visualizar a forma de onda:</p>
 <p><img alt="ModelSim" src="../figs/D-ULA/D-modelsim5.png" /></p>
@@ -1330,7 +1330,7 @@ Na hora de invocarmos o script de teste (<code>B-UnidadeLogicaAritmetica/testeUL
 <p>Testbench (bancada de teste) é a forma utilizada para verificarmos se um projeto de HDL (VHDL, Verilog, ...) está certo, o testbench pode ser escrito em várias linguagens inclusive em VHDL.</p>
 <p>Os TestBenchs estão localizados nas pastas dos projetos em: <code>/tests/tst/</code>.</p>
 <p>No projeto C temos os seguintes testbenchs definidos (um para cada módulo a ser implementando):</p>
-<div class="codehilite"><pre><span></span>/tests/tst/
+<div class="codehilite"><pre><span></span><code>/tests/tst/
           tb_Add16.vhd
           tb_ALU.vhd
           tb_comparador16.vhd
@@ -1339,27 +1339,27 @@ Na hora de invocarmos o script de teste (<code>B-UnidadeLogicaAritmetica/testeUL
           tb_Inc16.vhd
           tb_inversor16.vhd
           tb_zerador16.vhd
-</pre></div>
+</code></pre></div>
 
 <h3 id="tb_halfaddervhd">tb_HalfAdder.vhd<a class="headerlink" href="#tb_halfaddervhd" title="Permanent link">&para;</a></h3>
 <p>Note que na simulação do HalfAdder não testamos um dos casos de entrada: <strong>1 + 1</strong>, esse teste está incompleto. Vamos corrigir isso!</p>
 <p>O arquivo <code>tb_HalfAdder</code> faz a inclusão do módulo HalfAdder (component e port map) instanciando esse módulo para uso. No arquivo é criado <strong>estímulos</strong> na entrada do componente e verifica-se se a saída está de acordo com o que deveria ser feito.</p>
 <h4 id="modificando-o-arquivo">modificando o arquivo<a class="headerlink" href="#modificando-o-arquivo" title="Permanent link">&para;</a></h4>
 <p>Agora vamos modificar o arquivo para inserir o teste que está faltando: <code>1+1</code>, para isso inclua as linhas a seguir logo após o teste 3:</p>
-<div class="codehilite"><pre><span></span> -- Teste: 4
+<div class="codehilite"><pre><span></span><code> -- Teste: 4
  -- 1 + 1
 <span class="gi">+inA &lt;= &#39;1&#39;; inB&lt;= &#39;1&#39;;</span>
 <span class="gi">+wait for 200 ps;</span>
 <span class="gi">+assert(soma = &#39;0&#39; and vaium = &#39;1&#39;)  report &quot;Falha em teste: 4&quot; severity error;</span>
-</pre></div>
+</code></pre></div>
 
 <p>Como isso funciona? Primeiro colocamos os valores desejados na entrada do componente:</p>
-<div class="codehilite"><pre><span></span>inA &lt;= &#39;1&#39;; inB &lt;= &#39;1&#39;;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>inA &lt;= &#39;1&#39;; inB &lt;= &#39;1&#39;;
+</code></pre></div>
 
 <p>é necessário aguardar um instante de tempo para que as portas lógicas fiquem com a saída estável (e para possibilitar a visualização na simulação):</p>
-<div class="codehilite"><pre><span></span>wait for 200 ps;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wait for 200 ps;
+</code></pre></div>
 
 <h4 id="testando-novamente">Testando novamente<a class="headerlink" href="#testando-novamente" title="Permanent link">&para;</a></h4>
 <p>Execute novamente a simulação com o modo <code>--gui</code> e verifique se o módulo está se comportando corretamente:<code>soma = 0</code> e <code>vaium = 1</code>.</p>
@@ -1369,6 +1369,7 @@ Na hora de invocarmos o script de teste (<code>B-UnidadeLogicaAritmetica/testeUL
 </div>
                 
                   
+                
                 
               
               
@@ -1428,9 +1429,9 @@ Na hora de invocarmos o script de teste (<code>B-UnidadeLogicaAritmetica/testeUL
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -1440,7 +1441,7 @@ Na hora de invocarmos o script de teste (<code>B-UnidadeLogicaAritmetica/testeUL
       
     </div>
     
-      <script src="../assets/javascripts/application.1f8d785c.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
         
         
@@ -1457,7 +1458,7 @@ Na hora de invocarmos o script de teste (<code>B-UnidadeLogicaAritmetica/testeUL
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:".."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

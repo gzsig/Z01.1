@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.96cc8824.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -53,12 +53,12 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#componentes-digitais" tabindex="1" class="md-skip">
+      <a href="#componentes-digitais" tabindex="0" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -183,7 +183,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1337,7 +1337,7 @@
 <blockquote>
 <p><a href="https://en.wikipedia.org/wiki/Multiplexer">fonte wikipedia</a>: Schematic of a 2-to-1 Multiplexer. It can be equated to a controlled switch.</p>
 </blockquote>
-<div class="codehilite"><pre><span></span>    <span class="k">entity</span> <span class="nc">mux</span> <span class="k">is</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">entity</span> <span class="nc">mux</span> <span class="k">is</span>
       <span class="k">port</span><span class="p">(</span>
             <span class="n">in0</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
             <span class="n">in1</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
@@ -1345,7 +1345,7 @@
             <span class="n">o</span>     <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span>
       <span class="p">);</span>
     <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <p>O mux como é chamado o <a href="https://www.electronics-tutorials.ws/combination/comb_2.html">Multiplexador</a> é um componente que possui <code>n</code> entradas e uma saída <code>q</code>, um sinal chamado de seletor <code>sel</code> seleciona qual entrada irá ser copiada para a saída.</p>
 <p>As entradas <code>n</code> e a saída <code>q</code> podem ser binárias ou vetor de tamanho <code>m</code>. </p>
@@ -1430,7 +1430,7 @@
 <blockquote>
 <p><a href="https://en.wikipedia.org/wiki/Multiplexer">fonte wikipedia</a>: Schematic of a 1-to-2 Demultiplexer. Like a multiplexer, it can be equated to a controlled switch. </p>
 </blockquote>
-<div class="codehilite"><pre><span></span>    <span class="k">entity</span> <span class="nc">demux</span> <span class="k">is</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">entity</span> <span class="nc">demux</span> <span class="k">is</span>
       <span class="k">port</span><span class="p">(</span>
             <span class="n">in0</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
             <span class="n">sel</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
@@ -1438,7 +1438,7 @@
             <span class="n">out1</span>  <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span>
       <span class="p">);</span>
     <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <p>A entrada <code>in</code> e a saída <code>q</code> podem ser binárias ou de vetorer de tamanho <code>m</code>. </p>
 <p>A seguir uma tabela verdade para um <code>demux</code> de 2 saídas:</p>
@@ -1554,23 +1554,23 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span>             |-----------|
+<div class="codehilite"><pre><span></span><code>             |-----------|
              |           |  out1[3..0]
    x[n..0]   |  Binary   |-----/--------&gt;
  ----/------&gt;|    to     |  ....
              |   BCD     |  outm[3..0]
              |           |-----/--------&gt;
              |-----------|
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span>    <span class="k">entity</span> <span class="nc">binaryToBCD</span> <span class="k">is</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">entity</span> <span class="nc">binaryToBCD</span> <span class="k">is</span>
       <span class="k">port</span><span class="p">(</span>
             <span class="n">x</span>    <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">(</span><span class="mi">4</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
             <span class="n">out0</span> <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">-- Unidade</span>
             <span class="n">out1</span> <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1">-- Dezena</span>
       <span class="p">);</span>
     <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1727,43 +1727,43 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span>             |-----------|
+<div class="codehilite"><pre><span></span><code>             |-----------|
              |           |  eq
   x[1..0]    |           |----------&gt;
  ----/------&gt;| comparador|
              |           |  gt
              |           |----------&gt;
              |-----------|
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span>    <span class="k">entity</span> <span class="nc">COMPARADOR</span> <span class="k">is</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">entity</span> <span class="nc">COMPARADOR</span> <span class="k">is</span>
       <span class="k">port</span><span class="p">(</span>
             <span class="n">x</span>  <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
             <span class="n">eq</span> <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">;</span>
             <span class="n">gt</span> <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span>
       <span class="p">);</span>
     <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="somadores">Somadores<a class="headerlink" href="#somadores" title="Permanent link">&para;</a></h2>
 <p>Os somadores são componentes que realizam a soma de dois números binários, eles podem ser construídos de diversas maneiras. </p>
-<div class="codehilite"><pre><span></span> in0[1..0]   |-----------|
+<div class="codehilite"><pre><span></span><code> in0[1..0]   |-----------|
  ----/------&gt;|           |
              |           |  out[2..0]
              |  ADDER    |-----/-----&gt;
  in1[1..0]   |           |
  ----/------&gt;|           |
              |-----------|
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span>    <span class="k">entity</span> <span class="nc">ADDER</span> <span class="k">is</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">entity</span> <span class="nc">ADDER</span> <span class="k">is</span>
       <span class="k">port</span><span class="p">(</span>
             <span class="n">in0</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">(</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
             <span class="n">in1</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">(</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
             <span class="n">o</span>     <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">2</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span>
       <span class="p">);</span>
     <span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <p>Um somador de dois vetores de dois bits cada possui o seguinte comportamento:</p>
 <table>
@@ -1809,6 +1809,7 @@
 </table>
                 
                   
+                
                 
               
               
@@ -1868,9 +1869,9 @@
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -1880,7 +1881,7 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.1f8d785c.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
         
         
@@ -1897,7 +1898,7 @@
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:".."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
