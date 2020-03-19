@@ -855,6 +855,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exemplo-construindo-um-adder-de-4-bits-usando-fulladder-de-1-bit" class="md-nav__link">
+    Exemplo: Construindo um Adder de 4-bits usando FullAdder de 1-bit
+  </a>
+  
+</li>
+      
       
       
       
@@ -1205,6 +1212,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exemplo-construindo-um-adder-de-4-bits-usando-fulladder-de-1-bit" class="md-nav__link">
+    Exemplo: Construindo um Adder de 4-bits usando FullAdder de 1-bit
+  </a>
+  
+</li>
+      
       
       
       
@@ -1348,6 +1362,135 @@
     ```</li>
 </ul>
 </div>
+<h2 id="exemplo-construindo-um-adder-de-4-bits-usando-fulladder-de-1-bit">Exemplo: Construindo um Adder de 4-bits usando FullAdder de 1-bit<a class="headerlink" href="#exemplo-construindo-um-adder-de-4-bits-usando-fulladder-de-1-bit" title="Permanent link">&para;</a></h2>
+<p>Neste exemplo vamos ver a elaboração de um somador (<code>adder</code>) de 4-bits atráves do uso de vários somadores de 1-bit. </p>
+<p>Suponha que você já tenha um somador pronto porém o mesmo é apenas de 1-bit, criar um somador de 4-bits do zero, pode ser uma tarefa trabalhosa, elaborar uma tabela verdade de 2^4 = 16 linhas, econtrar 4 saídas distintas (cada bit de saída), enfim... será que não é possível usar o conceito que vimos de port-map anteriormente e multiplos somadores para obter o desejado?</p>
+<p>Sim, é possível, desde que nosso somador de 1-bit seja um Full-Adder, lembre-se que a principal diferença de um Full-Adder e um Half-Adder, é a presença de uma entrada de Carry In, que permite que a ligação em cascata de vários somadores.</p>
+<p>Portanto, o nosso somador de 4-bits, nada mais será que uma <code>caixa preta</code> que dentro terá 4 somadores de 1-bit realizando o trabalho, para o usuário final, que irá utilizar o componente isto ficará transparente e o mesmo não saberá deste detalhe. </p>
+<p><img alt="" src="../figs/VHDL/VHDL-Esquema-Adder.svg" /></p>
+<p>Vamos criar nosso componente Somador de 4-bits, <code>Adder.vhdl</code> e definir suas entradas e saídas (4-bits).
+<div class="codehilite"><pre><span></span><code><span class="k">entity</span> <span class="nc">Adder</span> <span class="k">is</span>
+    <span class="k">port</span>
+    <span class="p">(</span>
+        <span class="n">X</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">Y</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">Z</span>   <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">);</span>
+<span class="k">end</span> <span class="nc">Adder</span><span class="p">;</span>
+
+<span class="k">architecture</span> <span class="nc">archAdder</span> <span class="k">of</span> <span class="nc">Adder</span> <span class="k">is</span>
+<span class="k">begin</span>
+<span class="k">end</span> <span class="nc">archAdder</span><span class="p">;</span>
+</code></pre></div></p>
+<p>Agora suponha que temos o arquivo de nosso <code>FullAdder</code> de 1-bit, <code>FullAdder1.vhdl</code> e que tenha a definição (entidade da seguinte forma):
+<div class="codehilite"><pre><span></span><code><span class="k">entity</span> <span class="nc">FullAdder1</span> <span class="k">is</span>
+    <span class="k">port</span>
+    <span class="p">(</span>
+        <span class="n">X</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
+        <span class="n">Y</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
+        <span class="n">Cin</span> <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
+        <span class="n">Z</span>   <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">;</span>
+        <span class="n">Cout</span><span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span>
+    <span class="p">);</span>
+<span class="k">end</span> <span class="nc">FullAdder1</span><span class="p">;</span>
+</code></pre></div></p>
+<p>Observe que nós preocupamos apenas em ver a entidade (onde existem as entradas e saídas). Quer dizer que agora podemos usar a entidade <code>FullAdder1</code> diretamente no <code>Adder</code>? Não ainda! O componente <code>Adder</code> não conhece nenhum <code>FullAdder1</code> ! para poder usar.</p>
+<p>Por isto devemos declarar na arquitetura do Adder que existe um componente com este nome e com tais entradas e saídas disponíveis para uso! Para isso usamos a declaração <code>component</code> do VHDL, permitindo especificar os nomes e entradas.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">architecture</span> <span class="nc">archAdder</span> <span class="k">of</span> <span class="nc">Adder</span> <span class="k">is</span>
+<span class="k">component</span> <span class="nc">FullAdder1</span>
+    <span class="k">port</span>
+    <span class="p">(</span>
+        <span class="c1">-- Input ports</span>
+        <span class="n">X</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
+        <span class="n">Y</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
+        <span class="n">Cin</span><span class="o">:</span> <span class="k">in</span> <span class="kt">std_logic</span><span class="p">;</span>
+
+        <span class="c1">-- Output ports</span>
+        <span class="n">Z</span>   <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">;</span>
+        <span class="n">Cout</span><span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span>
+    <span class="p">);</span>
+<span class="k">end</span> <span class="k">component</span><span class="p">;</span>
+<span class="k">begin</span>
+<span class="k">end</span> <span class="nc">archAdder</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Pronto! Agora podemos usar o componente <code>FullAdder1</code>, na verdade, podemos usar vários! Isso mesmo, podemos criar várias instâncias deste <code>FullAdder1</code>, vamos precisar de 4. A forma de fazer isto em VHDL, é usar definir um nome de instancia, nome do componente e suas ligações (port-map).</p>
+<p>Sintaxe:
+<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="n">instance_name</span><span class="o">&gt;</span> <span class="o">:</span> <span class="o">&lt;</span><span class="n">component_name</span><span class="o">&gt;</span> 
+    <span class="k">port</span> <span class="k">map</span> 
+    <span class="p">(</span>
+        <span class="o">&lt;</span><span class="n">formal_input</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="k">signal</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="o">&lt;</span><span class="n">formal_output</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="k">signal</span><span class="o">&gt;</span>
+    <span class="p">);</span>
+</code></pre></div>
+Exemplo para os nosso 4 FAs (por enquanto vamos ligar apenas as entradas X, Y e saídas Z sem se preocupar com os Cin/Cout).</p>
+<div class="codehilite"><pre><span></span><code>    <span class="n">A0</span> <span class="o">:</span> <span class="n">FullAdder1</span>
+    <span class="k">port</span> <span class="k">map</span> 
+    <span class="p">(</span>
+        <span class="n">X</span> <span class="o">=&gt;</span> <span class="n">X</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">Y</span> <span class="o">=&gt;</span> <span class="n">Y</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">Z</span> <span class="o">=&gt;</span> <span class="n">Z</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="p">);</span>
+
+    <span class="n">A1</span> <span class="o">:</span> <span class="n">FullAdder1</span>
+    <span class="k">port</span> <span class="k">map</span> 
+    <span class="p">(</span>
+        <span class="n">X</span> <span class="o">=&gt;</span> <span class="n">X</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">Y</span> <span class="o">=&gt;</span> <span class="n">Y</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">Z</span> <span class="o">=&gt;</span> <span class="n">Z</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">);</span>
+
+    <span class="n">A2</span> <span class="o">:</span> <span class="n">FullAdder1</span>
+    <span class="k">port</span> <span class="k">map</span> 
+    <span class="p">(</span>
+        <span class="n">X</span> <span class="o">=&gt;</span> <span class="n">X</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+        <span class="n">Y</span> <span class="o">=&gt;</span> <span class="n">Y</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+        <span class="n">Z</span> <span class="o">=&gt;</span> <span class="n">Z</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="p">);</span>
+
+    <span class="n">A3</span> <span class="o">:</span> <span class="n">FullAdder1</span>
+    <span class="k">port</span> <span class="k">map</span> 
+    <span class="p">(</span>
+        <span class="n">X</span> <span class="o">=&gt;</span> <span class="n">X</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+        <span class="n">Y</span> <span class="o">=&gt;</span> <span class="n">Y</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+        <span class="n">Z</span> <span class="o">=&gt;</span> <span class="n">Z</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="p">);</span>
+</code></pre></div>
+
+<p>Observe que conseguimos facilmente instanciar 4 somadores de 1-bit! Outro detalhe importante no port-map é que sempre o sinal a esquerda pertence ao componente e este é conectado ao sinal da direita (pertence ao arquivo atual). Por isto podemos ligar X a X(0), sem dar erro de nome duplicado, pois o VHDL é espertinho e sabe que o primeiro X se refere ao X do componente e o segundo, ao do nosso Adder de 4-bits.</p>
+<p>Agora precisamos ligar os Carrys para que nosso somador some corretamente, lembre, o primeiro somador (bit 0), terá carry de entrada (Cin) zero (0), e os demais somadores receberam o carry de saída (Cout) do somador anterior. </p>
+<p>No entanto no VHDL não é possível ligar diretamente entre componentes diferentes!! E agora?
+Existem no VHDL, sinais virtuais, literalmente chamados <code>signals</code>, podemos pensar nestes sinais como um <code>fio</code>, cuidado, eles não são variavéis (o VHDL possui elas, porém tem algumas pecularidades diferentes que não iremos abordar aqui)</p>
+<p>Os sinais devem serem declarados dentro de um arquitetura com a seguinte sintaxe
+<div class="codehilite"><pre><span></span><code><span class="k">signal</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span> <span class="o">:</span> <span class="o">&lt;</span><span class="k">type</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
+Como teremos 4 carrys de saída, podemos usar então
+<div class="codehilite"><pre><span></span><code><span class="k">signal</span> <span class="n">carry</span> <span class="o">:</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
+</code></pre></div></p>
+<p>Agora basta ligar o carry dos somadores intermediarios e o final, no anterior (não esquece de ligar o carry de entrada e saída). Exemplo dos dois primeiros somadores.</p>
+<div class="codehilite"><pre><span></span><code>    <span class="n">A0</span> <span class="o">:</span> <span class="n">FullAdder1</span>
+    <span class="k">port</span> <span class="k">map</span> 
+    <span class="p">(</span>
+        <span class="n">X</span> <span class="o">=&gt;</span> <span class="n">X</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">Y</span> <span class="o">=&gt;</span> <span class="n">Y</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">Cin</span> <span class="o">=&gt;</span> <span class="sc">&#39;0&#39;</span><span class="p">,</span>
+        <span class="n">Z</span> <span class="o">=&gt;</span> <span class="n">Z</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">Cout</span> <span class="o">=&gt;</span> <span class="n">carry</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="p">);</span>
+
+    <span class="n">A1</span> <span class="o">:</span> <span class="n">FullAdder1</span>
+    <span class="k">port</span> <span class="k">map</span> 
+    <span class="p">(</span>
+        <span class="n">X</span> <span class="o">=&gt;</span> <span class="n">X</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">Y</span> <span class="o">=&gt;</span> <span class="n">Y</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">Cin</span> <span class="o">=&gt;</span> <span class="n">carry</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">Z</span> <span class="o">=&gt;</span> <span class="n">Z</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">Cout</span> <span class="o">=&gt;</span> <span class="n">carry</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">);</span>
+    <span class="p">...</span>
+</code></pre></div>
+
+<p>Feito isto, seu somador está completo, basta utiliza-lo em um TopLevel ou outro VHDL que desejar para ver os resultados!</p>
                 
                   
                 
