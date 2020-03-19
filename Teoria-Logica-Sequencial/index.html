@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://insper.github.io/Z01.1/Teoria-VHDL-Combinacional/">
+        <link rel="canonical" href="https://insper.github.io/Z01.1/Teoria-Logica-Sequencial/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>VHDL - Combinacional - 2020-1 - Elementos de Sistemas - Z01</title>
+        <title>Lógica Sequencial - 2020-1 - Elementos de Sistemas - Z01</title>
       
     
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#vhdl-combinacional" tabindex="1" class="md-skip">
+      <a href="#logica-sequencial" tabindex="1" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -164,7 +164,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                VHDL - Combinacional
+                Lógica Sequencial
               
             </span>
           
@@ -291,6 +291,19 @@
       
         <a href="../Teoria-Algebra-Booleana/" class="md-tabs__link md-tabs__link--active">
           Teoria
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../VHDL-basico/" class="md-tabs__link">
+          VHDL
         </a>
       
     </li>
@@ -728,18 +741,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../Teoria-VHDL-basico/" title="VHDL - Introdução" class="md-nav__link">
-      VHDL - Introdução
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -751,11 +752,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        VHDL - Combinacional
+        Lógica Sequencial
       </label>
     
-    <a href="./" title="VHDL - Combinacional" class="md-nav__link md-nav__link--active">
-      VHDL - Combinacional
+    <a href="./" title="Lógica Sequencial" class="md-nav__link md-nav__link--active">
+      Lógica Sequencial
     </a>
     
       
@@ -769,43 +770,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vhdl" class="md-nav__link">
-    VHDL
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#equacoes" class="md-nav__link">
-    Equações
+  <a href="#circuitos-biestaveis" class="md-nav__link">
+    Circuitos biestáveis
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#concatenate" class="md-nav__link">
-    Concatenate
+      
+        <li class="md-nav__item">
+  <a href="#clock" class="md-nav__link">
+    Clock
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#with-select" class="md-nav__link">
-    with select
+      
+        <li class="md-nav__item">
+  <a href="#flip-flop" class="md-nav__link">
+    Flip-Flop
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#when-else" class="md-nav__link">
-    when else
+      
+        <li class="md-nav__item">
+  <a href="#binary-digit" class="md-nav__link">
+    Binary-digit
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -817,30 +805,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Teoria-VHDL-port-map/" title="VHDL - port map" class="md-nav__link">
-      VHDL - port map
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Teoria-VHDL-exemplos/" title="VHDL - Exemplos completos" class="md-nav__link">
-      VHDL - Exemplos completos
-    </a>
   </li>
 
         
@@ -871,10 +835,82 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
-      Estudo
+      VHDL
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
+        VHDL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../VHDL-basico/" title="VHDL - Introdução" class="md-nav__link">
+      VHDL - Introdução
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../VHDL-Combinacional/" title="VHDL - Combinacional" class="md-nav__link">
+      VHDL - Combinacional
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../VHDL-port-map/" title="VHDL - port map" class="md-nav__link">
+      VHDL - port map
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../VHDL-exemplos/" title="VHDL - Exemplos completos" class="md-nav__link">
+      VHDL - Exemplos completos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Estudo
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
         Estudo
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -952,13 +988,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-7">
       Simulados
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-7">
         Simulados
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -988,13 +1024,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
-    <label class="md-nav__link" for="nav-7">
+    <label class="md-nav__link" for="nav-8">
       Útil
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
+      <label class="md-nav__title" for="nav-8">
         Útil
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1055,13 +1091,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-5" type="checkbox" id="nav-7-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-5" type="checkbox" id="nav-8-5">
     
-    <label class="md-nav__link" for="nav-7-5">
+    <label class="md-nav__link" for="nav-8-5">
       ZO1.1
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-7-5">
+      <label class="md-nav__title" for="nav-8-5">
         ZO1.1
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1170,43 +1206,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vhdl" class="md-nav__link">
-    VHDL
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#equacoes" class="md-nav__link">
-    Equações
+  <a href="#circuitos-biestaveis" class="md-nav__link">
+    Circuitos biestáveis
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#concatenate" class="md-nav__link">
-    Concatenate
+      
+        <li class="md-nav__item">
+  <a href="#clock" class="md-nav__link">
+    Clock
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#with-select" class="md-nav__link">
-    with select
+      
+        <li class="md-nav__item">
+  <a href="#flip-flop" class="md-nav__link">
+    Flip-Flop
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#when-else" class="md-nav__link">
-    when else
+      
+        <li class="md-nav__item">
+  <a href="#binary-digit" class="md-nav__link">
+    Binary-digit
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1226,111 +1249,218 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/Z01.1/edit/master/docs/Teoria-VHDL-Combinacional.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/insper/Z01.1/edit/master/docs/Teoria-Logica-Sequencial.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="vhdl-combinacional">VHDL - Combinacional<a class="headerlink" href="#vhdl-combinacional" title="Permanent link">&para;</a></h1>
-<p>Em sistemas digitais, lógica combinacional é aquela que não depende do estado anterior (não possui memória), podemos classificar portas lógicas (and, or, nand ...), mux, demux, comparadores, full address e outros componentes como sendo do tipo combinacional.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Logic is combinational if outputs at a specified time are a function only of the inputs at that time. Examples of combinational logic functions are decoders, multiplexers, and adders.
-...</p>
+                <h1 id="logica-sequencial">Lógica Sequencial<a class="headerlink" href="#logica-sequencial" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Estudando</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bibliografia</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>[Cap1. Cap2. NISAN, 2005]</td>
+</tr>
+<tr>
+<td></td>
+<td>[Cap6. TOCCI, 2011]</td>
+</tr>
+<tr>
+<td></td>
+<td>[Cap1. FLOYD, 2007]</td>
+</tr>
+<tr>
+<td></td>
+<td>[LAING, 2004]</td>
+</tr>
+<tr>
+<td>Vídeos (extra)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://www.youtube.com/watch?v=_Lb2c18xdeo">Logic 101 (#11): Truth Tables</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Colossus</p>
+<p>O Colossus foi um computador Britânico de 1700 válvulas, feito
+em 1943 para decifrar códigos nazistas durante a segunda
+guerra mundial. O computador e planos foram destruídos para
+manter o projeto em segredo.</p>
+<p>Uma característa importante desse computador é que ele podia 
+ser programado e reprogramado para decifrar as mensagens nazistas.
+Essa flexibilidade de programação foi revolucionária. O computador
+usava um mecanismo de memória chamado de flip-flops, que foi 
+desenvolvido muitos anos antes pelos professores </p>
+<ul>
+<li><a href="http://www.britannica.com/technology/computer/images-videos/The-Colossus-computer-at-Bletchley-Park-Buckinghamshire-England-1943/19626">http://www.britannica.com/technology/computer/images-videos/The-Colossus-computer-at-Bletchley-Park-Buckinghamshire-England-1943/19626</a></li>
+<li><a href="http://www.computerhistory.org/revolution/digital-logic/12/269">http://www.computerhistory.org/revolution/digital-logic/12/269</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Flip-flop_(electronics">https://en.wikipedia.org/wiki/Flip-flop_(electronics</a>)</li>
+</ul>
+</div>
+<p>Até o momento só usamos circuitos criados com lógica combinacional. Porém nem todos os tipos de lógica digital podem ser enquadrados nessa categoria. Nessas lógicas uma tabela verdade define bem a saída de um circuito. Por exemplo, podemos dizer que ao se colocar os sinais nas entradas de uma unidade lógica aritmética temos quase que instantaneamente uma saída válida e independente dos sinais que estavam anteriormente no circuito. </p>
+<p><img alt="" src="../figs/Teoria/LogicaSequencial-Combinacional.png" width="400" /></p>
+<p>Já na lógica sequencial o estado anterior das entradas influencia na saída, ou seja, essa lógica possui uma memória. E é justamente essa característica de memória de estados anteriores que nos interessa. Podemos por exemplo armazenar valores para uso futuro, ou tomar uma decisão com base no estado anterior/atual.</p>
+<p><img alt="" src="../figs/Teoria/LogicaSequencial-visaoGeral.png" width="600" /></p>
+<p><a href="http://www.inf.pucrs.br/~emoreno/undergraduate/SI/orgarq/class_files/Aula06.pdf">http://www.inf.pucrs.br/~emoreno/undergraduate/SI/orgarq/class_files/Aula06.pdf</a>
+<a href="http://www.ee.surrey.ac.uk/Projects/CAL/seq-switching/General_seq_circ.htm">http://www.ee.surrey.ac.uk/Projects/CAL/seq-switching/General_seq_circ.htm</a></p>
+<p>Sistemas sequências são em sua grande combinados com sistema síncrono, onde todos o circuito digital opera em um
+determinado ritmo, esse sinal é conhecido como <code>clock</code> do sistema. </p>
+<h2 id="circuitos-biestaveis">Circuitos biestáveis<a class="headerlink" href="#circuitos-biestaveis" title="Permanent link">&para;</a></h2>
+<p>Um dos circuitos sequenciais mais simples existentes são os circuitos biestáveis, que são chamados assim pois permanecem em um dos dois estados binários (<code>0</code> ou <code>1</code>) enquanto estiver energizado. Eles são usados para armazenar e recuperar os estados dos bits dos computadores.</p>
+<ul>
+<li><a href="http://hyperphysics.phy-astr.gsu.edu/hbase/electronic/nandlatch.html#c1">http://hyperphysics.phy-astr.gsu.edu/hbase/electronic/nandlatch.html#c1</a></li>
+</ul>
+<p>O <a href="https://pt.wikipedia.org/wiki/Circuito_sequencial">latch SR</a> é um circuito biestável composto de duas portas NOR que armazenam um valor simples. </p>
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/RS_Flip-flop_%28NOR%29.svg/200px-RS_Flip-flop_%28NOR%29.svg.png" width="200" /></p>
 <blockquote>
-<p>Trecho extraído do site da <a href="https://www.intel.com/content/www/us/en/programmable/quartushelp/13.0/mergedProjects/hdl/vhdl/vhdl_pro_combinatorial.htm">intel</a></p>
+<p>Fonte: <a href="https://en.wikibooks.org/wiki/Digital_Circuits/Latches">WikiBook</a></p>
 </blockquote>
-</div>
-<h2 id="vhdl">VHDL<a class="headerlink" href="#vhdl" title="Permanent link">&para;</a></h2>
-<p>Existem duas formas de descrevermos um circuito combinacional em VHDL, uma delas é utilizando o <code>process</code>, não iremos tratar dessa alternativa nesse documento.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>O uso de <code>process</code> pode confundir vocês nesse primeiro momento, por parecer um função de um programa sequêncial.</p>
-</div>
-<p>Para transcrevermos uma lógica combinacional em VHDL basta escrever a implementação </p>
-<h3 id="equacoes">Equações<a class="headerlink" href="#equacoes" title="Permanent link">&para;</a></h3>
-<p>Podemos escrever equações em VHDL utilizando os seguintes operadores: <code>not</code>, <code>and</code>, <code>or</code>, <code>nor</code>, <code>xor</code>, <code>xnor</code>. Como no exemplo a seguir:</p>
-<p><span><span class="MathJax_Preview">X = (\bar{A} . B) + C)</span><script type="math/tex">X = (\bar{A} . B) + C)</script></span></p>
-<p>Transcrevemos para:</p>
-<div class="codehilite"><pre><span></span><span class="n">X</span> <span class="o">&lt;=</span> <span class="p">((</span><span class="k">not</span> <span class="n">A</span><span class="p">)</span> <span class="k">and</span> <span class="n">B</span><span class="p">)</span> <span class="k">or</span> <span class="n">C</span><span class="p">;</span>
-</pre></div>
-
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Abuse dos parenteses <code>()</code> para explicitar a lógica desejada, por exemplo:</p>
-<div class="codehilite"><pre><span></span>not A and B ---&gt; not (A and B) 
-            \
-             \-&gt; (not A) and B
-</pre></div>
-
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Quando desenvolvemos projetos para FPGA não tem a necessidade de simplificarmos a equação lógica, a ferramenta (<code>Quartus</code>) faz isso para a gente.</p>
-</div>
-<h3 id="concatenate">Concatenate<a class="headerlink" href="#concatenate" title="Permanent link">&para;</a></h3>
-<p>Em VHDL podemos concatenar bit para formar vetores, isso é feito da seguinte forma:</p>
-<div class="codehilite"><pre><span></span><span class="k">signal</span> <span class="n">bit0</span><span class="p">,</span> <span class="n">bit1</span> <span class="o">:</span> <span class="kt">std_logic</span><span class="p">;</span>
-<span class="k">signal</span> <span class="n">vec</span>        <span class="o">:</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
-
-<span class="k">begin</span>
-
-   <span class="n">vec</span> <span class="o">&lt;=</span> <span class="n">bit1</span> <span class="o">&amp;</span> <span class="n">bit0</span><span class="p">;</span>
-
-<span class="k">end</span><span class="p">;</span>
-</pre></div>
-
-<p>No exemplo anterior, temos um vetor de 2 bits (<code>vec</code>) que é formado por: <code>[bit1, bit0]</code>.</p>
-<h3 id="with-select">with select<a class="headerlink" href="#with-select" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
-<p><a href="https://insights.sigasi.com/tech/signal-assignments-vhdl-withselect-whenelse-and-case/">https://insights.sigasi.com/tech/signal-assignments-vhdl-withselect-whenelse-and-case/</a></p>
-</div>
-<p>O <code>with select</code> em VHDL é utilizado quando desejamos que um sinal (ou saída) receba diferentes valores com base em um sinal de seleção. No exemplo a seguir, o sinal <code>b</code> recebe o valor <code>1000</code> quando o sinal de seleção <code>a</code> for <code>00</code>, <code>0100</code> quando <code>a</code> for <code>01</code>, ..., note que no último caso usamos o <code>others</code>, ele entrou no lugar do <code>11</code>.</p>
-<div class="codehilite"><pre><span></span><span class="k">signal</span> <span class="n">a</span> <span class="o">:</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span> 
-<span class="k">signal</span> <span class="n">b</span> <span class="o">:</span> <span class="kt">std_logic_Vector</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
-
-<span class="k">begin</span>
-
-<span class="k">with</span> <span class="n">a</span> <span class="k">select</span> 
-    <span class="n">b</span> <span class="o">&lt;=</span> <span class="s">&quot;1000&quot;</span> <span class="k">when</span> <span class="s">&quot;00&quot;</span><span class="p">,</span>
-         <span class="s">&quot;0100&quot;</span> <span class="k">when</span> <span class="s">&quot;01&quot;</span><span class="p">,</span>
-         <span class="s">&quot;0010&quot;</span> <span class="k">when</span> <span class="s">&quot;10&quot;</span><span class="p">,</span>
-         <span class="s">&quot;0001&quot;</span> <span class="k">when</span> <span class="k">others</span><span class="p">;</span>
-</pre></div>
-
-<p>O hardware gerado pela descrição anterior seria:</p>
-<p><img alt="" src="../figs/VHDL/VHDL-with-mux.svg" /></p>
+<p>Nesse circuito normalmente as entradas <code>S</code> e <code>R</code>, conhecidas como Set e Reset, ficam em nível baixo. Enquanto estiverem assim o valor das saídas Q e <span><span class="MathJax_Preview">\bar{Q}</span><script type="math/tex">\bar{Q}</script></span>, que é sempre o inverso do Q, se mantem inalterados. Se o nível do <code>S</code> subir (<code>1</code>) a saída <code>Q</code> fica em nível alto, ou podemos dizer <code>1</code>, já se o nível do <code>R</code>, <code>Q</code> fica em nível lógico baixo, ou seja <code>0</code>. A tabela a seguir ilustra o texto:</p>
+<table>
+<thead>
+<tr>
+<th><span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span></th>
+<th><span><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span></th>
+<th><span><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span></th>
+<th><span><span class="MathJax_Preview">\bar{Q}</span><script type="math/tex">\bar{Q}</script></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td>Armazenado</td>
+<td>!Armazenado</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td><code>1</code></td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td>metaestável</td>
+<td>metaestável</td>
+</tr>
+</tbody>
+</table>
+<p>Um outro circuito biestável é o latch tipo D, nesse caso o circuito mantem o valor da entrada de Dados D enquanto a entrada de Enable <code>E</code> estiver em nível alto, se o sinal <code>E</code> for para nível baixo o circuito não muda de estado. </p>
+<p><img alt="" src="https://commons.wikimedia.org/wiki/File:D-type_Transparent_Latch_(NOR).svg.png" /></p>
+<blockquote>
+<p>Fonte: <a href="https://en.wikibooks.org/wiki/Digital_Circuits/Latches">WikiBook</a></p>
+</blockquote>
+<p>Esse componente possui a tabela verdade a seguir:</p>
+<table>
+<thead>
+<tr>
+<th><span><span class="MathJax_Preview">E</span><script type="math/tex">E</script></span></th>
+<th><span><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span></th>
+<th><span><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span></th>
+<th><span><span class="MathJax_Preview">\bar{Q}</span><script type="math/tex">\bar{Q}</script></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td>Armazenado</td>
+<td>!Armazenado</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td><code>1</code></td>
+<td>Armazenado</td>
+<td>!Armazenado</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>0</code></td>
+<td>Copia Entrada <code>D</code>: <code>0</code></td>
+<td>Copia Entrada <code>D</code> negada: <code>1</code></td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td><code>1</code></td>
+<td>Copia Entrada <code>D</code>: <code>1</code></td>
+<td>Copia Entrada <code>D</code> negada: <code>0</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Fonte <a href="https://en.wikipedia.org/wiki/Flip-flop_(electronics">https://en.wikipedia.org/wiki/Flip-flop_(electronics</a>)</p>
+</blockquote>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Utilizar <code>others</code> na última opção!</p>
+<p class="admonition-title">TODO</p>
+<p>TODO: Vídeo + Figura</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Precisamos lembrar que no final tudo vai virar um hardware, o <code>with</code> é normalmente interpretado como um <code>mux</code>!</p>
-</div>
-<h3 id="when-else">when else<a class="headerlink" href="#when-else" title="Permanent link">&para;</a></h3>
-<p>O construtor <code>when else</code> é um pouco mais geral, para cada opção você pode fornecer uma condição diferente. O mesmo exemplo do <code>with</code> ficaria escrito da seguinte maneira:</p>
-<div class="codehilite"><pre><span></span><span class="n">b</span> <span class="o">&lt;=</span> <span class="s">&quot;1000&quot;</span> <span class="k">when</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&quot;00&quot;</span> <span class="k">else</span> 
-     <span class="s">&quot;0100&quot;</span> <span class="k">when</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&quot;01&quot;</span> <span class="k">else</span> 
-     <span class="s">&quot;0010&quot;</span> <span class="k">when</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&quot;10&quot;</span> <span class="k">else</span> 
-     <span class="s">&quot;0001&quot;</span><span class="p">;</span>
-</pre></div>
-
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>A última opção não deve possuir nenhuma condição!</p>
-</div>
-<p>Porém com o <code>when else</code> temos a flexibilidade de realizar algo como:</p>
-<div class="codehilite"><pre><span></span><span class="n">b</span> <span class="o">&lt;=</span> <span class="s">&quot;1000&quot;</span> <span class="k">when</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="s">&quot;00&quot;</span> <span class="k">AND</span> <span class="n">en</span> <span class="o">=</span> <span class="sc">&#39;1&#39;</span><span class="p">)</span> <span class="k">else</span> 
-     <span class="s">&quot;0100&quot;</span> <span class="k">when</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="s">&quot;01&quot;</span> <span class="k">AND</span> <span class="n">en</span> <span class="o">=</span> <span class="sc">&#39;1&#39;</span><span class="p">)</span> <span class="k">else</span> 
-     <span class="s">&quot;0010&quot;</span> <span class="k">when</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="s">&quot;10&quot;</span> <span class="k">AND</span> <span class="n">en</span> <span class="o">=</span> <span class="sc">&#39;1&#39;</span><span class="p">)</span> <span class="k">else</span> 
-     <span class="s">&quot;0010&quot;</span> <span class="k">when</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="s">&quot;00&quot;</span> <span class="k">AND</span> <span class="n">en</span> <span class="o">=</span> <span class="sc">&#39;1&#39;</span><span class="p">)</span> <span class="k">else</span> 
-     <span class="s">&quot;0000&quot;</span><span class="p">;</span>                                    <span class="c1">-- enable desativado</span>
-</pre></div>
-
-<p>Nesse exemplo, temos duas condições para cada opção: <code>a</code> e <code>en</code> devem satisfazer a condição, isso não é possível com o <code>with select</code>.</p>
+<h2 id="clock">Clock<a class="headerlink" href="#clock" title="Permanent link">&para;</a></h2>
+<p>Em sistemas digitais, precisamos considerar que cada porta lógica possui um tempo de propagação do resultado, a resposta de uma porta AND não é imediata, leva alguns <code>ns</code> para que o resultado da operação <code>a and b</code> estabilize na saída. Cada porta possui tempos de propagação distintos (até uma mesma porta AND possui diferença de tempo entre elas). Agora imagine um sistema com centenas de milhares de portas lógicas onde um sinal pode percorrer por diversos caminhos distintos, mas precisa chegar na saída ao mesmo tempo. Muito difícil ne? Para isso utilizamos um sistema síncrono, que pretende resolver esse problema.</p>
+<blockquote>
+<p>Podemos fazer analogia com uma banda que possui um saxofonista muito virtuoso chamado de Nand-Parker e um guitarrista mais calmo chamado de Or-Brubeck, o que aconteceria se cada um tocasse em seu tempo? O resultado com certeza não serial bom! Para isso tem o ritmo/ batida, na qual os músicos por mais 'velozes/lentos' que sejam, precisam seguir. Em um sistema digital, esse é um dos papeis do clock! fazer com que todos executem ao mesmo tempo.</p>
+</blockquote>
+<p>O clock é um sinal elétrico periódico utilizado para sincronizar sistemas digitais, utilizado em todo circuito síncrono, serve como o 'baterista' da banda, dando o ritmo de execução para a eletrônica. A cada novo clock (instante que ocorre uma mudança no sinal <code>1</code> -&gt; <code>0</code> ou de <code>0</code> -&gt; <code>1</code>), o sistema começa uma nova operação. O sinal do clock é geralmente periódico e de modulação 50% (50% em alto e 50% em baixo):</p>
+<p><img alt="" src="../figs/Teoria/Logica-Sequencial-clock.svg" width="400" /></p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code>others</code> e <code>else</code>: Precisamos entender que um sinal do tipo <code>std_logic</code> em VHDL não pode assumir apenas os valores <code>0</code> e <code>1</code>, mas sim: <code>0</code>, <code>1</code>, <code>X</code>, <code>Z</code>, <code>W</code>, <code>L</code>, <code>H</code>, <code>-</code>, para cobrir todas as opções (com dois 'bits') deveríamos possuir 64 linhas para cada <code>with</code> ou <code>when</code> que fossemos construir.</p>
+<p class="admonition-title">Clock de 3Ghz</p>
+<p>São 3 bilhões <code>3_000_000_000</code> de bordas (<code>0</code> -&gt; <code>1</code>) em um segundo!! Imagine que a cada borda, uma operação é realizada no computador, são 3 bilhões de operações em um único segundo....</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Overclock?</p>
+<p>Muitos de vocês já ouviram falar overclock? Nessa técnica, aumentasse o clock para uma frequência na qual o sistema não foi projetado
+para operar, consequências disso são:</p>
+<ul>
+<li>Possíveis erros de processamento (dado que parte do circuito pode ser mais lento que o 1/f)</li>
+<li>Superaquecimento do chip, já que a tecnologia atual utilizada para fabricação de componentes eletrônicos (MOSFET) 'gasta' energia a cada clock. Com um aumento no clock, mais energia é gasta por segundo.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Borda</p>
+<p>Nem todo sistema digital trabalha com borda de subida (<code>rising_edge</code>) (<code>0</code> -&gt; <code>1</code>), outras opções são:</p>
+<ul>
+<li>borda de descida (<code>falling_edge</code>): <code>1</code> -&gt; <code>0</code>.</li>
+<li>double data rate (DDR): Uma nova mudança a cada borda, subida e descida. (<strong>Dai que vem o nome da memória DDR4 do seu computador!</strong>)</li>
+</ul>
+</div>
+<ul>
+<li><a href="http://slideplayer.com.br/slide/370185/">http://slideplayer.com.br/slide/370185/</a></li>
+<li><a href="http://www.plantation-productions.com/Webster/www.artofasm.com/Linux/HTML/SystemOrganizationa4.html">http://www.plantation-productions.com/Webster/www.artofasm.com/Linux/HTML/SystemOrganizationa4.html</a></li>
+<li><a href="http://www.gitam.edu/eresource/comp/gvr/6.1.htm">http://www.gitam.edu/eresource/comp/gvr/6.1.htm</a></li>
+</ul>
+<h2 id="flip-flop">Flip-Flop<a class="headerlink" href="#flip-flop" title="Permanent link">&para;</a></h2>
+<p>Flip-Flop é um circuito similar ao LATCH porém síncrono, ou seja, a mudança só ocorre na borda do clock.</p>
+<ul>
+<li>o que é/ para que serve</li>
+<li>tipo d</li>
+<li>como é construído</li>
+<li>tabela verdade e waveform</li>
+<li>outros tipos</li>
+</ul>
+<h2 id="binary-digit">Binary-digit<a class="headerlink" href="#binary-digit" title="Permanent link">&para;</a></h2>
+<ul>
+<li>o que é/ para que serve</li>
+<li>como é contruído</li>
+<li>para que serve</li>
+<li>tabela verdade e waveform</li>
+</ul>
                 
                   
                 
@@ -1351,7 +1481,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Teoria-VHDL-basico/" title="VHDL - Introdução" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Teoria-ULA/" title="ULA" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1360,19 +1490,19 @@
                 <span class="md-footer-nav__direction">
                   Anterior
                 </span>
-                VHDL - Introdução
+                ULA
               </span>
             </div>
           </a>
         
         
-          <a href="../Teoria-VHDL-port-map/" title="VHDL - port map" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Util-Video-Aulas/" title="Vídeo Aulas (Luciano)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Próximo
                 </span>
-                VHDL - port map
+                Vídeo Aulas (Luciano)
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
