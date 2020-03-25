@@ -1424,6 +1424,61 @@ De uma olhada nessas dicas:
 
 <h2 id="testando-em-hw">Testando em HW<a class="headerlink" href="#testando-em-hw" title="Permanent link">&para;</a></h2>
 <p>Para testar os módulos em hardware, deve-se abrir o projeto (<code>C-UnidadeLogicaAritmetica/Quartus</code>). Ele já inclui todos os módulos desta entrega e também os módulos da entrega passada. O arquivo localizado em <code>/rtl/toplevel.vhd</code> já faz o mapeamento dos pinos da FPGA para os pinos da ULA. Para testar no hardware basta compilar e programar a FPGA.</p>
+<h2 id="exemplo-aprimorando-o-teste-da-ula-para-testar-uma-nova-funcionalidade-novo">Exemplo: Aprimorando o teste da ULA para testar uma nova funcionalidade (novo)<a class="headerlink" href="#exemplo-aprimorando-o-teste-da-ula-para-testar-uma-nova-funcionalidade-novo" title="Permanent link">&para;</a></h2>
+<p>Imagine uma ALU em que foi implementado a seguinte funcionalidade: multiplicar um número X por 2.
+As alterações necessárias para esta operação foram feitas no arquivo da ULA (VHDL).</p>
+<p>No entanto, o teste implementado da ULA não verifica esta nova funcionalidade. 
+Neste exemplo iremos ver como alterar o teste para validar esta nova função.</p>
+<p>O teste de interesse é o arquivo presente em <em>C-UnidadeLogicaAritimetica/tests/tst/tb_ALU.vhd</em>. A sigla <strong>tb</strong> significa Testbench (bancada de testes).
+Note que o arquivo é um arquivo em VHDL como qualquer outro, tendo como diferencial, o fato de utilizar a biblioteca <strong>vunit_lib</strong> que permite carregar alguns recursos para teste, olhe que na arquitetura, deve-se incluir a declaração do componente a ser testado e em seguida o mesmo é instanciado (igual quando feito um port-map).</p>
+<p>Observe também que temos também alguns sinais (<em>signals</em>), estes são utilizados para alterar os valores que estamos colocando no componente a ser testado. A seguir, uma grande diferença do VHDL convencional que estamos acostumados se dá no seguinte trecho:
+<div class="codehilite"><pre><span></span><code><span class="nc">main</span><span class="o">:</span> <span class="k">process</span>
+<span class="k">begin</span>
+<span class="p">...</span>
+<span class="k">end</span>
+</code></pre></div></p>
+<p>Esta diretiva <strong>process</strong> indica que o que está contido no begin-end será executado sequencialmente diferente do que viemos usando que é execução combinacional. Vocês terão uma aula dedicada ao uso de lógica sequencial, por enquanto, apenas pense que cada linha a seguir é executada após a outra.</p>
+<p>A seguir, teremos vários trechos de códigos separados, cada trecho é um teste sendo feito.
+<div class="codehilite"><pre><span></span><code><span class="c1">-- Teste: 1</span>
+      <span class="n">inX</span> <span class="o">&lt;=</span> <span class="s">&quot;0000000000000000&quot;</span><span class="p">;</span> <span class="n">inY</span> <span class="o">&lt;=</span> <span class="s">&quot;1111111111111111&quot;</span><span class="p">;</span>
+      <span class="n">inZX</span> <span class="o">&lt;=</span> <span class="sc">&#39;1&#39;</span><span class="p">;</span> <span class="n">inNX</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span> <span class="n">inZY</span> <span class="o">&lt;=</span> <span class="sc">&#39;1&#39;</span><span class="p">;</span> <span class="n">inNY</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span> <span class="n">inF</span> <span class="o">&lt;=</span> <span class="sc">&#39;1&#39;</span><span class="p">;</span> <span class="n">inNO</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
+      <span class="k">wait</span> <span class="k">for</span> <span class="mi">100</span> <span class="n">ps</span><span class="p">;</span>
+      <span class="k">assert</span><span class="p">(</span><span class="n">outZR</span> <span class="o">=</span> <span class="sc">&#39;1&#39;</span> <span class="k">and</span> <span class="n">outNG</span> <span class="o">=</span> <span class="sc">&#39;0&#39;</span> <span class="k">and</span> <span class="n">outSaida</span><span class="o">=</span> <span class="s">&quot;0000000000000000&quot;</span><span class="p">)</span>  <span class="n">report</span> <span class="s">&quot;Falha em teste: 1&quot;</span> <span class="k">severity</span> <span class="n">error</span><span class="p">;</span>
+</code></pre></div></p>
+<p>Por exemplo, neste teste acima, é colocado 0 na entrada X e -1 na entrada Y. É zerado o X, não negado o X, zerado Y e não negado Y. Escolhido operação de soma, e não inverte a saída. Ele verifica se obtem na saída o resultado 0, assim como flag do zerador ativo e flag de negativo desligado.</p>
+<p>Enfim, como pode-se ver colocamos as entradas desejadas e verificamos se a saída é a esperada por nós. Caso não seja, o comando <strong>assert</strong> (condição de teste) irá falhar e executará o comando <strong>report</strong> que reportará ao usuário uma falha com severidade de erro.</p>
+<p>No entanto, temos um problema a resolver, para poder incorporar a funcionalidade de multiplicar por 2, o projetista, decidiu alterar o MUX que existe no projeto da ALU para ser um seletor de 2 bits e portanto o sinal <strong>f</strong> agora possui 2 bits. </p>
+<p>Neste caso, teremos que alterar a declaração do componente referente ao sinal <strong>f</strong>
+<div class="codehilite"><pre><span></span><code><span class="n">f</span><span class="o">:</span>     <span class="k">in</span> <span class="kt">STD_LOGIC_VECTOR</span><span class="p">(</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>                     <span class="c1">-- se 00 calcula x &amp; y, 01 x + y, 10 x*2</span>
+</code></pre></div></p>
+<p>E corrigir o sinal inF para 2 bits e todos os testes pre-existentes também terão que ser corrigidos!
+<div class="codehilite"><pre><span></span><code><span class="k">signal</span> <span class="n">inF</span><span class="o">:</span> <span class="kt">STD_LOGIC_VECTOR</span><span class="p">(</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
+<span class="err">``</span>
+<span class="n">Exemplo</span> <span class="n">pro</span> <span class="n">teste</span> <span class="mi">1</span>
+<span class="err">```</span> <span class="n">vhdl</span>
+<span class="c1">-- Teste: 1</span>
+      <span class="n">inX</span> <span class="o">&lt;=</span> <span class="s">&quot;0000000000000000&quot;</span><span class="p">;</span> <span class="n">inY</span> <span class="o">&lt;=</span> <span class="s">&quot;1111111111111111&quot;</span><span class="p">;</span>
+      <span class="n">inZX</span> <span class="o">&lt;=</span> <span class="sc">&#39;1&#39;</span><span class="p">;</span> <span class="n">inNX</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span> <span class="n">inZY</span> <span class="o">&lt;=</span> <span class="sc">&#39;1&#39;</span><span class="p">;</span> <span class="n">inNY</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span> <span class="n">inF</span> <span class="o">&lt;=</span> <span class="s">&quot;01&quot;</span><span class="p">;</span> <span class="n">inNO</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
+      <span class="k">wait</span> <span class="k">for</span> <span class="mi">100</span> <span class="n">ps</span><span class="p">;</span>
+      <span class="k">assert</span><span class="p">(</span><span class="n">outZR</span> <span class="o">=</span> <span class="sc">&#39;1&#39;</span> <span class="k">and</span> <span class="n">outNG</span> <span class="o">=</span> <span class="sc">&#39;0&#39;</span> <span class="k">and</span> <span class="n">outSaida</span><span class="o">=</span> <span class="s">&quot;0000000000000000&quot;</span><span class="p">)</span>  <span class="n">report</span> <span class="s">&quot;Falha em teste: 1&quot;</span> <span class="k">severity</span> <span class="n">error</span><span class="p">;</span>
+</code></pre></div></p>
+<p>Feito isso agora vamos criar nossos testes para a funcionalidade outSaida = 2 * X. Colocando os testes no final do arquivo. Primeiro, testar 5 * 2 = 10.
+<div class="codehilite"><pre><span></span><code><span class="c1">-- Teste: 20 - Testa 5 * 2= 10</span>
+      <span class="n">inX</span> <span class="o">&lt;=</span> <span class="s">&quot;0000000000000101&quot;</span><span class="p">;</span> <span class="n">inY</span> <span class="o">&lt;=</span> <span class="s">&quot;1111111111111111&quot;</span><span class="p">;</span>
+      <span class="n">inZX</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span> <span class="n">inNX</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span> <span class="n">inZY</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span> <span class="n">inNY</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span> <span class="n">inF</span> <span class="o">&lt;=</span> <span class="s">&quot;10&quot;</span><span class="p">;</span> <span class="n">inNO</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
+      <span class="k">wait</span> <span class="k">for</span> <span class="mi">100</span> <span class="n">ps</span><span class="p">;</span>
+      <span class="k">assert</span><span class="p">(</span><span class="n">outZR</span> <span class="o">=</span> <span class="sc">&#39;0&#39;</span> <span class="k">and</span> <span class="n">outNG</span> <span class="o">=</span> <span class="sc">&#39;0&#39;</span> <span class="k">and</span> <span class="n">outSaida</span><span class="o">=</span> <span class="s">&quot;0000000000001010&quot;</span><span class="p">)</span>  <span class="n">report</span> <span class="s">&quot;Falha em teste: 1&quot;</span> <span class="k">severity</span> <span class="n">error</span><span class="p">;</span>
+</code></pre></div></p>
+<p>Colocamos X = 5 (em binário). Não zeramos X e escolhemos a opção correta no seletor <strong>f</strong>. Verificando o resultado outSaida = 10 (em binário) e os flags.</p>
+<p>Depois vamos testar multiplicação por zero.
+<div class="codehilite"><pre><span></span><code><span class="c1">-- Teste: 21 - Testa 0 * 2 = 0</span>
+      <span class="n">inX</span> <span class="o">&lt;=</span> <span class="s">&quot;0000000000000000&quot;</span><span class="p">;</span> <span class="n">inY</span> <span class="o">&lt;=</span> <span class="s">&quot;1111111111111111&quot;</span><span class="p">;</span>
+      <span class="n">inZX</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span> <span class="n">inNX</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span> <span class="n">inZY</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span> <span class="n">inNY</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span> <span class="n">inF</span> <span class="o">&lt;=</span> <span class="s">&quot;10&quot;</span><span class="p">;</span> <span class="n">inNO</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
+      <span class="k">wait</span> <span class="k">for</span> <span class="mi">100</span> <span class="n">ps</span><span class="p">;</span>
+      <span class="k">assert</span><span class="p">(</span><span class="n">outZR</span> <span class="o">=</span> <span class="sc">&#39;1&#39;</span> <span class="k">and</span> <span class="n">outNG</span> <span class="o">=</span> <span class="sc">&#39;0&#39;</span> <span class="k">and</span> <span class="n">outSaida</span><span class="o">=</span> <span class="s">&quot;0000000000000000&quot;</span><span class="p">)</span>  <span class="n">report</span> <span class="s">&quot;Falha em teste: 1&quot;</span> <span class="k">severity</span> <span class="n">error</span><span class="p">;</span>
+</code></pre></div></p>
+<p>Enfim poderiamos fazer mais testes, envolvendo outros casos diferentes. O ideal é criar testes que peguem todas as possibilidades razoavelmente diferentes, note que se for fazer para todas possibilidades, só levando em conta o X teriamos 2^16 possibilidades... é inviável. Por isso teste apenas casos de <em>borda</em>, ou seja, quando o comportamento da saída pode mudar razoavelmente do normal (por isso testamos o zero aqui!)</p>
+<p>Com isso feito, ao rodar o teste novamente na pasta, se a funcionalidade tiver sido implementada com sucesso, devemos obter um teste com exito! Parabéns!</p>
 <h2 id="rubricas-para-avaliacao-de-projetos">Rubricas para avaliação de projetos<a class="headerlink" href="#rubricas-para-avaliacao-de-projetos" title="Permanent link">&para;</a></h2>
 <p>Cada integrante do grupo irá receber duas notas: uma referente ao desenvolvimento total do projeto (Projeto) e outra referente a sua participação individual no grupo (que depende do seu papel).</p>
 <h2 id="projeto">Projeto<a class="headerlink" href="#projeto" title="Permanent link">&para;</a></h2>
@@ -1441,7 +1496,7 @@ De uma olhada nessas dicas:
 </tr>
 <tr>
 <td></td>
-<td>- Modifique o <code>toplevel</code> para mostrar o resultado da ULA nos displays de 7s (em hexa)</td>
+<td><s>- Modifique o <code>toplevel</code> para mostrar o resultado da ULA nos displays de 7s (em hexa)</s></td>
 </tr>
 <tr>
 <td></td>
@@ -1500,8 +1555,13 @@ De uma olhada nessas dicas:
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol>
-<li>Para os conceitos B e A, o grupo deve gravar um vídeo da FPGA demonstrando que as modificações funcionam.</li>
-<li>Os conceitos são incrementais: primeiro deve atingir o C <img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/27a1.svg" title=":arrow_right:" /> B <img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/27a1.svg" title=":arrow_right:" /> A.</li>
+<li><s>Para os conceitos B e A, o grupo deve gravar um vídeo da FPGA demonstrando que as modificações funcionam.</s></li>
+<li>
+<p>Para os conceitos B e A, o grupo deve modificar o teste da ULA para que comprove o funcionamento dos recursos adicionados (sinais, operações), ou seja, testa-los tentando abordar todos os casos comuns de uso. </p>
+</li>
+<li>
+<p>Os conceitos são incrementais: primeiro deve atingir o C <img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/27a1.svg" title=":arrow_right:" /> B <img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/27a1.svg" title=":arrow_right:" /> A.</p>
+</li>
 </ol>
 </div>
 <h3 id="desenvolvedor-e-scrum-master">Desenvolvedor e Scrum Master<a class="headerlink" href="#desenvolvedor-e-scrum-master" title="Permanent link">&para;</a></h3>
