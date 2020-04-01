@@ -799,8 +799,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
+  <a href="#implementando-o-binary-digit" class="md-nav__link">
+    Implementando o binary-digit
   </a>
   
 </li>
@@ -1445,8 +1445,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
+  <a href="#implementando-o-binary-digit" class="md-nav__link">
+    Implementando o binary-digit
   </a>
   
 </li>
@@ -1508,7 +1508,7 @@
 <ol>
 <li>Faça uma branch</li>
 <li>Implemente local no seu PC</li>
-<li>Só um integrante do grupo deve enviar para a master via PR ao final</li>
+<li><strong>Só um integrante do grupo deve enviar para a master via PR ao final</strong></li>
 </ol>
 </div>
 <div class="admonition tip">
@@ -1516,6 +1516,10 @@
 <ul>
 <li>Esse já é um dos módulos da entrega do projeto!</li>
 </ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Antes de seguir você deve fazer uma leitura rápida do material de lógica sequencial em VHDL <a href="https://insper.github.io/Z01.1/VHDL-Sequencial/">VHDL -&gt; Sequencial</a></p>
 </div>
 <p>Vamos agora implementar um FF tipo D em VHDL, para isso iremos modificar o arquivo <code>D-LogicaSequencial/src/rtl/FlipFlopD.vhd</code> que declara a entidade de um Flip Flop do tipo D.</p>
 <h3 id="reset-e-preset">Reset e Preset<a class="headerlink" href="#reset-e-preset" title="Permanent link">&para;</a></h3>
@@ -1549,9 +1553,6 @@
 </ul>
 </div>
 <p>Agora você pode executar o script de teste do projeto e verificar se a implementação está correta.</p>
-<div class="admonition tip">
-<p>Só continuar se estiver passando nos testes</p>
-</div>
 <div class="admonition example">
 <p class="admonition-title">Tarefa: waveform</p>
 <ul>
@@ -1573,6 +1574,7 @@
 <li>Salve a forma de onda na pasta <code>src/rtl/</code> do projeto com o nome <code>FlipFlop.png</code>.</li>
 </ul>
 </div>
+<p><strong>Agora somente um integrante do grupo deve fazer o envio para a master via PR.</strong></p>
 <h3 id="checkpoint">Checkpoint<a class="headerlink" href="#checkpoint" title="Permanent link">&para;</a></h3>
 <p>Ao final dessa etapa você deve ser capaz de:</p>
 <ul>
@@ -1581,7 +1583,21 @@
 <li>Explicar a forma de onda do <strong>FlipFlopD</strong> gerada no <strong>modelsim</strong></li>
 <li>Explicar o <strong>RTL</strong> do <strong>FlipFlopD</strong> criado pelo <strong>Quartus</strong></li>
 </ul>
-<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="implementando-o-binary-digit">Implementando o binary-digit<a class="headerlink" href="#implementando-o-binary-digit" title="Permanent link">&para;</a></h2>
+<p>Com o FFD implementando, vocês são capazes de implementar o binary-digit, que possui internamente um FF tipo D:</p>
+<p><img 600px="600px" alt="" src="../figs/E-LogSeq/binarydigit.png" /></p>
+<p>Para isso vocês terão que modificar o arquivo: <code>D-LogicaSequencial/src/rtl/BinaryDigit.vhd</code> e utilizando <code>port map</code> criar o componente <code>binaryDigit</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Tarefa</p>
+<ol>
+<li>Implemente o binary-digit</li>
+<li>Teste </li>
+</ol>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Assim como no FFD cada um do grupo vai ter uma implementação do binary-digit e só um deve enviar o PR para a <code>master</code>.</p>
+</div>
                 
                   
                 
