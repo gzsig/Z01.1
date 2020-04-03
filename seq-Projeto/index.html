@@ -1625,7 +1625,7 @@ else
 <tbody>
 <tr>
 <td>A</td>
-<td>- Gravou e testou a memória RAM8 na FPGA. (gravou um vídeo para mostrar o funcionamento)</td>
+<td>- Módulos extras (rtl + tests)</td>
 </tr>
 <tr>
 <td></td>
@@ -1649,15 +1649,11 @@ else
 </tr>
 <tr>
 <td></td>
-<td>- <strong>O ramo master passa nos testes do travis</strong></td>
-</tr>
-<tr>
-<td></td>
 <td>- Todos os módulos passam nos testes</td>
 </tr>
 <tr>
 <td></td>
-<td>- Possui a forma de onda e rtl de todos os módulos (.png)</td>
+<td>- Possui a forma de onda (.png) e rtl de todos os módulos (.png)</td>
 </tr>
 <tr>
 <td></td>
@@ -1677,6 +1673,37 @@ else
 </tr>
 </tbody>
 </table>
+<h3 id="a-modulos-extras">A - Módulos extras<a class="headerlink" href="#a-modulos-extras" title="Permanent link">&para;</a></h3>
+<p>Para a rubrica A o grupo deve implementar os seguintes módulos extras e os seus testes (estão fazios!)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Vocês devem implementar o módulos e seus testes!</p>
+</div>
+<ul>
+<li>Flip Flop JK</li>
+<li><strong>Arquivo</strong>: <code>conceitoA/FlipFlopJK.vhd</code></li>
+<li><strong>Arquivo Teste</strong>: <code>tests/tst/tb_FlipFlopJK.vhd</code></li>
+<li><strong>Dependência</strong>:</li>
+</ul>
+<p>É é flipflop do tipo <a href="https://en.wikipedia.org/wiki/Flip-flop_(electronics)">JK</a></p>
+<ul>
+<li>Flip Flop T</li>
+<li><strong>Arquivo</strong>: <code>ConceitoA/FlipFlopT.vhd</code></li>
+<li><strong>Arquivo Teste</strong>: <code>tests/tst/tb_FlipFlopT.vhd</code></li>
+<li><strong>Dependência</strong>:</li>
+</ul>
+<p>É é flipflop do tipo <a href="https://en.wikipedia.org/wiki/Flip-flop_(electronics)">T</a></p>
+<ul>
+<li>Counter Down</li>
+<li><strong>Arquivo</strong>: <code>ConceitoA/CounterDown.vhd</code></li>
+<li><strong>Arquivo Teste</strong>: <code>tests/tst/CoubterDown.vhd</code></li>
+<li><strong>Dependência</strong>: <code>FlipFlopT</code></li>
+</ul>
+<p>O CouterDown é componente capaz de contar para 'baixo' em binário (000 -&gt; 111 -&gt; 110 -&gt; 101 -&gt; 100), esse componente é formado por FlipFlops do tipo T, como demonstrado no diagrama a seguir:</p>
+<p><img alt="" src="../figs/E-LogSeq/CounterDown.png" /></p>
+<blockquote>
+<p>Fonte: (2008) Fundamentals of Digital Logic with VHDL Design - pg. 406</p>
+</blockquote>
                 
                   
                 
