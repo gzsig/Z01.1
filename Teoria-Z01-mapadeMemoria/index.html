@@ -954,6 +954,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sw" class="md-nav__link">
+    SW
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lcd" class="md-nav__link">
+    LCD
+  </a>
+  
+</li>
+      
       
       
       
@@ -971,8 +985,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../Teoria-nasm-jump/" title="nasm - jump" class="md-nav__link">
-      nasm - jump
+    <a href="../Teoria-nasm-jump/" title="Z01 - jump" class="md-nav__link">
+      Z01 - jump
     </a>
   </li>
 
@@ -1460,6 +1474,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sw" class="md-nav__link">
+    SW
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lcd" class="md-nav__link">
+    LCD
+  </a>
+  
+</li>
+      
       
       
       
@@ -1494,7 +1522,7 @@
 <tr>
 <th>Endereço</th>
 <th>Periférico</th>
-<th>Leitura &reg; / Escrita (w)</th>
+<th>Leitura (<code>r</code>) / Escrita (<code>w</code>)</th>
 </tr>
 </thead>
 <tbody>
@@ -1528,7 +1556,7 @@
 <tr>
 <th>Endereço</th>
 <th>Periférico</th>
-<th>Leitura &reg; / Escrita (w)</th>
+<th>Leitura (<code>r</code>) / Escrita (<code>w</code>)</th>
 </tr>
 </thead>
 <tbody>
@@ -1570,6 +1598,7 @@
 </tr>
 </tbody>
 </table>
+<p>Nossa memória RAM possui 16 bits de largura.</p>
 <p>A princípio podemos utilizar qualquer endereço da nossa memória RAM para armazenar nossos dados temporários, isso não será verdade mais para frente do curso, onde iremos organizar nossa memória RAM em secções.</p>
 <div class="admonition example">
 <p class="admonition-title">Gravando e lendo dados da RAM</p>
@@ -1581,12 +1610,13 @@
 </pre></div>
 
 <ul>
-<li>Podemos também usar os labels, no lugar do valor, o exemplo anterior fica:</li>
+<li>Podemos também usar o label <code>ARG</code> para referencia o endereço <code>3</code> da memória RAM:</li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="nf">leaw</span> <span class="kc">$</span><span class="nv">ARG</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>  <span class="c1">; faz %A = 3 (%A aponta para RAM[ARG])</span>
-<span class="nf">...</span>
 </pre></div>
 
+<details class="note"><summary>Z01-Simulator</summary><p><img alt="" src="../figs/Teoria/Z0-nasm-ram-simulator.gif" width="600" /></p>
+</details>
 </div>
 <p>Como isso acontece em HW?</p>
 <p><img alt="" src="../figs/Teoria/Z0-nasm-ram.gif" /></p>
@@ -1601,6 +1631,24 @@
 <p>Outro tipo de operação </p>
 </div>
 <h2 id="leds">LEDs<a class="headerlink" href="#leds" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Endereço</th>
+<th>Periférico</th>
+<th>Leitura (<code>r</code>) / Escrita (<code>w</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21184</td>
+<td>LED</td>
+<td>w</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../figs/Teoria/Z0-mapa-de-memoria-leds.svg" width="500" /></p>
+<p>Os LEDs da FPGA são mapeados no endereço de memória <code>21184</code> onde cada bit (9..0) representa um LED, se o bit específico estiver valor <code>1</code>o LED está aceso e <code>0</code> apagado.</p>
 <div class="admonition example">
 <p class="admonition-title">Acendendo os LEDs</p>
 <p>Como isso é traduzido para código? Imagine que desejamos acender um LED que nosso computador controla, para isso devemos fazer com que o registrador <code>%A</code> aponte para o endereço de memória na qual o LED está associado e então escreva nele:</p>
@@ -1608,7 +1656,71 @@
 <span class="nf">movw</span> <span class="kc">$</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="o">%</span><span class="nv">A</span><span class="p">)</span>     <span class="c1">; move valor 1 para ele</span>
 </pre></div>
 
-<p><img alt="" src="../figs/Teoria/Z0-mapa-de-memoria-leds.gif" width="600" /></p>
+<details class="note"><summary>Z01-Simulator</summary><p><img alt="" src="../figs/Teoria/Z0-mapa-de-memoria-leds.gif" width="600" /></p>
+</details>
+</div>
+<h2 id="sw">SW<a class="headerlink" href="#sw" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Endereço</th>
+<th>Periférico</th>
+<th>Leitura (<code>r</code>) / Escrita (<code>w</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21185</td>
+<td>SW</td>
+<td>r</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../figs/Teoria/Z0-mapa-de-memoria-sw.svg" width="500" /></p>
+<p>Os chaves (SW) da FPGA são mapeados no endereço de memória <code>21185</code> onde cada bit (9..0) representa uma chave, se o bit específico estiver valor <code>1</code> indica que a chave está ligada (on) e <code>0</code> desligada.</p>
+<div class="admonition example">
+<p class="admonition-title">Copiando valor das chaves para o LED</p>
+<div class="codehilite"><pre><span></span><span class="nf">leaw</span> <span class="kc">$</span><span class="mi">21185</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>   <span class="c1">; endereço da chave</span>
+<span class="nf">movw</span> <span class="p">(</span><span class="o">%</span><span class="nv">A</span><span class="p">),</span> <span class="o">%</span><span class="nv">D</span>     <span class="c1">; copia valor das chaves para %D</span>
+<span class="nf">leaw</span> <span class="kc">$</span><span class="mi">21184</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>   <span class="c1">; endereço do LED</span>
+<span class="nf">movw</span> <span class="o">%</span><span class="nv">D</span><span class="p">,</span> <span class="p">(</span><span class="o">%</span><span class="nv">A</span><span class="p">)</span>     <span class="c1">; move valor das chaves para %D</span>
+</pre></div>
+
+</div>
+<h2 id="lcd">LCD<a class="headerlink" href="#lcd" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Endereço</th>
+<th>Periférico</th>
+<th>Leitura (<code>r</code>) / Escrita (<code>w</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16384 - 21183</td>
+<td>LCD</td>
+<td>w</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../figs/Teoria/Z0-mapa-de-memoria-lcd.svg" width="500" /></p>
+<p>O nosso LCD é um dispositivo de <code>320x240</code> pixels. Cada linha do endereço de memória do LCD representa <code>16</code> pixels do dispositivo, conforme figura anterior. Para acender um pixel, basta colocar <code>1</code> ou <code>0</code> para apagar.- </p>
+<div class="admonition tip">
+<p class="admonition-title">endereços do LCD</p>
+<p>Como nosso LCD possui 320px na horizontal, e como cada endereço de memória acessa 16px por vez,
+uma linha é acessível por: <code>320/16 = 20</code> endereços. Ou seja, para acessar os primeiros px de cada linha devemos escrever endereço de memória:</p>
+<ul>
+<li>Primeira linha: <code>16384 + 0x20</code>: 16384</li>
+<li>Segunda  linha: <code>16384 + 1x20</code>: 16404</li>
+<li>Terceira linha: <code>16384 + 2x19</code>: 16424</li>
+<li>...</li>
+<li>Última linha:  <code>16384 + 239x19</code>: 21164</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">LCD</p>
+<p>Vamos reproduzir o LCD que está ilustrado no diagrama, para isso precisamos carregar `101010101010</p>
 </div>
                 
                   
@@ -1645,13 +1757,13 @@
           </a>
         
         
-          <a href="../Teoria-nasm-jump/" title="nasm - jump" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Teoria-nasm-jump/" title="Z01 - jump" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Próximo
                 </span>
-                nasm - jump
+                Z01 - jump
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
