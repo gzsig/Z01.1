@@ -17,7 +17,7 @@
     
     
       
-        <title>Lab 8: ULA - 2020-1 - Elementos de Sistemas - Z01</title>
+        <title>Lab 13: saltos (jmp) - 2020-1 - Elementos de Sistemas - Z01</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-8-ula" class="md-skip">
+        <a href="#lab-13-saltos-jmp" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +86,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Lab 8: ULA
+              Lab 13: saltos (jmp)
             
           </span>
         </div>
@@ -686,8 +686,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../seq-Lab-1/" title="Lab 10: D - Lógica Sequencial" class="md-nav__link">
-      Lab 10: D - Lógica Sequencial
+    <a href="../seq-Lab-1/" title="Lab 10: Lógica Sequencial" class="md-nav__link">
+      Lab 10: Lógica Sequencial
     </a>
   </li>
 
@@ -710,8 +710,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../assembly-Lab-2/" title="Lab 12 - Periféricos" class="md-nav__link">
-      Lab 12 - Periféricos
+    <a href="../assembly-Lab-2/" title="Lab 12: Periféricos" class="md-nav__link">
+      Lab 12: Periféricos
     </a>
   </li>
 
@@ -730,10 +730,55 @@
       
     
     
-    <a href="./" title="Lab 8: ULA" class="md-nav__link md-nav__link--active">
-      Lab 8: ULA
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lab 13: saltos (jmp)
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Lab 13: saltos (jmp)" class="md-nav__link md-nav__link--active">
+      Lab 13: saltos (jmp)
     </a>
     
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#condicional" class="md-nav__link">
+    Condicional
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../assembly-Lab-4/" title="Lab 14: praticando nasm" class="md-nav__link">
+      Lab 14: praticando nasm
+    </a>
   </li>
 
         
@@ -1401,6 +1446,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#condicional" class="md-nav__link">
+    Condicional
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1419,65 +1481,192 @@
                   
                 
                 
-                <h1 id="lab-8-ula">Lab 8: ULA<a class="headerlink" href="#lab-8-ula" title="Permanent link">&para;</a></h1>
+                <h1 id="lab-13-saltos-jmp">Lab 13: saltos (jmp)<a class="headerlink" href="#lab-13-saltos-jmp" title="Permanent link">&para;</a></h1>
 <p>Ao final desse lab você deve ser capaz de:</p>
 <ol>
-<li>Fazer programas simples em assembly com saltos </li>
-<li>Entender ainda mais a linguagem </li>
-<li>Entender ainda mias o hardawre</li>
+<li>Fazer programas complexos em assembly </li>
 </ol>
-<p>Para todos os programas:</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Trabalhe com o grupo!</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Faça primeiramente na LOUSA, chame seu professor para validar</strong><ul>
-<li>Alterne quem vai para a lousa</li>
-</ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Faça no simulador GUI<ul>
-<li>Lembre de iniciar a memória RAM para validar o teste!</li>
-</ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Descomente no arquivo <code>test/conf.txt</code></li>
-<li>Sempre use a descrição do hardware.</li>
-</ul>
-<h1 id="pequenos-problemas-que-ja-contam-na-entrega">Pequenos problemas (que já contam na entrega)<a class="headerlink" href="#pequenos-problemas-que-ja-contam-na-entrega" title="Permanent link">&para;</a></h1>
-<p>Com auxilio do exemplo do add e das instruções disponíveis no nosso hardware (<a href="AssemblyZ1">AssemblyZ1</a>) faça na <strong>LOUSA</strong> e depois no <strong>Simulador GUI</strong> um programa que:</p>
-<h2 id="sub">sub<a class="headerlink" href="#sub" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Para fazer esse lab, você deve ter lido a teoria sobre <a href="https://insper.github.io/Z01.1/Teoria-Z01-mapadeMemoria/">mapa de memória</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dúvidas sobre assembly? <a href="https://insper.github.io/Z01.1/Util-Resumo-Assembly/">Z01-&gt;Resumo Assembly</a></p>
+</div>
+<p>Esse lab deve ser feito no Z01Simulador, para abrir o programa basta <mark>executar o script</mark> <code>Z01simulador.py</code> dentro da pasta do projeto <code>E-Assembly</code></p>
+<div class="admonition example">
+<p class="admonition-title">jmp1.nasm</p>
 <ul>
-<li>Arquivo: <code>sub.nasm</code></li>
-<li>Faz uma subtração binaria do valor de:  RAM[1] - RAM[0] gravando em RAM[2].</li>
+<li><code>Projetos/E-Assembly/src/labs/jmp1.nasm</code></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="gd">- FAÇA NA LOUSA PRIMEIRO! CHAME UM PROF. PARA VALIDAR</span>
-<span class="gd">- SIMULE NO GUI</span>
-<span class="gd">- RODE O TESTE </span>
- (descomente tests/conf.txt)
+<p>Preencha todos os px do LCD de preto!</p>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">configuração</label><div class="tabbed-content">
+<p>No Z01Simulador, abra as configurações e coloque o tempo de simulação em <code>40000</code></p>
+<p><img alt="" src="../figs/F-Assembly/lab2-lcd1-config.gif" width="500" /></p>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">resultado esperado</label><div class="tabbed-content">
+<p><img alt="" src="../figs/F-Assembly/lab2-jmp1.png" width="350" /></p>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">nasm</label><div class="tabbed-content">
+<p>Irei usar o RAM[0] para salvar o contador, que será incrementado a partir do endeço base do LCD <code>16384</code> até a onde o programa executar.</p>
+<blockquote>
+<p>Isso não é bom, vamos corrigir mais para frente!</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="nf">leaw</span> <span class="kc">$</span><span class="mi">16384</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+<span class="nf">movw</span> <span class="o">%</span><span class="nv">A</span><span class="p">,</span> <span class="o">%</span><span class="nv">D</span>
+<span class="nf">leaw</span> <span class="kc">$</span><span class="mi">0</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+<span class="nf">movw</span> <span class="o">%</span><span class="nv">D</span><span class="p">,</span> <span class="p">(</span><span class="o">%</span><span class="nv">A</span><span class="p">)</span>
+
+<span class="nl">LOOP:</span>
+  <span class="nf">leaw</span> <span class="kc">$</span><span class="mi">0</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+  <span class="nf">movw</span> <span class="p">(</span><span class="o">%</span><span class="nv">A</span><span class="p">),</span> <span class="o">%</span><span class="nv">D</span>
+  <span class="nf">addw</span> <span class="kc">$</span><span class="mi">1</span><span class="p">,</span> <span class="o">%</span><span class="nv">D</span><span class="p">,</span> <span class="p">(</span><span class="o">%</span><span class="nv">A</span><span class="p">)</span>
+  <span class="nf">movw</span> <span class="o">%</span><span class="nv">D</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+  <span class="nf">movw</span> <span class="kc">$</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="o">%</span><span class="nv">A</span><span class="p">)</span>
+  <span class="nf">leaw</span> <span class="kc">$</span><span class="nv">LOOP</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+  <span class="nf">jmp</span>
+  <span class="nf">nop</span>
 </code></pre></div>
 
-<h2 id="mov">mov<a class="headerlink" href="#mov" title="Permanent link">&para;</a></h2>
+</div>
+</div>
+</div>
+<h2 id="condicional">Condicional<a class="headerlink" href="#condicional" title="Permanent link">&para;</a></h2>
+<p>Saltos condicionais são utilizados para verificarmos condições no programa, vamos trabalhar um pouco com isso.</p>
+<div class="admonition example">
+<p class="admonition-title">jmp2.nasm</p>
 <ul>
-<li>Arquivo: <code>mov.nasm</code></li>
-<li>Movimentação de dados da memoria RAM.</li>
+<li><code>Projetos/E-Assembly/src/labs/jmp2.nasm</code></li>
 </ul>
-<div class="highlight"><pre><span></span><code> tmp    = RAM[0]
- RAM[0] = RAM[1]
- RAM[1] = tmp
- RAM[3] = 1
+<p>Implemente o pseudo código a seguir em nasm:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">RAM</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+    <span class="n">RAM</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">else</span>
+    <span class="n">RAM</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="gd">- FAÇA NA LOUSA PRIMEIRO! CHAME UM PROF. PARA VALIDAR</span>
-<span class="gd">- SIMULE NO GUI</span>
-<span class="gd">- RODE O TESTE</span>
- (descomente tests/conf.txt)
+<div class="tabbed-set" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">configuração</label><div class="tabbed-content">
+<p>Teste o programa com diferentes valores na RAM[1]:</p>
+<ul>
+<li>Teste 1: RAM[1] = 3</li>
+<li>Teste 2: RAM[1] = 0</li>
+</ul>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">resultado esperado</label><div class="tabbed-content">
+<ul>
+<li>Teste 1: RAM[0] = 2</li>
+<li>Teste 2: RAM[0] = 1</li>
+</ul>
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">dica</label><div class="tabbed-content">
+<p>Podemos reescrever o código para ficar:</p>
+<div class="highlight"><pre><span></span><code><span class="n">RAM</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">if</span> <span class="n">RAM</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+    <span class="n">RAM</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 </code></pre></div>
 
-<h2 id="sw-e-led">SW e LED<a class="headerlink" href="#sw-e-led" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Arquivo: <code>SWeLED.nasm</code></li>
-<li>Faça os LEDs exibirem o resultado da soma entre as chaves da FPGA: LEDR = SW[9..6] + SW[3..0].</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="gd">- Valide no hardawre</span>
-<span class="gd">- Faça um vídeo!</span>
+</div>
+<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">nasm</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">leaw</span> <span class="kc">$</span><span class="mi">2</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+<span class="nf">movw</span> <span class="o">%</span><span class="nv">A</span><span class="p">,</span> <span class="o">%</span><span class="nv">D</span>
+<span class="nf">leaw</span> <span class="kc">$</span><span class="mi">0</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+<span class="nf">movw</span> <span class="o">%</span><span class="nv">D</span><span class="p">,</span> <span class="p">(</span><span class="o">%</span><span class="nv">A</span><span class="p">)</span> <span class="c1">; RAM[0] = 2</span>
+<span class="nf">leaw</span> <span class="kc">$</span><span class="mi">1</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+<span class="nf">movw</span> <span class="p">(</span><span class="o">%</span><span class="nv">A</span><span class="p">),</span> <span class="o">%</span><span class="nv">D</span> <span class="c1">; busca valor verificar (RAM[1])</span>
+<span class="nf">leaw</span> <span class="kc">$</span><span class="nv">END</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span> <span class="c1">; prepara salto</span>
+<span class="nf">jne</span>           <span class="c1">; RAM[1] == 0?</span>
+<span class="nf">nop</span>
+<span class="nf">leaw</span> <span class="kc">$</span><span class="mi">1</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+<span class="nf">movw</span> <span class="kc">$</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="o">%</span><span class="nv">A</span><span class="p">)</span> <span class="c1">; RAM[=] = 1</span>
+<span class="nl">END:</span>          
 </code></pre></div>
+
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">jmp3.nasm</p>
+<ul>
+<li><code>Projetos/E-Assembly/src/labs/jmp3.nasm</code></li>
+</ul>
+<p>Implemente o pseudo código a seguir em nasm:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">RAM</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span> 
+    <span class="n">RAM</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">else</span>
+    <span class="n">RAM</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+</code></pre></div>
+
+<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">configuração</label><div class="tabbed-content">
+<p>Teste o programa com diferentes valores na RAM:</p>
+<ul>
+<li>Teste 1: RAM[1] = 3</li>
+<li>Teste 2: RAM[1] = 0</li>
+</ul>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">resultado esperado</label><div class="tabbed-content">
+<ul>
+<li>Teste 1: RAM[0] = 1</li>
+<li>Teste 2: RAM[0] = 2</li>
+</ul>
+</div>
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">dica</label><div class="tabbed-content">
+<p>Não temos uma instrução de jmp que verifica se o valor de <code>%D</code> é igual a 3, porém podemos subtrair <strong>3</strong> do calor salvo em RAM[1] e verificar se o resultado é igual a 0:</p>
+<div class="highlight"><pre><span></span><code><span class="n">RAM</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">if</span> <span class="n">RAM</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+    <span class="n">RAM</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nf">leaw</span> <span class="kc">$</span><span class="mi">1</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+<span class="nf">movw</span> <span class="p">(</span><span class="o">%</span><span class="nv">A</span><span class="p">),</span> <span class="o">%</span><span class="nv">D</span>
+<span class="nf">leaw</span> <span class="kc">$</span><span class="mi">3</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+<span class="nf">subw</span> <span class="o">%</span><span class="nv">D</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span><span class="p">,</span> <span class="o">%</span><span class="nv">D</span> <span class="c1">; %D = RAM[1] - 3</span>
+</code></pre></div>
+
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">jmp4.nasm</p>
+<ul>
+<li><code>Projetos/E-Assembly/src/labs/jmp4.nasm</code></li>
+</ul>
+<p>Implemente o pseudo código a seguir em nasm:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">RAM</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">RAM</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span> 
+    <span class="n">RAM</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">else</span>
+    <span class="n">RAM</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+</code></pre></div>
+
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">configuração</label><div class="tabbed-content">
+<p>Teste o programa com diferentes valores na RAM:</p>
+<ul>
+<li>Teste 1: RAM[1] = 1 / RAM[2] = 4</li>
+<li>Teste 2: RAM[1] = 1 / RAM[2] = 1</li>
+</ul>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">resultado esperado</label><div class="tabbed-content">
+<ul>
+<li>Teste 1: RAM[0] = 1</li>
+<li>Teste 2: RAM[0] = 2</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">jmp5.nasm</p>
+<ul>
+<li><code>Projetos/E-Assembly/src/labs/jmp5.nasm</code></li>
+</ul>
+<p>Acione a metade superior dos pxs do LCD de preto.</p>
+<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">configuração</label><div class="tabbed-content">
+<p>No Z01Simulador, abra as configurações e coloque o tempo de simulação em <code>40000</code></p>
+</div>
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">resultado esperado</label><div class="tabbed-content">
+<p><img alt="" src="../figs/F-Assembly/lab2-jmp5.png" width="350" /></p>
+</div>
+</div>
+</div>
                 
               
               
@@ -1496,7 +1685,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../assembly-Lab-2/" title="Lab 12 - Periféricos" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../assembly-Lab-2/" title="Lab 12: Periféricos" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -1505,19 +1694,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Lab 12 - Periféricos
+                Lab 12: Periféricos
               </div>
             </div>
           </a>
         
         
-          <a href="../Teoria-Algebra-Booleana/" title="Álgebra Booleana" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../assembly-Lab-4/" title="Lab 14: praticando nasm" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Álgebra Booleana
+                Lab 14: praticando nasm
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

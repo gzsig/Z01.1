@@ -17,7 +17,7 @@
     
     
       
-        <title>Lab 12 - Periféricos - 2020-1 - Elementos de Sistemas - Z01</title>
+        <title>Lab 12: Periféricos - 2020-1 - Elementos de Sistemas - Z01</title>
       
     
     
@@ -86,7 +86,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Lab 12 - Periféricos
+              Lab 12: Periféricos
             
           </span>
         </div>
@@ -686,8 +686,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../seq-Lab-1/" title="Lab 10: D - Lógica Sequencial" class="md-nav__link">
-      Lab 10: D - Lógica Sequencial
+    <a href="../seq-Lab-1/" title="Lab 10: Lógica Sequencial" class="md-nav__link">
+      Lab 10: Lógica Sequencial
     </a>
   </li>
 
@@ -719,14 +719,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Lab 12 - Periféricos
+        Lab 12: Periféricos
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
         </span>
       </label>
     
-    <a href="./" title="Lab 12 - Periféricos" class="md-nav__link md-nav__link--active">
-      Lab 12 - Periféricos
+    <a href="./" title="Lab 12: Periféricos" class="md-nav__link md-nav__link--active">
+      Lab 12: Periféricos
     </a>
     
       
@@ -778,8 +778,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../assembly-Lab-3/" title="Lab 8: ULA" class="md-nav__link">
-      Lab 8: ULA
+    <a href="../assembly-Lab-3/" title="Lab 13: saltos (jmp)" class="md-nav__link">
+      Lab 13: saltos (jmp)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../assembly-Lab-4/" title="Lab 14: praticando nasm" class="md-nav__link">
+      Lab 14: praticando nasm
     </a>
   </li>
 
@@ -1497,7 +1509,7 @@
                   
                 
                 
-                <h1 id="lab-12-perifericos">Lab 12 - Periféricos<a class="headerlink" href="#lab-12-perifericos" title="Permanent link">&para;</a></h1>
+                <h1 id="lab-12-perifericos">Lab 12: Periféricos<a class="headerlink" href="#lab-12-perifericos" title="Permanent link">&para;</a></h1>
 <p>Ao final desse lab você deve ser capaz de:</p>
 <ol>
 <li>Escrever nos LEDs do nosso Z01</li>
@@ -1513,8 +1525,12 @@
 <p>Dúvidas sobre assembly? <a href="https://insper.github.io/Z01.1/Util-Resumo-Assembly/">Z01-&gt;Resumo Assembly</a></p>
 </div>
 <p>Esse lab deve ser feito no Z01Simulador, para abrir o programa basta <mark>executar o script <code>Z01simulador.py</code></mark> dentro da pasta do projeto <code>E-Assembly</code></p>
+<p>Todos os arquivos possuem teste, após programar no <code>Simulador</code> execute o teste</p>
 <h2 id="leds">LEDs<a class="headerlink" href="#leds" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Pergunda</label><div class="tabbed-content">
+<p>Problemas relacionados ao LED do nosso Z01</p>
+<div class="admonition question">
+<p class="admonition-title">Lembrando...</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Pergunta</label><div class="tabbed-content">
 <p>Qual endereço de memória para acessar os leds do Z01?</p>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Resposta</label><div class="tabbed-content">
@@ -1523,15 +1539,152 @@
 </ul>
 </div>
 </div>
-<h2 id="sw">SW<a class="headerlink" href="#sw" title="Permanent link">&para;</a></h2>
-<h2 id="lcd">LCD<a class="headerlink" href="#lcd" title="Permanent link">&para;</a></h2>
-<p>O mesmo deve executar um código no Z01 que escreve a letra <strong>R</strong> no LCD. </p>
-<p>Programe os exemplos a seguir:</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">led1.nasm</p>
 <ul>
-<li><code>pxLCD.nasm</code>: Escreve apenas 16 pixels no LCD (um ponto)</li>
-<li><code>testeLED.nasm</code>: Um programa que exibe um contador binário nos LEDs da FPGA</li>
-<li><code>testeSW.nasm</code>: Um programa que lê as chaves da FPGA e aciona os LEDs com base no seus resultados.</li>
+<li><code>Projetos/E-Assembly/src/labs/led1.nasm</code></li>
 </ul>
+<p>Faça o LED0 acender</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">resultado esperado</label><div class="tabbed-content">
+<p><img alt="" src="../figs/F-Assembly/lab2-led1.png" width="350" /></p>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">resposta</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">leaw</span> <span class="kc">$</span><span class="mi">1</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+<span class="nf">movw</span> <span class="o">%</span><span class="nv">A</span><span class="p">,</span> <span class="o">%</span><span class="nv">D</span>
+<span class="nf">leaw</span> <span class="kc">$</span><span class="mi">21184</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+<span class="nf">movw</span> <span class="o">%</span><span class="nv">D</span><span class="p">,</span> <span class="p">(</span><span class="o">%</span><span class="nv">A</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">led2.nasm</p>
+<ul>
+<li><code>Projetos/E-Assembly/src/labs/led2.nasm</code></li>
+</ul>
+<p>Faça os LEDs: 9,7,5,3,1 acenderem</p>
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">resultado esperado</label><div class="tabbed-content">
+<p><img alt="" src="../figs/F-Assembly/lab2-led2.png" width="350" /></p>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">dica</label><div class="tabbed-content">
+<ol>
+<li>Você precisa escrever a palavra 0b<code>1010101010</code> nos LEDs, converta para decimal e carrega na CPU com <code>leaw</code></li>
+<li>Use uma calculadora/google para isso<ul>
+<li>no google: <code>bin 1010101010 to dec</code></li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<h2 id="sw">SW<a class="headerlink" href="#sw" title="Permanent link">&para;</a></h2>
+<p>Problemas relacionado a chave do nosso Z01</p>
+<div class="admonition question">
+<p class="admonition-title">Lembrando...</p>
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Pergunta</label><div class="tabbed-content">
+<p>Qual endereço de memória para acessar as chaves SW do Z01?</p>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Resposta</label><div class="tabbed-content">
+<ul>
+<li><code>21185</code></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">sw1.nasm</p>
+<ul>
+<li><code>Projetos/E-Assembly/src/labs/sw1.nasm</code></li>
+</ul>
+<p>Faça os LEDs serem o valor das chaves: LED = SW</p>
+<div class="tabbed-set" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">configurando</label><div class="tabbed-content">
+<p>Antes de iniciar a simulação, você deve configurar as chaves:</p>
+<p><img alt="" src="../figs/F-Assembly/lab2-sw1.png" width="350" /></p>
+</div>
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">resultado esperado</label><div class="tabbed-content">
+<p><img alt="" src="../figs/F-Assembly/lab2-sw1a.png" width="350" /></p>
+</div>
+<input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><label for="__tabbed_5_3">resposta</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">leaw</span> <span class="kc">$</span><span class="mi">21185</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+<span class="nf">movw</span> <span class="p">(</span><span class="o">%</span><span class="nv">A</span><span class="p">),</span> <span class="o">%</span><span class="nv">D</span>
+<span class="nf">leaw</span> <span class="kc">$</span><span class="mi">21184</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+<span class="nf">movw</span> <span class="o">%</span><span class="nv">D</span><span class="p">,</span> <span class="p">(</span><span class="o">%</span><span class="nv">A</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">sw2.nasm</p>
+<ul>
+<li><code>Projetos/E-Assembly/src/labs/sw2.nasm</code></li>
+</ul>
+<p>Faça os LEDs serem o contrário do valor das chaves: LED = !SW</p>
+<div class="tabbed-set" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">configurando</label><div class="tabbed-content">
+<p>Antes de iniciar a simulação, você deve configurar as chaves:</p>
+<p><img alt="" src="../figs/F-Assembly/lab2-sw1.png" width="350" /></p>
+</div>
+<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">resultado esperado</label><div class="tabbed-content">
+<p><img alt="" src="../figs/F-Assembly/lab2-sw2.png" width="350" /></p>
+</div>
+<input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><label for="__tabbed_6_3">dica</label><div class="tabbed-content">
+<p>Utilize a instrução <code>notw %D</code> para inverter o valor  salvo no registrador <code>%D</code></p>
+</div>
+</div>
+</div>
+<h2 id="lcd">LCD<a class="headerlink" href="#lcd" title="Permanent link">&para;</a></h2>
+<p>Trabalhando com o LCD.</p>
+<div class="admonition example">
+<p class="admonition-title">lcd1.nasm</p>
+<ul>
+<li><code>Projetos/E-Assembly/src/labs/lcd1.nasm</code></li>
+</ul>
+<p>Acione os 16 primeiros pxs do LCD.</p>
+<div class="tabbed-set" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">resultado esperado</label><div class="tabbed-content">
+<p><img alt="" src="figs/F-Assembly/lab2-lcd1.png" width="350" /></p>
+</div>
+<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">dica</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nf">leaw</span> <span class="kc">$</span><span class="mi">16384</span><span class="p">,</span> <span class="o">%</span><span class="nv">A</span>
+<span class="nf">movw</span> <span class="kc">$</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="o">%</span><span class="nv">A</span><span class="p">)</span>
+</code></pre></div>
+
+<blockquote>
+<p><code>movw $-1, (%A)</code>: Gera o vetor <code>1111111111111</code> e grava no endereço que %A aponta (primeiros pxs do LCD)</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">lcd2.nasm</p>
+<ul>
+<li><code>Projetos/E-Assembly/src/labs/lcd1.nasm</code></li>
+</ul>
+<p>Acione todos os pxs da primeira posição de memória do LCD, do meio do LCD e da última posição de memória do LCD.</p>
+<div class="tabbed-set" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">resultado esperado</label><div class="tabbed-content">
+<p><img alt="" src="../figs/F-Assembly/lab2-lcd2.png" width="350" /></p>
+</div>
+<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">dica</label><div class="tabbed-content">
+<p>O endereço central do LCD vocês podem calcular por:</p>
+<div class="highlight"><pre><span></span><code>LCD = 320x240
+
+1. enderecos_porLinha    = 320/16 
+                         = 20
+
+2. offset_linhaCentral   = 20*240/2
+                         = 2400
+
+3. endereco_linhaCentral = 16384 + 2400
+                         = 18784
+
+4. px_central            = 18784 + 10 
+                         = 18794
+</code></pre></div>
+
+</div>
+</div>
+</div>
                 
               
               
@@ -1565,13 +1718,13 @@
           </a>
         
         
-          <a href="../assembly-Lab-3/" title="Lab 8: ULA" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../assembly-Lab-3/" title="Lab 13: saltos (jmp)" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Lab 8: ULA
+                Lab 13: saltos (jmp)
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
