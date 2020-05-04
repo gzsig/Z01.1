@@ -750,6 +750,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CPU-Lab-1.md" title="None" class="md-nav__link">
+      None
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1804,6 +1816,17 @@
 <li><code>.lst</code>: saída do simulador com os estados da CPU</li>
 </ul>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Nosso hardware não suporta operações que realizam escrita e leitura na memória RAM ao mesmo tempo. Operações como:</p>
+<ul>
+<li><code>incw (%A)</code></li>
+<li><code>decw (%A)</code></li>
+<li><code>addw (%A), %D, (%A)</code></li>
+<li><code>subw %D, (%A), (%A)</code></li>
+</ul>
+<p>Vão ser aceitas pelo assembler, mas vão executar erradas no HW.</p>
+</div>
 <h2 id="instrucoes">Instruções<a class="headerlink" href="#instrucoes" title="Permanent link">&para;</a></h2>
 <h4 id="lea-carregamento-efetivo-do-endereco-valor">LEA - Carregamento Efetivo do Endereço (Valor)<a class="headerlink" href="#lea-carregamento-efetivo-do-endereco-valor" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
@@ -1866,7 +1889,7 @@ opcional).</p>
 <hr />
 <h4 id="rsub-subtracao-de-inteiros-reversa">RSUB - Subtração de Inteiros Reversa<a class="headerlink" href="#rsub-subtracao-de-inteiros-reversa" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
-<p><strong>rsubw</strong> reg/mem/im*, rem/mem, reg/mem {, reg/mem, reg/mem}</p>
+<p><strong>rsubw</strong> reg/mem/im*, rem/mem, reg {, reg, reg}</p>
 </div>
 <p>A instrução rsub, subtrai o segundo valor do primeiro
 valor e armazena o resultado no terceiro parâmetro (quarto e quinto
@@ -1878,7 +1901,7 @@ opcional).</p>
 <hr />
 <h4 id="inc-incrementa-inteiro">INC - Incrementa Inteiro<a class="headerlink" href="#inc-incrementa-inteiro" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
-<p><strong>incw</strong> reg/mem</p>
+<p><strong>incw</strong> reg</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Restrição</p>
@@ -1903,7 +1926,7 @@ registrador ou memória.</p>
 <hr />
 <h4 id="dec-decrementa-inteiro">DEC - Decrementa Inteiro<a class="headerlink" href="#dec-decrementa-inteiro" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
-<p><strong>decw</strong> reg/mem</p>
+<p><strong>decw</strong> reg</p>
 </div>
 <p>A instrução <em>dec,</em> subtrai um (1) do valor do registrador
 ou memória.</p>
@@ -1925,7 +1948,7 @@ se um bit tem valor 0 fica com 1 e vice-versa.</p>
 <hr />
 <h4 id="neg-negacao-por-complemento-de-dois">NEG - Negação por Complemento de dois<a class="headerlink" href="#neg-negacao-por-complemento-de-dois" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
-<p>negw reg/mem</p>
+<p>negw reg</p>
 </div>
 <p>A instrução <em>neg,</em> faz o valor ficar negativo, ou seja,
 um valor de x é modificado para -x.</p>
