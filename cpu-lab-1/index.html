@@ -552,6 +552,72 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
+    
+    <label class="md-nav__link" for="nav-3-7">
+      F - CPU
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="F - CPU" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        F - CPU
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cpu-Projeto/" title="F - CPU" class="md-nav__link">
+      F - CPU
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cpu-Testando/" title="Testando" class="md-nav__link">
+      Testando
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cpu-DicasBeA/" title="Dicas B/A" class="md-nav__link">
+      Dicas B/A
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1710,6 +1776,14 @@
                 
                 
                 <h1 id="lab-15-control-unit">LAB 15: Control Unit<a class="headerlink" href="#lab-15-control-unit" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Antes de começar</p>
+<p>Aqui começa o projeto <strong>F-CPU</strong>. <mark>Vocês devem escolher um novo Mediador</mark></p>
+<p>Toda vez que um novo projeto começar será necessário realizar algumas configurações no repositório do grupo, vocês devem seguir para o documento: <a href="https://insper.github.io/Z01.1/Util-Comecando-novo-projeto/"><code>Util/Começando novo Projeto</code></a> e depois voltar para esse lab.</p>
+<ul>
+<li>Não seguir sem realizar a etapa anterior.</li>
+</ul>
+</div>
 <p>A unidade de controle é o periférico da CPU responsável por decodificar uma instrução (linguagem de máquina) e realizar as modificações necessárias no HW (mux, load, ULA, registradores, PC) a fim de executar tal operação.</p>
 <p><img alt="" src="../figs/G-CPU/controlUnit.svg" width="60%" /></p>
 <p>O <code>control unit</code> controla todos os componentes internos da nossa CPU, é ele que por exemplo seleciona como vai estar os sinais do seletor dos mux (<code>muxALUI/I</code>/<code>muxAM/D</code>, qual operação a ULA irá executar (<code>zr.nx.zy.ny.f.no</code>), onde o dado será salvo (<code>loadD</code>, <code>loadA</code>, <code>writeM</code>, <code>loadPC</code>) e se é para executar uma operação de salto (<code>loadPC</code>). </p>
