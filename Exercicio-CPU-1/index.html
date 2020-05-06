@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/Z01.1/I-VM-Lab-1/">
+        <link rel="canonical" href="https://insper.github.io/Z01.1/Exercicio-CPU-1/">
       
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
@@ -17,7 +17,7 @@
     
     
       
-        <title>Descrição - 2020-1 - Elementos de Sistemas - Z01</title>
+        <title>LAB 15: Control Unit - 2020-1 - Elementos de Sistemas - Z01</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#descricao" class="md-skip">
+        <a href="#lab-15-control-unit" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +86,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Descrição
+              LAB 15: Control Unit
             
           </span>
         </div>
@@ -1433,16 +1433,111 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#modulos-a-serem-implementados" class="md-nav__link">
-    Módulos a serem implementados
+  <a href="#controlunit" class="md-nav__link">
+    ControlUnit
+  </a>
+  
+    <nav class="md-nav" aria-label="ControlUnit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loadd-exemplo" class="md-nav__link">
+    loadD (exemplo)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadm" class="md-nav__link">
+    loadM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loada" class="md-nav__link">
+    loadA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muxalui_a" class="md-nav__link">
+    muxALUI_A
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zx" class="md-nav__link">
+    zx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-io" class="md-nav__link">
+    Memory IO
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory IO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estudando" class="md-nav__link">
+    Estudando!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    CPU
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exemplos" class="md-nav__link">
-    Exemplos
+  <a href="#extras" class="md-nav__link">
+    Extras
   </a>
+  
+    <nav class="md-nav" aria-label="Extras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nop" class="md-nav__link">
+    nop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movw-d-a-e-jg-d-ao-mesmo-tempo" class="md-nav__link">
+    movw %D, %A e jg %D ao mesmo tempo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadpc" class="md-nav__link">
+    loadPC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1458,7 +1553,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/Z01.1/edit/master/docs/I-VM-Lab-1.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/Z01.1/edit/master/docs/Exercicio-CPU-1.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                   </a>
                 
@@ -1466,399 +1561,274 @@
                   
                 
                 
-                <h1 id="descricao">Descrição<a class="headerlink" href="#descricao" title="Permanent link">&para;</a></h1>
-<p>Nesse lab iremos criar programas em VM para o nosso Z01.1, essa entrega é individual e não vale nota, mas será cobrado em prova e servirá para vocês entenderem o próximo projeto: <code>F-VMTranslator</code>.</p>
-<h4 id="modulos-a-serem-implementados">Módulos a serem implementados<a class="headerlink" href="#modulos-a-serem-implementados" title="Permanent link">&para;</a></h4>
-<p>Os módulos estão na pasta <code>Projetos/I-VM/src/vm/</code> e estão organizados por ordem de dificuldade:</p>
-<ul>
-<li>1a-Add</li>
-<li>1b-Add</li>
-<li>2a-Calculadora</li>
-<li>1c-Dic</li>
-<li>2b-Calculadora</li>
-<li>2c-Calculadora</li>
-<li>2d-Calculadora</li>
-</ul>
-<p>Para testar, basta editar o arquivo <code>tests/config.txt</code> com os módulos que deseja executar e então executar o script: <code>testeVM.py</code> localizado na pasta do projeto.</p>
-<h4 id="exemplos">Exemplos<a class="headerlink" href="#exemplos" title="Permanent link">&para;</a></h4>
-<p>Existem diversos exemplos de programas escritos em linguagem VM, eles estão na pasta <code>src/vmExamples/</code></p>
-<h1 id="linguagem-vm">Linguagem VM<a class="headerlink" href="#linguagem-vm" title="Permanent link">&para;</a></h1>
-<p>A linguagem VM proposta para o curso é baseada em pilha (assim como tantas outras), as operações nesse nível não mais lidam com registradores do computador mas sim com dados que são colocados e tirados de uma pilha (stack). Uma grande vantagem disso é a abstração do hardware, agora não precisamos mais nos preocuparmos com a manipulação dos dados em baixo nível (o VMTranslator será encarregado disso). Um código escrito em VM passa pelas seguintes etapas antes de ser executado em máquina :</p>
-<div class="highlight"><pre><span></span><code>      VMTranslator          Assembler
- .vm -------------&gt; .nasm -------------&gt; .hack
-</code></pre></div>
-
-<p>O código vm é traduzido para linguagem nasm pelo VMTranslator (vocês vão ter que fazer esse programa), e então é montado pelo Assembler para linguagem de máquina.</p>
-<p>Temos diversas vantagens quando programamos em linguagem virtual : </p>
-<p>a. Abstração de Hardware 
-     - (já não mais lidamos com o hardware diretamente)
-c. Portabilidade
-b. Código mais alto nível 
-     - (chamada de funções, linguagem mais próxima do que estamos acostumados, ...)</p>
-<h2 id="pilha">Pilha<a class="headerlink" href="#pilha" title="Permanent link">&para;</a></h2>
-<p>A linguagem VM é baseada em pilha, ou seja, todas as operações que serão realizadas serão feitas na pilha. A pilha é uma região da memória RAM (começando no endereço 256) reservada para armazenar os dados que estão sendo manipulados.</p>
-<p>A pilha cresce conforme operações de push (envio de dados para a pilha) vão sendo executados, e decresce conforme operações de pull (retirar dados da pilha) são executadas. </p>
-<p><img alt="Stack" src="../figs/I-VM/Stack.svg" /></p>
-<h3 id="stack-pointer-sp">Stack Pointer (SP)<a class="headerlink" href="#stack-pointer-sp" title="Permanent link">&para;</a></h3>
-<p>O Stack Pointer é o endereço de memória (RAM[0]) reservado por apontar o topo da pilha, ou seja, a próxima posição vazia da pilha. O SP é salvo na RAM 0 (R0), e deve ser incrementado/decrementado conforme a pilha vai sendo manipulada.</p>
-<p><img alt="Stack Pointer" src="../figs/I-VM/SP.svg" /></p>
-<h2 id="operacao">Operação<a class="headerlink" href="#operacao" title="Permanent link">&para;</a></h2>
-<p>Considerando a seguinte disposição na pilha :</p>
-<div class="highlight"><pre><span></span><code>     ...
-     ...
-      X
-      Y
-SP -&gt;
-</code></pre></div>
-
-<p>São suportadas as seguintes operações aritméticas na pilha:</p>
-<ul>
-<li>add <ul>
-<li>executa: X + Y</li>
-</ul>
-</li>
-<li>sub <ul>
-<li>executa: X - Y</li>
-</ul>
-</li>
-<li>neg<ul>
-<li>executa: <span><span class="MathJax_Preview">- Y</span><script type="math/tex">- Y</script></span>  (complemento de dois)</li>
-</ul>
-</li>
-<li>eq <ul>
-<li>compara X == Y <ul>
-<li>True : resulta em b"11111111111111111", 0xFFFF</li>
-<li>False: resulta em b"0000000000000000"", 0x0000</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>gt<ul>
-<li>compara X &gt; Y <ul>
-<li>True : resulta em b"11111111111111111", 0xFFFF</li>
-<li>False: resulta em b"0000000000000000"", 0x0000</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>lt <ul>
-<li>compara X &lt; Y <ul>
-<li>True : resulta em b"11111111111111111", 0xFFFF</li>
-<li>False: resulta em b"0000000000000000"", 0x0000</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>and <ul>
-<li>executa: X and Y (bit a bit)</li>
-</ul>
-</li>
-<li>or<ul>
-<li>executa: X or Y (bit a bit)</li>
-</ul>
-</li>
-<li>not<ul>
-<li>executa: not Y (bit a bit)</li>
-</ul>
-</li>
-</ul>
-<p>Note que as operações de comparação (eq, gt, lt) resulta em um True e False e esse resultado é salvo na pilha, considere o exemplo a seguir (em hexa) que possui inicialmente na pilha os valores 2 3 e 5, e após a operação de eq os valores 3 e 5 são comparados e resulta em um valor True ou False (0xFFFF ou 0x0000).</p>
-<div class="highlight"><pre><span></span><code>         -&gt; eq -&gt;    -&gt; gt -&gt;
-     0x2          0x2         0xFFFF
-     0x3          0x0    SP-&gt;
-     0x5      SP-&gt;
-SP-&gt;
-</code></pre></div>
-
-<p>As operações na pilha não apagam o resultado que já estava na pilha, se olharmos a memória real do exemplo anterior seria a seguinte:</p>
-<div class="highlight"><pre><span></span><code>          -&gt; eq -&gt;      -&gt; gt -&gt;
-     0x2            0x2          0xFFFF
-     0x3            0x0     SP-&gt; 0x0
-     0x5       SP-&gt; 0x5          0x5
-SP-&gt; 0x0            0x0          0x0
-</code></pre></div>
-
-<p>O mesmo acontece com arquivos que são deletados do seu computador, o sistema operacional não "limpa a memória" sempre que um arquivo é excluído, apenas apaga o ponteiro para aquele arquivo.</p>
-<h2 id="acesso-a-memoria">Acesso a memória<a class="headerlink" href="#acesso-a-memoria" title="Permanent link">&para;</a></h2>
-<p>Os comandos <strong>push</strong> e <strong>pop</strong> são a única maneira que temos de acessar/manipular a memória. O comando <strong>push</strong> traz para a pilha um valor da memória (RAM ou ROM) e o comando <strong>pop</strong> salva na memória um valor da pila (RAM). Os comandos possuem a seguinte sintaxe :</p>
-<ul>
-<li><strong>push</strong> <em>segment index</em></li>
-<li><strong>pop</strong>  <em>segment index</em></li>
-</ul>
-<p>Onde <em>index</em> é um número inteiro positivo e <em>segment</em> pode ser um dos casos a seguir:</p>
+                <h1 id="lab-15-control-unit">LAB 15: Control Unit<a class="headerlink" href="#lab-15-control-unit" title="Permanent link">&para;</a></h1>
+<p>A unidade de controle é o periférico da CPU responsável por decodificar uma instrução (linguagem de máquina) e realizar as modificações necessárias no HW (mux, load, ULA, registradores, PC) a fim de executar tal operação.</p>
+<p><img alt="" src="../figs/G-CPU/controlUnit.svg" width="60%" /></p>
+<p>O <code>control unit</code> controla todos os componentes internos da nossa CPU, é ele que por exemplo seleciona como vai estar os sinais do seletor dos mux (<code>muxALUI/I</code>/<code>muxAM/D</code>, qual operação a ULA irá executar (<code>zr.nx.zy.ny.f.no</code>), onde o dado será salvo (<code>loadD</code>, <code>loadA</code>, <code>writeM</code>, <code>loadPC</code>) e se é para executar uma operação de salto (<code>loadPC</code>). </p>
+<p>A figura a baixo ilustra tudo que o <mark>control unit controla</mark>.</p>
+<p><img alt="" src="../figs/G-CPU/cpu-cu.svg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note que os sinais do comparador da ULA: <code>zr</code> e <code>ng</code> também vão para a unidade de controle. É a partir do valor deles que o hardware decide se vai ou não ocorrer uma operação de salto.</p>
+</div>
+<h2 id="controlunit">ControlUnit<a class="headerlink" href="#controlunit" title="Permanent link">&para;</a></h2>
+<p>Vamos implementar partes da unidade de controle. </p>
+<h3 id="loadd-exemplo"><code>loadD</code> (exemplo)<a class="headerlink" href="#loadd-exemplo" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p>Exemplo!</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Utilize o documento <a href="https://insper.github.io/Z01.1/Util-InstructionSet/"><code>Z01/Instruction Set</code></a> para resolver esse lab.</p>
+</div>
+<p>O sinal <code>loadD</code> indica quando o registrador <code>D</code> deve armazenar um novo sinal. Para isso, devemos verificar se a instrução em questão que está sendo decodificada pelo 'controlUnit' é do tipo <strong>comando</strong> (C), essa verificação é feita pelo bit mais significativo da instrução (<code>bit17</code>).</p>
+<p>Uma vez que detectado uma instrução do tipo C, devemos verificar se o comando que ela representa carrega a operação de salvar em <code>%D</code>, verificamos isso pelo bit <code>d1</code>, que indica se irá ou não ocorrer um carregamento em <code>%D</code>.</p>
+<p><img alt="" src="../figs/G-CPU/loadD.svg" /></p>
+<p>Com esses dados conseguimos criar a tabela verdade a seguir e extrair a equação que rege esse sinal.</p>
 <table>
 <thead>
 <tr>
-<th>segment</th>
-<th>Uso</th>
-<th>Index</th>
-<th>Comentário</th>
+<th><code>bit 17</code></th>
+<th><code>bit 4</code></th>
+<th><code>loadD</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>argument</td>
-<td>Local onde o argumento da função está salvo</td>
-<td>0 ..</td>
-<td>Alocado dinamicamente pelo VMTranslator quando a função é chamada</td>
+<td>0</td>
+<td>X</td>
+<td>0</td>
 </tr>
 <tr>
-<td>local</td>
-<td>Local das variáveis locais da função</td>
-<td>0 ..</td>
-<td>Alocado dinamicamente pelo VMTranslator quando a função é chamada</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
 </tr>
 <tr>
-<td>static</td>
-<td>Local onde as variáveis do objeto estão salvos</td>
-<td>0 ..</td>
-<td>Essas variáveis são compartilhadas por todas as funções do mesmo .vm, assim como em um objeto</td>
-</tr>
-<tr>
-<td>constant</td>
-<td>Carrega uma constante na pilha</td>
-<td>0 .. 32767</td>
-<td>Mesmo uso do leaw (carrega da ROM um valor na RAM)</td>
-</tr>
-<tr>
-<td>this/that</td>
-<td>Segmentos de uso geral, pode apontar para qualquer lugar</td>
-<td>0 ..</td>
-<td>Usado para ler e escrever de endereços da memória, por exemplo, acessar o LCD</td>
-</tr>
-<tr>
-<td>pointer</td>
-<td>Altera os valores do this e do that</td>
-<td>0, 1</td>
-<td>Usado para modificar a onde o this e o that apontam</td>
-</tr>
-<tr>
-<td>temp</td>
-<td>Local para uso de variáveis temporárias</td>
-<td>0 .. 7</td>
-<td>Acessado por qualquer função, é armazenado nos endereços R5 .. R12 da RAM</td>
+<td><mark>1</mark></td>
+<td><mark>1</mark></td>
+<td><mark>1</mark></td>
 </tr>
 </tbody>
 </table>
-<h3 id="exemplo-acessando-o-temp">Exemplo, acessando o temp<a class="headerlink" href="#exemplo-acessando-o-temp" title="Permanent link">&para;</a></h3>
-<p>Por exemplo, para trazermos para a pilha uma constante realizamos a seguinte operação:</p>
-<div class="highlight"><pre><span></span><code>push constant 15
+<p>Podendo ser traduzido para o código em VHDL (via soma dos produtos):</p>
+<div class="highlight"><pre><span></span><code>  <span class="n">loadD</span> <span class="o">&lt;=</span> <span class="n">istruction</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span> <span class="k">and</span> <span class="n">instruction</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
 </code></pre></div>
 
-<ul>
-<li>nesse caso o segmento acessado é o constant e o parâmetro é o 15.</li>
-</ul>
-<p>Para salvarmos o valor 15 no <em>temp 3</em> (endereço da RAM 7), basta:</p>
-<div class="highlight"><pre><span></span><code>push constant 15
-pop temp 3
-</code></pre></div>
-
-<p>Podemos também trazer o <em>temp 3</em> para a pilha:</p>
-<div class="highlight"><pre><span></span><code>push temp 3
-</code></pre></div>
-
-<h4 id="programando">PROGRAMANDO<a class="headerlink" href="#programando" title="Permanent link">&para;</a></h4>
-<p>Implemente os programas a seguir e teste com <code>testeVm.py</code>.</p>
-<ul>
-<li><code>Projetos/I-VM/src/vm/1a-Add</code></li>
-<li><code>Projetos/I-VM/src/vm/1b-Add</code></li>
-<li><code>Projetos/I-VM/src/vm/2a-Calculadora</code></li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Antes de Continuar</p>
-<p>Só Continue após implementar e testar todos os programas!</p>
-</div>
-<h3 id="escrevendo-um-pixel-no-lcd">Escrevendo um pixel no LCD<a class="headerlink" href="#escrevendo-um-pixel-no-lcd" title="Permanent link">&para;</a></h3>
-<p>Para atualizarmos o LCD via VM será necessário primeiro atualizarmos para onde o <strong>that</strong> aponta, <strong>that</strong> é a maneira que possuímos de escrever em qualquer endereço da memória. O exemplo a seguir ilustra como usamos o segmento <strong>that</strong> para escrever nos pixels centrais do LCD, supondo que gostaríamos de realizar a seguinte operação em C.</p>
-<div class="highlight"><pre><span></span><code> <span class="kt">int</span> <span class="o">*</span><span class="n">pLCD</span> <span class="o">=</span> <span class="mi">16384</span>
- <span class="o">*</span><span class="p">(</span><span class="n">pLCD</span> <span class="o">+</span> <span class="mi">1200</span><span class="p">)</span> <span class="o">=</span> <span class="mh">0xFFFF</span>
-</code></pre></div>
-
-<p>Nesse pequeno código em C o que está acontecendo é que primeiramente definimos um ponteiro pLCD que aponta para 16384, depois fazemos com que o endereço desse ponteiro + 1200 receba 0xFFFF, o mesmo código em VM é realizado da seguinte maneira :</p>
-<p><img alt="exemplo that atualizando LCD" src="../figs/I-VM/that.svg" /></p>
-<div class="highlight"><pre><span></span><code>push constant 16384   -- carrega 16384 para a pilha
-pop pointer 1         -- atualiza para onde that aponta (int *pLCD = 16384)
-push contant 1        -- carrega 1 para a pilha
-neg                   -- nega o 1 para obter o valor 0xFFFF
-                      -- poderia ter realizado o push contant 4095 no lugar
-                      -- dessas duas operações
-pop that 1200         -- faz com que o endereço da memória 16384 + 1200 = 0xFFFF
-</code></pre></div>
-
-<h2 id="goto">GOTO<a class="headerlink" href="#goto" title="Permanent link">&para;</a></h2>
-<p>Goto é a maneira de desviarmos uma execução em .vm, e possui a seguinte sintaxe:</p>
-<ul>
-<li><strong>goto</strong> LABEL</li>
-<li><strong>if-goto</strong> LABEL</li>
-</ul>
-<p>podemos utilizar dois tipos : </p>
-<ul>
-<li>goto : incondicional , salta sem condição</li>
-<li>if-goto : condiconal, salta se o último valor da pilha for True</li>
-</ul>
+<blockquote>
+<p>Nesse lab iremos fazer parte do ControlUnit, ele não deve passar em todos os testes.</p>
+</blockquote>
 <div class="admonition example">
-<p class="admonition-title">Exemplo: Salto para igual se 3 = 2</p>
-<div class="highlight"><pre><span></span><code>push constant 3
-push constant 2
-eq
-if-goto IGUAL
-..
-..
-label IGUAL
-..
-..
-</code></pre></div>
-
+<p class="admonition-title">Implementando e testando</p>
+<ol>
+<li>Abra o arquivo <code>/Projetos/F-CPU/src/rtl/controlUnit.vhd</code></li>
+<li>Insira a implementação anterior do <code>loadD</code> na arquitetura</li>
+<li>Teste com o comando <code>./testeHW.py lib.tb_controlunit.all</code></li>
+<li>Deve passar no <mark>TESTE 1</mark> e <mark>TESTE 2</mark></li>
+<li>Deve parar para no <mark>TESTE 3</mark></li>
+</ol>
+<p>O resultado deve ser como a seguir:</p>
+<p><img alt="" src="../figs/G-CPU/loadD-teste.png" width="300" /></p>
+</div>
+<h3 id="loadm"><code>loadM</code><a class="headerlink" href="#loadm" title="Permanent link">&para;</a></h3>
+<p>Vamos agora implementar o sinal <code>loadM</code>, esse sinal é o que controla se irá ocorrer uma operação de escrita na memória RAM.</p>
+<p><img alt="" src="../figs/G-CPU/cpu-writeM.svg" width="300" /></p>
+<div class="admonition example">
+<p class="admonition-title">Implementando e testando</p>
+<ol>
+<li>Entenda os bits envolvidos</li>
+<li>Escreva uma tabela verdade</li>
+<li>Encontre a equação e implemente no <code>controlUnit.vhd</code></li>
+<li>Teste com o comando <code>./testeHW.py lib.tb_controlunit.all</code></li>
+<li>Deve passar no <mark>TESTE 3</mark> e <mark>TESTE 4</mark></li>
+<li>Deve parar para no <mark>TESTE 4</mark></li>
+</ol>
+</div>
+<h3 id="loada"><code>loadA</code><a class="headerlink" href="#loada" title="Permanent link">&para;</a></h3>
+<p>Agora implemente o <code>loadA</code>, esse sinal que controla o load do registrador A.</p>
+<div class="admonition example">
+<p class="admonition-title">Implementando e testando</p>
+<ol>
+<li>Entenda os bits envolvidos</li>
+<li>Escreva uma tabela verdade</li>
+<li>Encontre a equação e implemente no <code>controlUnit.vhd</code></li>
+<li>Teste com o comando <code>./testeHW.py lib.tb_controlunit.all</code></li>
+<li>Deve passar no <mark>TESTE 5</mark> e <mark>TESTE 6</mark></li>
+<li>Deve parar para no <mark>TESTE 7</mark></li>
+</ol>
+</div>
+<h3 id="muxalui_a"><code>muxALUI_A</code><a class="headerlink" href="#muxalui_a" title="Permanent link">&para;</a></h3>
+<p>Esse sinal (<code>muxALUI_A</code>) controla o mux que seleciona qual o sinal que entra no registrador <code>%A</code>, a entrada <code>0</code> do mux é o sinal que sai da ULA e o sinal <code>1</code> do mux são os bits [15..0] da instrução. </p>
+<p><img alt="" src="../figs/G-CPU/cpu-muxALUI.svg" width="300" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Com esse sinal implementando, nossa CPU já suporta a instrução <code>leaw $x, %A</code></p>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Exemplo: Contador utilizando for utilizando goto</p>
-<div class="highlight"><pre><span></span><code>// for(i=0; i&lt;10; i++)
-//     x = x+1;
-
-push constant 0
-pop temp 0         
-push constant 1
-pop temp 1
-label LOOP_START
-push temp 0
-push constant 10
-eq
-if-goto END       // se temp0 = 10 salta para o fim
-push temp 0
-push constant 1
-add
-pop temp 0
-push temp 1
-push temp 1
-add
-pop temp 1
-goto LOOP_START  // If counter &gt; 0, goto LOOP_START
-label END
-</code></pre></div>
-
+<p class="admonition-title">Implementando e testando</p>
+<ol>
+<li>Entenda os bits envolvidos</li>
+<li>Escreva uma tabela verdade</li>
+<li>Encontre a equação e implemente no <code>controlUnit.vhd</code></li>
+<li>Teste com o comando <code>./testeHW.py lib.tb_controlunit.all</code></li>
+<li>Deve passar no <mark>TESTE 7</mark> e <mark>TESTE 8</mark></li>
+<li>Deve parar para no <mark>TESTE 9</mark></li>
+</ol>
 </div>
-<h3 id="labels">labels<a class="headerlink" href="#labels" title="Permanent link">&para;</a></h3>
-<p>Os labels são definidos pela keyword <strong>label</strong> + nome :</p>
-<ul>
-<li><strong>label</strong> nome</li>
-</ul>
-<h4 id="programando_1">PROGRAMANDO<a class="headerlink" href="#programando_1" title="Permanent link">&para;</a></h4>
-<p>Implemente os programas a seguir e teste com <code>testeVm.py</code>.</p>
-<ul>
-<li><code>Projetos/I-VM/src/vm/1c-div</code></li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Antes de Continuar</p>
-<p>Só Continue após implementar e testar todos o programa!</p>
+<h3 id="zx"><code>zx</code><a class="headerlink" href="#zx" title="Permanent link">&para;</a></h3>
+<p>Agora faça o sinal <code>zx</code> que controla o zerador do sinal x da ULA.</p>
+<div class="admonition example">
+<p class="admonition-title">Implementando e testando</p>
+<ol>
+<li>Entenda os bits envolvidos</li>
+<li>Escreva uma tabela verdade</li>
+<li>Encontre a equação e implemente no <code>controlUnit.vhd</code></li>
+<li>Teste com o comando <code>./testeHW.py lib.tb_controlunit.all</code></li>
+<li>Deve passar no <mark>TESTE 9</mark> e <mark>TESTE 10</mark></li>
+<li>Deve parar para no <mark>TESTE 11</mark></li>
+</ol>
 </div>
-<h2 id="funcoes">Funções<a class="headerlink" href="#funcoes" title="Permanent link">&para;</a></h2>
-<p>A linguagem VM possibilita o uso de funções, as funções são definidas em novos arquivos .vm na mesma pasta do arquivo Main.vm. Por exemplo :</p>
-<p>Nesse projeto SimpleFunction possuímos duas funções : O <code>Main.vm</code> e a <code>SimpleFunction.vm</code>. A função main deve sempre existir no projeto, e será a primeira chamada na inicialização do sistema (assim como no python e C).</p>
-<p>Para definirmos uma função em VM basta criarmos um arquivo com a extensão <code>.vm</code> (que precisa ter o mesmo nome da função) que será como uma classe do nosso projeto, podendo conter mais que um método/função. </p>
+<h2 id="memory-io">Memory IO<a class="headerlink" href="#memory-io" title="Permanent link">&para;</a></h2>
+<p>O componente <code>memory IO</code> é a 'memória' do nosso computador. Interno nesse módulo possuímos além da memória RAM, outros componentes tais como: tela, chave, leds. Lembrando que para a CPU, não existe separação entre o que é memória e o que é periférico. </p>
+<p>Os periféricos internos do <code>memoryIO</code> são:</p>
+<ul>
+<li>Tela (<code>screen.vhd</code>)<ul>
+<li>responsável por controlar o LCD </li>
+</ul>
+</li>
+<li>RAM (<code>ram16k.vhd</code>)<ul>
+<li>memória RAM de 16k endereços</li>
+</ul>
+</li>
+<li>SW<ul>
+<li>chaves da FPGA</li>
+</ul>
+</li>
+<li>LED<ul>
+<li>LEDs da FPGA</li>
+</ul>
+</li>
+</ul>
+<p><code>screen</code> e <code>ram16k</code> possuem a interface detalhada a seguir:</p>
+<p><img alt="" src="../figs/G-CPU/memoryIO.svg" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Olhe o exemplo <code>src/vmExamples/StatiTest/</code> para ver como isso funciona.</p>
+<p>Os sinais do tipo <code>LCD_</code> da <code>screen</code> são conectados diretamente ao LCD, via <code>portmap</code>.</p>
 </div>
-<p>Uma função é definida pela seguinte estrutura :</p>
-<ul>
-<li><strong>function</strong> <em>functionName</em> <em>numberOfVars</em></li>
-</ul>
-<p>Onde :</p>
-<ul>
-<li><strong>function:</strong> é uma palavra reservado (keyword) para definir funções</li>
-<li><strong>functionName:</strong> é o nome da função</li>
-<li><strong>numberOfVars:</strong> a quantidade de variáveis locais que essa função possui.</li>
-</ul>
-<p>Como exemplo, vamos transformar a seguinte função em python para vm  :</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">SimpleFunction</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-   <span class="n">aux0</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-   <span class="n">aux1</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
-   <span class="k">return</span><span class="p">(</span><span class="n">aux1</span><span class="o">+</span><span class="n">aux0</span><span class="p">)</span>
-</code></pre></div>
-
-<p>Em vm:</p>
-<div class="highlight"><pre><span></span><code>function SimpleFunction 2
-    push argument 0
-    push argument 1
-    add
-    pop local 0       // aux0 = a + b
-    push argument 0
-    push argument 1
-    sub
-    pop local 1       // aux1 = a - b
-    push local 0
-    push local 1
-    add               // aux0 + aux1
-    return
-</code></pre></div>
-
-<p>Essa função possui duas variáveis locais, que pode ser acessada pelo segmento <strong>local</strong>, os parâmetros passados para a função (a e b) são acessíveis pelo segmento <strong>argument</strong> :</p>
-<ul>
-<li>
-<p><strong>push argument 0</strong> </p>
-<ul>
-<li>acessa o primeiro argumento da função ( <strong>a</strong> ), trazendo o dado para a pilha.</li>
-</ul>
-</li>
-<li>
-<p><strong>push argument 1</strong> </p>
-<ul>
-<li>acessa o primeiro argumento da função ( <strong>b</strong> ), trazendo o dado para a pilha.</li>
-</ul>
-</li>
-<li>
-<p><strong>push/pop temp 0</strong> </p>
-<ul>
-<li>acessa ou grava na primeiro variável local da função ( <strong>aux0</strong> ).</li>
-</ul>
-</li>
-<li>
-<p><strong>push/pop temp 1</strong> </p>
-<ul>
-<li>acessa ou grava na primeiro variável local da função ( <strong>aux1</strong> ).</li>
-</ul>
-</li>
-</ul>
-<p>Note que os parâmetros devem ser apenas leitura, não devendo escrever nesses segmentos.</p>
-<h3 id="return">return<a class="headerlink" href="#return" title="Permanent link">&para;</a></h3>
-<p>A função considera como retorno o último valor da pilha, e sempre retorna um único </p>
-<h3 id="chamada-de-funcao">Chamada de função<a class="headerlink" href="#chamada-de-funcao" title="Permanent link">&para;</a></h3>
-<p>A chamada de função ocorre na própria pilha, para isso é necessário colocar na pilha os parâmetros da função, no exemplo anterior :</p>
-<div class="highlight"><pre><span></span><code>     a
-     b 
-SP-&gt;
-</code></pre></div>
-
-<p>e em seguida fazer a chamada de função que possui a seguinte estrutura:</p>
-<ul>
-<li><strong>call</strong> <em>functionName</em> <em>numberOfParameters</em> </li>
-</ul>
-<p>Onde :</p>
-<ul>
-<li><strong>call</strong> : palavra reservada para chamada de funções</li>
-<li><strong>functioName</strong> : nome da função a ser chamada</li>
-<li><strong>numberOfPar</strong> : quantidade de parâmetros que essa função recebe.</li>
-</ul>
-<p>O exemplo a seguir chama a função SimpleFunction com os valores 5 e 8</p>
-<div class="highlight"><pre><span></span><code>function Main.main 0
-    push constant 5
-    push constant 8
-    call SimpleFunction 2
-</code></pre></div>
-
-<h2 id="graficamente">Graficamente<a class="headerlink" href="#graficamente" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../figs/I-VM/function.svg" /></p>
-<h4 id="programando_2">PROGRAMANDO<a class="headerlink" href="#programando_2" title="Permanent link">&para;</a></h4>
-<p>Implemente os programas a seguir e teste com <code>testeVm.py</code>.</p>
-<ul>
-<li><code>Projetos/I-VM/src/vm/2b-Calculadora</code></li>
-<li><code>Projetos/I-VM/src/vm/2c-Calculadora</code></li>
-<li><code>Projetos/I-VM/src/vm/2d-Calculadora</code></li>
-</ul>
+<p>O componente <code>memoryIO</code> possui a seguinte entidade:</p>
+<p><img alt="" src="../figs/G-CPU/memoryio-entidade.png" width="200" /></p>
+<h3 id="estudando">Estudando!<a class="headerlink" href="#estudando" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
-<p class="admonition-title">Antes de continuar</p>
-<p>Escreva os programas e teste.</p>
+<p class="admonition-title">Warning</p>
+<p>Discuta, pense e escreva a solução antes de ver a resposta.</p>
 </div>
+<ol>
+<li>
+<p>Pense e discuta com seus colegas o <code>memoryIO</code>.</p>
+</li>
+<li>
+<p>Dos sinais de entrada do <code>memoryIO</code> qual define qual periférico (RAM/LCD/SW/LED) será acessado pela CPU? Explique.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<details class="info"><summary>Resposta</summary><p>O sinal em questão é o <code>address</code>, pois os periféricos são mapeados em endereços diferentes, e é esse sinal que define qual periférico a CPU está querendo acessar. Exemplo: se o sinal <code>address = 1024</code>, a CPU está realizando uma operação na memória RAM, mas se o sinal <code>address = 21184</code> isso indica que a CPU está querendo acessar o <code>LED</code>.</p>
+<ul>
+<li>Para mais informações, leia <a href="https://insper.github.io/Z01.1/Teoria-Z01-mapadeMemoria/">Teoria/Z01 - Mapa de Memória</a>.</li>
+</ul>
+</details>
+<ol>
+<li>Qual sinal informa o <code>memoryIO</code> que a CPU está realizando uma escrita?</li>
+</ol>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<details class="info"><summary>Resposta</summary><p>É o <code>writeM</code>, se <code>1</code> indica que a CPU quer realizar uma escrita, caso contrário é uma leitura.</p>
+</details>
+<ol>
+<li>Quais são suas entradas e saídas do LCD que o memoryIO controla? (tudo tirando o que começa com <strong>LCD_</strong>)</li>
+</ol>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<details class="info"><summary>Resposta</summary><div class="highlight"><pre><span></span><code>  <span class="n">DISPLAY</span><span class="o">:</span> <span class="n">Screen</span>  <span class="k">port</span> <span class="k">map</span> <span class="p">(</span>
+         <span class="n">RST</span>          <span class="o">=&gt;</span> <span class="n">RST</span><span class="p">,</span>
+         <span class="n">CLK_FAST</span>     <span class="o">=&gt;</span> <span class="n">CLK_FAST</span><span class="p">,</span>
+         <span class="n">CLK_SLOW</span>     <span class="o">=&gt;</span> <span class="n">CLK_SLOW</span><span class="p">,</span>
+
+         <span class="n">INPUT</span>        <span class="o">=&gt;</span> <span class="n">INPUT</span><span class="p">,</span>
+         <span class="n">LOAD</span>         <span class="o">=&gt;</span> <span class="n">LOAD_DISPLAY</span><span class="p">,</span>
+         <span class="n">ADDRESS</span>      <span class="o">=&gt;</span> <span class="n">ADDRESS</span><span class="p">(</span><span class="mi">13</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">),</span>
+         <span class="n">LCD_INIT_OK</span>  <span class="o">=&gt;</span> <span class="n">LCD_INIT_OK</span><span class="p">,</span>
+
+         <span class="n">LCD_CS_N</span>     <span class="o">=&gt;</span> <span class="n">LCD_CS_N</span> <span class="p">,</span>
+         <span class="n">LCD_D</span>          <span class="o">=&gt;</span> <span class="n">LCD_D</span><span class="p">,</span>
+         <span class="n">LCD_RD_N</span>     <span class="o">=&gt;</span> <span class="n">LCD_RD_N</span><span class="p">,</span>
+         <span class="n">LCD_RESET_N</span>  <span class="o">=&gt;</span> <span class="n">LCD_RESET_N</span><span class="p">,</span>
+         <span class="n">LCD_RS</span>         <span class="o">=&gt;</span> <span class="n">LCD_RS</span><span class="p">,</span>
+         <span class="n">LCD_WR_N</span>     <span class="o">=&gt;</span> <span class="n">LCD_WR_N</span>
+<span class="p">);</span>
+</code></pre></div>
+
+<ul>
+<li><code>input</code>: são os px a serem escritos</li>
+<li><code>load</code>: se é para atualizar os px</li>
+<li><code>adddress</code>: quais px serão escritos</li>
+</ul>
+<p>Note que esses sinais são os mesmos sinais de uma memória RAM, porém se a parte de leitura. O LCD como foi implementando, não suporta que realizemos a leitura de seus pxs.</p>
+</details>
+<ol>
+<li>Como funciona o LED?</li>
+</ol>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<details class="info"><summary>Resposta</summary><p>O LED é um endereço da memória, como ele 'armazena' o dado, deve ser implementando com um registrador.</p>
+</details>
+<ol>
+<li>Faça um esboço (diagrama) de como o <code>memoryIO</code> implementará a saída <code>LED</code> </li>
+</ol>
+<div class="highlight"><pre><span></span><code>         |                                                          |
+   LOAD  ---&gt;                                                       |
+   ADDRESS -&gt;                                                       |
+   INPUT ---&gt;                                                       |
+         |                                                          ---&gt; LED
+         |                                                          |
+         |                                                          |
+         |                                                          |
+         |                                                          |
+</code></pre></div>
+
+<p>Pinos do <code>memoryIO</code>:</p>
+<ul>
+<li>LOAD: indica escrita</li>
+<li>ADDRESS(16 downto 0): endereço da escrita</li>
+<li>INPUT(16 downto 0): dado a ser escrito </li>
+<li>LED(9 downto 0): Valor dos LEDs da FPGA</li>
+</ul>
+<h2 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h2>
+<p>Proponha uma modificação na <code>CPU</code> do nosso Z01.1 que:</p>
+<ol>
+<li>Adiciona mais um registrador (<code>%S</code>) (onde é melhor?)</li>
+<li>Você teria que modificar a linguagem de máquina do nosso HW. Proponha uma solução.</li>
+<li>Possibilita %D endereçar a memória <ul>
+<li><code>movw %A, (%D)</code></li>
+</ul>
+</li>
+<li>Possibilite fazer carregamento efetivo em %D<ul>
+<li><code>leaw $5, %D</code></li>
+</ul>
+</li>
+</ol>
+<p>Para cada modificação faça o desenho da nova CPU.</p>
+<h2 id="extras">Extras<a class="headerlink" href="#extras" title="Permanent link">&para;</a></h2>
+<h3 id="nop"><code>nop</code><a class="headerlink" href="#nop" title="Permanent link">&para;</a></h3>
+<p>Como o controlUnit controla a CPU para realizar a operação de NOP?</p>
+<h3 id="movw-d-a-e-jg-d-ao-mesmo-tempo"><code>movw %D, %A e jg %D</code> ao mesmo tempo<a class="headerlink" href="#movw-d-a-e-jg-d-ao-mesmo-tempo" title="Permanent link">&para;</a></h3>
+<p>Nossa CPU suportaria executar simultaneamente a instrução <code>movw %D, %A</code> e ao mesmo tempo a instrução <code>jg %D</code>? </p>
+<h3 id="loadpc"><code>loadPC</code><a class="headerlink" href="#loadpc" title="Permanent link">&para;</a></h3>
+<p>Quais sinais o influenciam?</p>
                 
               
               

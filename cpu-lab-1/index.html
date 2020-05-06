@@ -148,7 +148,9 @@
         
           
 
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -196,7 +198,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../A-Ambiente-Lab-1/" class="md-tabs__link">
+        <a href="../A-Ambiente-Lab-1/" class="md-tabs__link md-tabs__link--active">
           Labs
         </a>
       
@@ -559,10 +561,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Labs
@@ -752,11 +756,155 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../CPU-Lab-1.md" title="None" class="md-nav__link">
-      None
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        LAB 15: Control Unit
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="LAB 15: Control Unit" class="md-nav__link md-nav__link--active">
+      LAB 15: Control Unit
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#controlunit" class="md-nav__link">
+    ControlUnit
+  </a>
+  
+    <nav class="md-nav" aria-label="ControlUnit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loadd-exemplo" class="md-nav__link">
+    loadD (exemplo)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadm" class="md-nav__link">
+    loadM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loada" class="md-nav__link">
+    loadA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muxalui_a" class="md-nav__link">
+    muxALUI_A
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zx" class="md-nav__link">
+    zx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-io" class="md-nav__link">
+    Memory IO
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory IO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estudando" class="md-nav__link">
+    Estudando!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    CPU
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extras" class="md-nav__link">
+    Extras
+  </a>
+  
+    <nav class="md-nav" aria-label="Extras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nop" class="md-nav__link">
+    nop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movw-d-a-e-jg-d-ao-mesmo-tempo" class="md-nav__link">
+    movw %D, %A e jg %D ao mesmo tempo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadpc" class="md-nav__link">
+    loadPC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1433,37 +1581,111 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exemplo-loadd" class="md-nav__link">
-    (exemplo) loadD
+  <a href="#controlunit" class="md-nav__link">
+    ControlUnit
+  </a>
+  
+    <nav class="md-nav" aria-label="ControlUnit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loadd-exemplo" class="md-nav__link">
+    loadD (exemplo)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#loadm" class="md-nav__link">
     loadM
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#loada" class="md-nav__link">
     loadA
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#muxalui_a" class="md-nav__link">
+    muxALUI_A
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#zx" class="md-nav__link">
     zx
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#muxam" class="md-nav__link">
-    muxA/M
+  <a href="#memory-io" class="md-nav__link">
+    Memory IO
   </a>
+  
+    <nav class="md-nav" aria-label="Memory IO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estudando" class="md-nav__link">
+    Estudando!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    CPU
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extras" class="md-nav__link">
+    Extras
+  </a>
+  
+    <nav class="md-nav" aria-label="Extras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nop" class="md-nav__link">
+    nop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movw-d-a-e-jg-d-ao-mesmo-tempo" class="md-nav__link">
+    movw %D, %A e jg %D ao mesmo tempo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadpc" class="md-nav__link">
+    loadPC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1488,19 +1710,35 @@
                 
                 
                 <h1 id="lab-15-control-unit">LAB 15: Control Unit<a class="headerlink" href="#lab-15-control-unit" title="Permanent link">&para;</a></h1>
-<p><img alt="" src="" /></p>
 <p>A unidade de controle é o periférico da CPU responsável por decodificar uma instrução (linguagem de máquina) e realizar as modificações necessárias no HW (mux, load, ULA, registradores, PC) a fim de executar tal operação.</p>
 <p><img alt="" src="../figs/G-CPU/controlUnit.svg" width="60%" /></p>
-<h3 id="exemplo-loadd">(exemplo) <code>loadD</code><a class="headerlink" href="#exemplo-loadd" title="Permanent link">&para;</a></h3>
-<p>O sinal <code>loadD</code> indica quando o registrador <code>D</code> deve armazenar um novo sinal. Para isso, devemos verificar se a instrução em questão que será decodificada pelo 'controlUnit' é do tipo <strong>comando</strong> (C), essa verificação é feita pelo bit mais significativo da instrução (bit17)</p>
-<p>Uma vez que detectado uma instrução do tipo C, devemos verificar se o comando que ela representa carrega a operação de salvar em %D.</p>
-<p>Com esses dados conseguimos criar a tabela verdade a seguir e extrair as equações.</p>
+<p>O <code>control unit</code> controla todos os componentes internos da nossa CPU, é ele que por exemplo seleciona como vai estar os sinais do seletor dos mux (<code>muxALUI/I</code>/<code>muxAM/D</code>, qual operação a ULA irá executar (<code>zr.nx.zy.ny.f.no</code>), onde o dado será salvo (<code>loadD</code>, <code>loadA</code>, <code>writeM</code>, <code>loadPC</code>) e se é para executar uma operação de salto (<code>loadPC</code>). </p>
+<p>A figura a baixo ilustra tudo que o <mark>control unit controla</mark>.</p>
+<p><img alt="" src="../figs/G-CPU/cpu-cu.svg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note que os sinais do comparador da ULA: <code>zr</code> e <code>ng</code> também vão para a unidade de controle. É a partir do valor deles que o hardware decide se vai ou não ocorrer uma operação de salto.</p>
+</div>
+<h2 id="controlunit">ControlUnit<a class="headerlink" href="#controlunit" title="Permanent link">&para;</a></h2>
+<p>Vamos implementar partes da unidade de controle. </p>
+<h3 id="loadd-exemplo"><code>loadD</code> (exemplo)<a class="headerlink" href="#loadd-exemplo" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p>Exemplo!</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Utilize o documento <a href="https://insper.github.io/Z01.1/Util-InstructionSet/"><code>Z01/Instruction Set</code></a> para resolver esse lab.</p>
+</div>
+<p>O sinal <code>loadD</code> indica quando o registrador <code>D</code> deve armazenar um novo sinal. Para isso, devemos verificar se a instrução em questão que está sendo decodificada pelo 'controlUnit' é do tipo <strong>comando</strong> (C), essa verificação é feita pelo bit mais significativo da instrução (<code>bit17</code>).</p>
+<p>Uma vez que detectado uma instrução do tipo C, devemos verificar se o comando que ela representa carrega a operação de salvar em <code>%D</code>, verificamos isso pelo bit <code>d1</code>, que indica se irá ou não ocorrer um carregamento em <code>%D</code>.</p>
+<p><img alt="" src="../figs/G-CPU/loadD.svg" /></p>
+<p>Com esses dados conseguimos criar a tabela verdade a seguir e extrair a equação que rege esse sinal.</p>
 <table>
 <thead>
 <tr>
-<th>bit 17</th>
-<th>bit 5</th>
-<th>loadD</th>
+<th><code>bit 17</code></th>
+<th><code>bit 4</code></th>
+<th><code>loadD</code></th>
 </tr>
 </thead>
 <tbody>
@@ -1515,40 +1753,91 @@
 <td>0</td>
 </tr>
 <tr>
-<td>1</td>
-<td>1</td>
-<td>1</td>
+<td><mark>1</mark></td>
+<td><mark>1</mark></td>
+<td><mark>1</mark></td>
 </tr>
 </tbody>
 </table>
-<p>Podendo ser traduzido para o código em VHDL:</p>
-<div class="highlight"><pre><span></span><code>loadS &lt;= INSTRUCAO(17) and INSTRUCAO(5);
+<p>Podendo ser traduzido para o código em VHDL (via soma dos produtos):</p>
+<div class="highlight"><pre><span></span><code>  <span class="n">loadD</span> <span class="o">&lt;=</span> <span class="n">istruction</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span> <span class="k">and</span> <span class="n">instruction</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
 </code></pre></div>
 
-<p>\newpage</p>
-<h3 id="loadm"><code>loadM</code><a class="headerlink" href="#loadm" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>loadM &lt;=
-</code></pre></div>
-
-<h3 id="loada"><code>loadA</code><a class="headerlink" href="#loada" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>loadA &lt;=
-</code></pre></div>
-
-<h3 id="zx"><code>zx</code><a class="headerlink" href="#zx" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>zx &lt;=
-</code></pre></div>
-
-<h3 id="muxam"><code>muxA/M</code><a class="headerlink" href="#muxam" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>muxAM &lt;= 
-</code></pre></div>
-
-<div class="alert">
-  Valide as respostas com algum professor/ colega.
+<blockquote>
+<p>Nesse lab iremos fazer parte do ControlUnit, ele não deve passar em todos os testes.</p>
+</blockquote>
+<div class="admonition example">
+<p class="admonition-title">Implementando e testando</p>
+<ol>
+<li>Abra o arquivo <code>/Projetos/F-CPU/src/rtl/controlUnit.vhd</code></li>
+<li>Insira a implementação anterior do <code>loadD</code> na arquitetura</li>
+<li>Teste com o comando <code>./testeHW.py lib.tb_controlunit.all</code></li>
+<li>Deve passar no <mark>TESTE 1</mark> e <mark>TESTE 2</mark></li>
+<li>Deve parar para no <mark>TESTE 3</mark></li>
+</ol>
+<p>O resultado deve ser como a seguir:</p>
+<p><img alt="" src="../figs/G-CPU/loadD-teste.png" width="300" /></p>
 </div>
-
-<p>\newpage</p>
-<h1 id="memory-io">Memory IO<a class="headerlink" href="#memory-io" title="Permanent link">&para;</a></h1>
-<p>O componente <code>memory IO</code> é a 'memória' do nosso computador. Interno nesse módulo possuímos além da memória RAM, outros componentes tais como: tela, chave, leds. Lembrando que para a CPU, não existe separação entre o que é memória e o que é hardware externo. </p>
+<h3 id="loadm"><code>loadM</code><a class="headerlink" href="#loadm" title="Permanent link">&para;</a></h3>
+<p>Vamos agora implementar o sinal <code>loadM</code>, esse sinal é o que controla se irá ocorrer uma operação de escrita na memória RAM.</p>
+<p><img alt="" src="../figs/G-CPU/cpu-writeM.svg" width="300" /></p>
+<div class="admonition example">
+<p class="admonition-title">Implementando e testando</p>
+<ol>
+<li>Entenda os bits envolvidos</li>
+<li>Escreva uma tabela verdade</li>
+<li>Encontre a equação e implemente no <code>controlUnit.vhd</code></li>
+<li>Teste com o comando <code>./testeHW.py lib.tb_controlunit.all</code></li>
+<li>Deve passar no <mark>TESTE 3</mark> e <mark>TESTE 4</mark></li>
+<li>Deve parar para no <mark>TESTE 4</mark></li>
+</ol>
+</div>
+<h3 id="loada"><code>loadA</code><a class="headerlink" href="#loada" title="Permanent link">&para;</a></h3>
+<p>Agora implemente o <code>loadA</code>, esse sinal que controla o load do registrador A.</p>
+<div class="admonition example">
+<p class="admonition-title">Implementando e testando</p>
+<ol>
+<li>Entenda os bits envolvidos</li>
+<li>Escreva uma tabela verdade</li>
+<li>Encontre a equação e implemente no <code>controlUnit.vhd</code></li>
+<li>Teste com o comando <code>./testeHW.py lib.tb_controlunit.all</code></li>
+<li>Deve passar no <mark>TESTE 5</mark> e <mark>TESTE 6</mark></li>
+<li>Deve parar para no <mark>TESTE 7</mark></li>
+</ol>
+</div>
+<h3 id="muxalui_a"><code>muxALUI_A</code><a class="headerlink" href="#muxalui_a" title="Permanent link">&para;</a></h3>
+<p>Esse sinal (<code>muxALUI_A</code>) controla o mux que seleciona qual o sinal que entra no registrador <code>%A</code>, a entrada <code>0</code> do mux é o sinal que sai da ULA e o sinal <code>1</code> do mux são os bits [15..0] da instrução. </p>
+<p><img alt="" src="../figs/G-CPU/cpu-muxALUI.svg" width="300" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Com esse sinal implementando, nossa CPU já suporta a instrução <code>leaw $x, %A</code></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Implementando e testando</p>
+<ol>
+<li>Entenda os bits envolvidos</li>
+<li>Escreva uma tabela verdade</li>
+<li>Encontre a equação e implemente no <code>controlUnit.vhd</code></li>
+<li>Teste com o comando <code>./testeHW.py lib.tb_controlunit.all</code></li>
+<li>Deve passar no <mark>TESTE 7</mark> e <mark>TESTE 8</mark></li>
+<li>Deve parar para no <mark>TESTE 9</mark></li>
+</ol>
+</div>
+<h3 id="zx"><code>zx</code><a class="headerlink" href="#zx" title="Permanent link">&para;</a></h3>
+<p>Agora faça o sinal <code>zx</code> que controla o zerador do sinal x da ULA.</p>
+<div class="admonition example">
+<p class="admonition-title">Implementando e testando</p>
+<ol>
+<li>Entenda os bits envolvidos</li>
+<li>Escreva uma tabela verdade</li>
+<li>Encontre a equação e implemente no <code>controlUnit.vhd</code></li>
+<li>Teste com o comando <code>./testeHW.py lib.tb_controlunit.all</code></li>
+<li>Deve passar no <mark>TESTE 9</mark> e <mark>TESTE 10</mark></li>
+<li>Deve parar para no <mark>TESTE 11</mark></li>
+</ol>
+</div>
+<h2 id="memory-io">Memory IO<a class="headerlink" href="#memory-io" title="Permanent link">&para;</a></h2>
+<p>O componente <code>memory IO</code> é a 'memória' do nosso computador. Interno nesse módulo possuímos além da memória RAM, outros componentes tais como: tela, chave, leds. Lembrando que para a CPU, não existe separação entre o que é memória e o que é periférico. </p>
 <p>Os periféricos internos do <code>memoryIO</code> são:</p>
 <ul>
 <li>Tela (<code>screen.vhd</code>)<ul>
@@ -1569,43 +1858,82 @@
 </li>
 </ul>
 <p><code>screen</code> e <code>ram16k</code> possuem a interface detalhada a seguir:</p>
-<p><img alt="" src="memoryIO.pdf" /></p>
-<blockquote>
-<p>os sinais do tipo <strong>LCD_</strong> da <code>screen</code> são conectados diretamente ao LCD, via portmap.</p>
-</blockquote>
+<p><img alt="" src="../figs/G-CPU/memoryIO.svg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Os sinais do tipo <code>LCD_</code> da <code>screen</code> são conectados diretamente ao LCD, via <code>portmap</code>.</p>
+</div>
 <p>O componente <code>memoryIO</code> possui a seguinte entidade:</p>
-<p><img alt="" src="memoryio-entidade.png" /></p>
-<p>\newpage</p>
-<h2 id="estudando">Estudando!<a class="headerlink" href="#estudando" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../figs/G-CPU/memoryio-entidade.png" width="200" /></p>
+<h3 id="estudando">Estudando!<a class="headerlink" href="#estudando" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Discuta, pense e escreva a solução antes de ver a resposta.</p>
+</div>
 <ol>
 <li>
 <p>Pense e discuta com seus colegas o <code>memoryIO</code>.</p>
 </li>
 <li>
-<p>Dos sinais de entrada do <code>memoryIO</code> qual define qual periférico será 'escrito/lido' pela CPU? Explique.</p>
+<p>Dos sinais de entrada do <code>memoryIO</code> qual define qual periférico (RAM/LCD/SW/LED) será acessado pela CPU? Explique.</p>
 </li>
 </ol>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 
+<details class="info"><summary>Resposta</summary><p>O sinal em questão é o <code>address</code>, pois os periféricos são mapeados em endereços diferentes, e é esse sinal que define qual periférico a CPU está querendo acessar. Exemplo: se o sinal <code>address = 1024</code>, a CPU está realizando uma operação na memória RAM, mas se o sinal <code>address = 21184</code> isso indica que a CPU está querendo acessar o <code>LED</code>.</p>
+<ul>
+<li>Para mais informações, leia <a href="https://insper.github.io/Z01.1/Teoria-Z01-mapadeMemoria/">Teoria/Z01 - Mapa de Memória</a>.</li>
+</ul>
+</details>
 <ol>
 <li>Qual sinal informa o <code>memoryIO</code> que a CPU está realizando uma escrita?</li>
 </ol>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 
+<details class="info"><summary>Resposta</summary><p>É o <code>writeM</code>, se <code>1</code> indica que a CPU quer realizar uma escrita, caso contrário é uma leitura.</p>
+</details>
 <ol>
-<li>Como funciona o LCD? Quais são suas entradas e saídas (tirando tudo que começa com <strong>LCD_</strong>)</li>
+<li>Quais são suas entradas e saídas do LCD que o memoryIO controla? (tudo tirando o que começa com <strong>LCD_</strong>)</li>
 </ol>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 
+<details class="info"><summary>Resposta</summary><div class="highlight"><pre><span></span><code>  <span class="n">DISPLAY</span><span class="o">:</span> <span class="n">Screen</span>  <span class="k">port</span> <span class="k">map</span> <span class="p">(</span>
+         <span class="n">RST</span>          <span class="o">=&gt;</span> <span class="n">RST</span><span class="p">,</span>
+         <span class="n">CLK_FAST</span>     <span class="o">=&gt;</span> <span class="n">CLK_FAST</span><span class="p">,</span>
+         <span class="n">CLK_SLOW</span>     <span class="o">=&gt;</span> <span class="n">CLK_SLOW</span><span class="p">,</span>
+
+         <span class="n">INPUT</span>        <span class="o">=&gt;</span> <span class="n">INPUT</span><span class="p">,</span>
+         <span class="n">LOAD</span>         <span class="o">=&gt;</span> <span class="n">LOAD_DISPLAY</span><span class="p">,</span>
+         <span class="n">ADDRESS</span>      <span class="o">=&gt;</span> <span class="n">ADDRESS</span><span class="p">(</span><span class="mi">13</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">),</span>
+         <span class="n">LCD_INIT_OK</span>  <span class="o">=&gt;</span> <span class="n">LCD_INIT_OK</span><span class="p">,</span>
+
+         <span class="n">LCD_CS_N</span>     <span class="o">=&gt;</span> <span class="n">LCD_CS_N</span> <span class="p">,</span>
+         <span class="n">LCD_D</span>          <span class="o">=&gt;</span> <span class="n">LCD_D</span><span class="p">,</span>
+         <span class="n">LCD_RD_N</span>     <span class="o">=&gt;</span> <span class="n">LCD_RD_N</span><span class="p">,</span>
+         <span class="n">LCD_RESET_N</span>  <span class="o">=&gt;</span> <span class="n">LCD_RESET_N</span><span class="p">,</span>
+         <span class="n">LCD_RS</span>         <span class="o">=&gt;</span> <span class="n">LCD_RS</span><span class="p">,</span>
+         <span class="n">LCD_WR_N</span>     <span class="o">=&gt;</span> <span class="n">LCD_WR_N</span>
+<span class="p">);</span>
+</code></pre></div>
+
+<ul>
+<li><code>input</code>: são os px a serem escritos</li>
+<li><code>load</code>: se é para atualizar os px</li>
+<li><code>adddress</code>: quais px serão escritos</li>
+</ul>
+<p>Note que esses sinais são os mesmos sinais de uma memória RAM, porém se a parte de leitura. O LCD como foi implementando, não suporta que realizemos a leitura de seus pxs.</p>
+</details>
 <ol>
 <li>Como funciona o LED?</li>
 </ol>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 
+<details class="info"><summary>Resposta</summary><p>O LED é um endereço da memória, como ele 'armazena' o dado, deve ser implementando com um registrador.</p>
+</details>
 <ol>
 <li>Faça um esboço (diagrama) de como o <code>memoryIO</code> implementará a saída <code>LED</code> </li>
 </ol>
@@ -1627,13 +1955,13 @@
 <li>INPUT(16 downto 0): dado a ser escrito </li>
 <li>LED(9 downto 0): Valor dos LEDs da FPGA</li>
 </ul>
-<p>\newpage</p>
-<h1 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h1>
+<h2 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h2>
 <p>Proponha uma modificação na <code>CPU</code> do nosso Z01.1 que:</p>
 <ol>
-<li>Adiciona mais um registrador (onde é melhor?)</li>
-<li>Possibilita %S endereçar a memória <ul>
-<li><code>movw %D, (%S)</code></li>
+<li>Adiciona mais um registrador (<code>%S</code>) (onde é melhor?)</li>
+<li>Você teria que modificar a linguagem de máquina do nosso HW. Proponha uma solução.</li>
+<li>Possibilita %D endereçar a memória <ul>
+<li><code>movw %A, (%D)</code></li>
 </ul>
 </li>
 <li>Possibilite fazer carregamento efetivo em %D<ul>
@@ -1641,39 +1969,14 @@
 </ul>
 </li>
 </ol>
-<p>Faça o desenho da nova CPU.</p>
-<p>\newpage</p>
-<h1 id="extras">Extras<a class="headerlink" href="#extras" title="Permanent link">&para;</a></h1>
+<p>Para cada modificação faça o desenho da nova CPU.</p>
+<h2 id="extras">Extras<a class="headerlink" href="#extras" title="Permanent link">&para;</a></h2>
 <h3 id="nop"><code>nop</code><a class="headerlink" href="#nop" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="boxBits.pdf" /></p>
-<h3 id="movw-s-d-e-jg-s"><code>movw %S, %D e jg %S</code><a class="headerlink" href="#movw-s-d-e-jg-s" title="Permanent link">&para;</a></h3>
-<p>Nossa CPU suportaria executar um <code>movw %S, %D</code> e ao mesmo tempo a instrução <code>jg %D</code>? </p>
-<p><img alt="" src="boxBits.pdf" /></p>
+<p>Como o controlUnit controla a CPU para realizar a operação de NOP?</p>
+<h3 id="movw-d-a-e-jg-d-ao-mesmo-tempo"><code>movw %D, %A e jg %D</code> ao mesmo tempo<a class="headerlink" href="#movw-d-a-e-jg-d-ao-mesmo-tempo" title="Permanent link">&para;</a></h3>
+<p>Nossa CPU suportaria executar simultaneamente a instrução <code>movw %D, %A</code> e ao mesmo tempo a instrução <code>jg %D</code>? </p>
 <h3 id="loadpc"><code>loadPC</code><a class="headerlink" href="#loadpc" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>loadPC &lt;=
-</code></pre></div>
-
-<h3 id="dissasembly">Dissasembly<a class="headerlink" href="#dissasembly" title="Permanent link">&para;</a></h3>
-<p>Você teve acesso a um binário de um programa para o Z01.1:
-<div class="highlight"><pre><span></span><code>000000000000000101
-100101100000010000
-000000000000000001
-100000000000100000
-000000000000001011
-100010011000000001
-100001010100000000
-100001111110100000
-000000000000001100
-100000011000000111
-100001010100000000
-100001010100100000
-000000000000000000
-100010011000001000
-</code></pre></div></p>
-<ol>
-<li>Faça o dissasembly (recuperar a instruções originais)</li>
-<li>O que o código faz?</li>
-</ol>
+<p>Quais sinais o influenciam?</p>
                 
               
               
@@ -1688,6 +1991,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../assembly-Lab-4/" title="Lab 14: praticando nasm" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lab 14: praticando nasm
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../Teoria-Algebra-Booleana/" title="Álgebra Booleana" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Álgebra Booleana
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
