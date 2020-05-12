@@ -17,7 +17,7 @@
     
     
       
-        <title>F - CPU - 2020-1 - Elementos de Sistemas - Z01</title>
+        <title>Projeto - 2020-1 - Elementos de Sistemas - Z01</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#f-cpu" class="md-skip">
+        <a href="#projeto" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +86,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              F - CPU
+              Projeto
             
           </span>
         </div>
@@ -596,14 +596,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        F - CPU
+        Projeto
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
         </span>
       </label>
     
-    <a href="./" title="F - CPU" class="md-nav__link md-nav__link--active">
-      F - CPU
+    <a href="./" title="Projeto" class="md-nav__link md-nav__link--active">
+      Projeto
     </a>
     
       
@@ -663,7 +663,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#projeto" class="md-nav__link">
+  <a href="#projeto_1" class="md-nav__link">
     Projeto
   </a>
   
@@ -1668,7 +1668,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#projeto" class="md-nav__link">
+  <a href="#projeto_1" class="md-nav__link">
     Projeto
   </a>
   
@@ -1721,9 +1721,9 @@
                   
                 
                 
-                <h1 id="f-cpu">F - CPU<a class="headerlink" href="#f-cpu" title="Permanent link">&para;</a></h1>
-<p><img alt="" src="figs/G-CPU/sistema-pc.png" /></p>
-<p>Nesse projeto cada grupo terá que implementar a CPU do Z01. </p>
+                <h1 id="projeto">Projeto<a class="headerlink" href="#projeto" title="Permanent link">&para;</a></h1>
+<p><img alt="" src="../figs/G-CPU/sistema-cpu.svg" /></p>
+<p>Nesse projeto cada grupo terá que implementar sua própria CPU do Z01. </p>
 <h2 id="comecando">Começando<a class="headerlink" href="#comecando" title="Permanent link">&para;</a></h2>
 <p>A seguir explicações de como começar o projeto.</p>
 <h3 id="entendendo-a-organizacao-do-projeto">Entendendo a Organização do Projeto<a class="headerlink" href="#entendendo-a-organizacao-do-projeto" title="Permanent link">&para;</a></h3>
@@ -1783,7 +1783,7 @@ $ ./testeHW.py lib.tb_controlunit.all
 <p class="admonition-title">Tip</p>
 <p>No travis você tem que colocar o caminho completo: <code>Projeto/F-CPU/...</code></p>
 </div>
-<h2 id="projeto">Projeto<a class="headerlink" href="#projeto" title="Permanent link">&para;</a></h2>
+<h2 id="projeto_1">Projeto<a class="headerlink" href="#projeto_1" title="Permanent link">&para;</a></h2>
 <p>Deve-se implementar o <code>Control Unit</code> e integrar os módulos: <code>MemoryIO</code> e <code>CPU</code>. O HDL que descreve o <code>Computador</code> já foi fornecido pronto.</p>
 <h2 id="modulos">Módulos<a class="headerlink" href="#modulos" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
@@ -1846,16 +1846,18 @@ $ ./testeHW.py lib.tb_controlunit.all
 </ul>
 <h3 id="diagramas">Diagramas<a class="headerlink" href="#diagramas" title="Permanent link">&para;</a></h3>
 <hr />
-<p><img alt="Computador.vhd" src="figs/G-CPU/computador.png" /></p>
-<hr />
 <p><img alt="MemoryIo.vhd" src="../figs/G-CPU/memoryIO.png" /></p>
 <hr />
-<p><img alt="CPU.vhd" src="figs/G-CPU/CPU.png" /></p>
-<hr />
-<p>ControlUnit</p>
-<p><img alt="ControlUnit.vhd" src="figs/G-CPU/controlUnit.png" /></p>
+<p><img alt="ControlUnit.vhd" src="../figs/G-CPU/controlUnit.svg" width="400" /></p>
 <hr />
 <h2 id="rubrica-do-projeto">Rubrica do projeto<a class="headerlink" href="#rubrica-do-projeto" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Os conceitos B e A devem ser feitos em um outro branch!</p>
+<ul>
+<li><code>git checkout -B CPU-Extras</code></li>
+</ul>
+</div>
 <table>
 <thead>
 <tr>
@@ -1866,7 +1868,7 @@ $ ./testeHW.py lib.tb_controlunit.all
 <tbody>
 <tr>
 <td>I</td>
-<td>- Menos da metade dos módulos funcionando</td>
+<td>Menos da metade dos módulos funcionando</td>
 </tr>
 <tr>
 <td></td>
@@ -1874,7 +1876,7 @@ $ ./testeHW.py lib.tb_controlunit.all
 </tr>
 <tr>
 <td>D</td>
-<td>- Ao menos um módulo não está feito e não passa no testes.</td>
+<td>Ao menos um módulo não está feito e não passa no testes.</td>
 </tr>
 <tr>
 <td></td>
@@ -1882,19 +1884,15 @@ $ ./testeHW.py lib.tb_controlunit.all
 </tr>
 <tr>
 <td>C</td>
-<td>- Construiu com os módulos do grupo o seu próprio computador</td>
+<td>Construiu com os módulos do grupo o seu próprio computador</td>
 </tr>
 <tr>
 <td></td>
-<td>- Todos os módulos sendo testados no Travis.</td>
+<td>Todos os módulos sendo testados no Travis.</td>
 </tr>
 <tr>
 <td></td>
-<td>- Todos os módulos passam nos testes.</td>
-</tr>
-<tr>
-<td></td>
-<td>- Executa o escreve a letra do grupo no LCD usando o seu computador</td>
+<td>Todos os módulos passam nos testes.</td>
 </tr>
 <tr>
 <td></td>
@@ -1902,15 +1900,15 @@ $ ./testeHW.py lib.tb_controlunit.all
 </tr>
 <tr>
 <td>B</td>
-<td>- Adiciona um novo registrador a CPU  (<code>%S</code>)</td>
+<td>Adiciona um novo registrador a CPU  (<code>%S</code>)</td>
 </tr>
 <tr>
 <td></td>
-<td>- Adiciona os displays de Sete Segmentos aos periféricos do Computador (memoryIO)</td>
+<td><del>Adiciona os displays de Sete Segmentos aos periféricos do Computador (memoryIO)</del></td>
 </tr>
 <tr>
 <td></td>
-<td>- Modifica os testes para testar esse novo recurso!</td>
+<td>Modifica os testes para testar esse novo recurso!</td>
 </tr>
 <tr>
 <td></td>
@@ -1918,11 +1916,11 @@ $ ./testeHW.py lib.tb_controlunit.all
 </tr>
 <tr>
 <td>A</td>
-<td>- Possibilita realizar carregamento efetivo em %D (<code>leaw $5, %D</code>)  <strong>OU</strong></td>
+<td>Possibilita realizar carregamento efetivo em %D (<code>leaw $5, %D</code>)</td>
 </tr>
 <tr>
 <td></td>
-<td>- Modifica os testes para testar esse novo recurso!</td>
+<td>Modifica os testes para testar esse novo recurso!</td>
 </tr>
 </tbody>
 </table>
